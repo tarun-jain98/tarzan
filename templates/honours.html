@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  </head>
+  <body style="background:#6099a6;">
+
+    <!-- Navbar -->
+    <div class="ui attached stackable menu" style="background:#225f73;">
+    <div class="ui container">
+      <a class="item" style="color:#ffffff;">
+        <i class="home icon" style="color:#ffffff;"></i> <span style="font-size:20px;">Tarzan</span>
+      </a>
+
+      <a class="item" style="color:#ffffff;">
+        <i class="columns icon" style="color:#ffffff;"></i> Honours/Achievements/Awards
+      </a>
+
+      <div class="right item">
+
+        <a class="item" style="color:#ffffff;">
+        <i class="power off icon" style="color:#ffffff;"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar end -->
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+  <h4 class="ui header">National</h4>
+
+  <form method="post">
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of Award</label>
+    {% render_field form.national_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of Organisation</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form.national_brief_remarks class="form-control" %}
+</div>
+</div>
+
+  
+</div>
+</form>
+</div>
+
+
+<!-- Attended -->
+
+<div class="ui raised segment" style="margin-top:2%; margin-bottom:5%;">
+<h4 class="ui header">International</h4>
+
+<form method="post">
+
+  <div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of Award</label>
+     {% render_field form.international_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of Organisation</label>
+   {% render_field form.international_name_organization class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form.international_brief_remarks class="form-control" %}
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="ui inverted vertical footer raised segment" style="background:#f5f5f5;">
+  <div class="ui center aligned container">
+
+    <div class="ui horizontal small divided link list">
+      <a class="item" href="#" style="color:#212121;">Contact Us</a>
+      <a class="item" href="#" style="color:#212121;">Terms and Conditions</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+  </body>
+</html>

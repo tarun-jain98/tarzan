@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  </head>
+  <body style="background:#6099a6;">
+
+    <!-- Navbar -->
+    <div class="ui attached stackable menu" style="background:#225f73;">
+    <div class="ui container">
+      <a class="item" style="color:#ffffff;">
+        <i class="home icon" style="color:#ffffff;"></i> <span style="font-size:20px;">Tarzan</span>
+      </a>
+
+      <a class="item" style="color:#ffffff;">
+        <i class="columns icon" style="color:#ffffff;"></i> Book
+      </a>
+
+      <div class="right item">
+
+        <a class="item" style="color:#ffffff;">
+        <i class="power off icon" style="color:#ffffff;"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar end -->
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+  <h4 class="ui header">Online Courses</h4>
+
+  <form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of course</label>
+      {% render_field form.name_course class="form-control" %}
+  </div>
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Organisation/Agency Name</label>
+      {% render_field form.name_organization class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Date of completion</label>
+     {% render_field form.date_completed class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+    {% render_field form.brief_remarks class="form-control" %}
+
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Grade (If any)</label>
+    {% render_field form.grade class="form-control" %}
+    
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+  </form>
+
+
+
+
+
+
+
+  </body>
+</html>
