@@ -7,4 +7,9 @@ app_name = 't1'
 
 urlpatterns = [
 
+    url(r'^fdp/', views.fdp, name="fdp"),
+    url(r'^ref_course/', views.ref_course, name="ref_course"),
+    url(r'^sttp/', views.sttp, name="sttp"),
+    url(r'^book/', views.book, name="book"),
+
 ]
