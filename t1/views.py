@@ -37,3 +37,23 @@ def online_courses(request):
 def consultancy(request):
     form = forms.form_counsltancy()
     return render(request,'consultancy.html',{'form':form})
+
+def phd_guide(request):
+    form = forms.form_phd_guide()
+    return render(request,'phd_guide.html',{'form':form})
+
+def phd_self(request):
+    form = forms.form_phd_self()
+    return render(request,'phd_self.html',{'form':form})
+
+def phd_self(request):
+    form = forms.form_phd_self()
+    return render(request,'phd_self.html',{'form':form})
+
+def conference_journal(request):
+    form = forms.form_conference_journal()
+    return render(request,'conference_journal.html',{'form':form})
+
+def funded_projects(request):
+    form = forms.form_funding()
+    return render(request,'funded_projects.html',{'form':form})

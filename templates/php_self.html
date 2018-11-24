@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  </head>
+  <body style="background:#6099a6;">
+
+    <!-- Navbar -->
+    <div class="ui attached stackable menu" style="background:#225f73;">
+    <div class="ui container">
+      <a class="item" style="color:#ffffff;">
+        <i class="home icon" style="color:#ffffff;"></i> <span style="font-size:20px;">Tarzan</span>
+      </a>
+
+      <a class="item" style="color:#ffffff;">
+        <i class="columns icon" style="color:#ffffff;"></i> PHD Self
+      </a>
+
+      <div class="right item">
+
+        <a class="item" style="color:#ffffff;">
+        <i class="power off icon" style="color:#ffffff;"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar end -->
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+  <h4 class="ui header">PHD Self</h4>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="ui form">
+
+  <div class="two fields">
+    <div class="field">
+      <label>Internal or external</label>
+      {% render_field form.int_ext class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Area / Domain</label>
+      {% render_field form.area class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <label>Year of registration</label>
+      {% render_field form.year class="form-control" %}
+    </div>
+    <div class="field">
+      <label>University name</label>
+      {% render_field form.name_university class="form-control" %}
+    </div>
+
+  </div>
+
+
+  <div class="three fields">
+    <div class="field">
+      <label>Research center name</label>
+      {% render_field form.name_research_centre class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Name of student</label>
+      {% render_field form.name_student class="form-control" %}
+    </div>
+    <div class="field">
+      <label>PHD Status</label>
+      {% render_field form.phd_status class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <label>Name Guide</label>
+      {% render_field form.name_guide class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Name co-guide</label>
+      {% render_field form.name_co_guide class="form-control" %}
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+  </form>
+
+
+
+</div>
+
+
+<!-- Attended -->
+
+
+
+
+</div>
+
+
+
+
+
+
+  </body>
+</html>
