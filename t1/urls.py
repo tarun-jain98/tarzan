@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^ref_course/', views.ref_course, name="ref_course"),
     url(r'^sttp/', views.sttp, name="sttp"),
     url(r'^book/', views.book, name="book"),
+    url(r'^interaction/', views.interaction, name="interaction"),
+
 
 ]

@@ -15,3 +15,6 @@ def sttp(request):
 
 def book(request):
     return render(request,'book.html')
+
+def interaction(request):
+    return render(request,'interaction.html')
