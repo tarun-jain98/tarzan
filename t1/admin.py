@@ -11,6 +11,16 @@ admin.site.register(Designation)
 
 admin.site.register(Department)
 
+admin.site.register(author_type)
+admin.site.register(agency_type)
+admin.site.register(consultancy_type)
+admin.site.register(investigator_type)
+
+admin.site.register(yes_no)
+admin.site.register(index_type)
+
+admin.site.register(int_ext)
+
 class UserResource(resources.ModelResource):
 	class Meta:
 		model = User
@@ -36,3 +46,24 @@ class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 	ordering = ('username',)
 	read_only = "password"
 	resource_class = UserResource
+
+
+class fdP(resources.ModelResource):
+	class Meta:
+		model = fdp
+
+
+@admin.register(fdp)
+class Fdp(ImportExportModelAdmin):
+
+
+	list_display = ('name',)
+	search_fields = ('info__first_name',)
+	ordering = ('id',)
+	resource_class = fdP
+
+	def name(self, instance):
+		return instance.info.first_name
+
+
+
