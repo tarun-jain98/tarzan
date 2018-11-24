@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  </head>
+  <body style="background:#6099a6;">
+
+    <!-- Navbar -->
+    <div class="ui attached stackable menu" style="background:#225f73;">
+    <div class="ui container">
+      <a class="item" style="color:#ffffff;">
+        <i class="home icon" style="color:#ffffff;"></i> <span style="font-size:20px;">Tarzan</span>
+      </a>
+
+      <a class="item" style="color:#ffffff;">
+        <i class="columns icon" style="color:#ffffff;"></i> Book
+      </a>
+
+      <div class="right item">
+
+        <a class="item" style="color:#ffffff;">
+        <i class="power off icon" style="color:#ffffff;"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar end -->
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  
+  <h4 class="ui header">Funded Projects</h4>
+
+  <form method="post">
+
+    <div class="ui form">
+
+
+<!-- one -->
+
+<div class="ui raised segment">
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form.title_1 class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of the funding agency</label>
+     {% render_field form.name_agency_1 class="form-control" %}
+  </div>
+
+</div>
+<div class="three fields">
+  <div class="four wide field">
+    <label>Type of funding agency</label>
+    {% render_field form.agency_type_1 class="form-control" %}
+
+  </div>
+
+  <div class="four wide field">
+    <label>Date of sanction</label>
+    {% render_field form.date_sanction_1 class="form-control" %}
+
+  </div>
+  <div class="four wide field">
+    <label>Total amount sanction</label>
+    {% render_field form.amount_sanction_1 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Date from</label>
+    {% render_field form.from_date_1 class="form-control" %}
+    
+  </div>
+
+  <div class="six wide field">
+    <label>Date to</label>
+    {% render_field form.to_date_1 class="form-control" %}
+    
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Place of execution</label>
+    {% render_field form.place_1 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>PI/Co-PI</label>
+    {% render_field form.investigator_type_1 class="form-control" %}
+    
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Amount released</label>
+    {% render_field form.amount_released_1 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>Date released</label>
+    {% render_field form.date_released_1 class="form-control" %}
+    
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Extended duration</label>
+     {% render_field form.date_released_1 class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Additional money</label>
+    {% render_field form.yes_no_1 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>Value</label>
+    {% render_field form.amount_additional_1 class="form-control" %}
+    
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+     {% render_field form.brief_remarks_1 class="form-control" %}
+  </div>
+
+</div>
+
+
+
+
+<!-- one end -->
+
+ </div>
+
+ <div class="ui raised segment">
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form.title_2 class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of the funding agency</label>
+     {% render_field form.name_agency_2 class="form-control" %}
+  </div>
+
+</div>
+<div class="three fields">
+  <div class="four wide field">
+    <label>Type of funding agency</label>
+    {% render_field form.agency_type_2 class="form-control" %}
+
+  </div>
+
+  <div class="four wide field">
+    <label>Date of sanction</label>
+    {% render_field form.date_sanction_2 class="form-control" %}
+
+  </div>
+  <div class="four wide field">
+    <label>Total amount sanction</label>
+    {% render_field form.amount_sanction_2 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Date from</label>
+    {% render_field form.from_date_2 class="form-control" %}
+    
+  </div>
+
+  <div class="six wide field">
+    <label>Date to</label>
+    {% render_field form.to_date_2 class="form-control" %}
+    
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Place of execution</label>
+    {% render_field form.place_2 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>PI/Co-PI</label>
+    {% render_field form.investigator_type_2 class="form-control" %}
+    
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Amount released</label>
+    {% render_field form.amount_released_2 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>Date released</label>
+    {% render_field form.date_released_2 class="form-control" %}
+    
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Extended duration</label>
+     {% render_field form.date_released_2 class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Additional money</label>
+    {% render_field form.yes_no_2 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>Value</label>
+    {% render_field form.amount_additional_2 class="form-control" %}
+    
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+     {% render_field form.brief_remarks_2 class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+
+
+
+ </div>
+
+ <div class="ui raised segment">
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form.title_3 class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of the funding agency</label>
+     {% render_field form.name_agency_3 class="form-control" %}
+  </div>
+
+</div>
+<div class="three fields">
+  <div class="four wide field">
+    <label>Type of funding agency</label>
+    {% render_field form.agency_type_3 class="form-control" %}
+
+  </div>
+
+  <div class="four wide field">
+    <label>Date of sanction</label>
+    {% render_field form.date_sanction_3 class="form-control" %}
+
+  </div>
+  <div class="four wide field">
+    <label>Total amount sanction</label>
+    {% render_field form.amount_sanction_3 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Date from</label>
+    {% render_field form.from_date_3 class="form-control" %}
+    
+  </div>
+
+  <div class="six wide field">
+    <label>Date to</label>
+    {% render_field form.to_date_3 class="form-control" %}
+    
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Place of execution</label>
+    {% render_field form.place_3 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>PI/Co-PI</label>
+    {% render_field form.investigator_type_3 class="form-control" %}
+    
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Amount released</label>
+    {% render_field form.amount_released_3 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>Date released</label>
+    {% render_field form.date_released_3 class="form-control" %}
+    
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Extended duration</label>
+     {% render_field form.date_released_3 class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Additional money</label>
+    {% render_field form.yes_no_3 class="form-control" %}
+    
+  </div>
+  <div class="six wide field">
+    <label>Value</label>
+    {% render_field form.amount_additional_3 class="form-control" %}
+    
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+     {% render_field form.brief_remarks_3 class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+
+  </form>
+
+
+
+
+
+
+
+  </body>
+</html>
