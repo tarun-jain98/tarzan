@@ -33,364 +33,297 @@
 
   <!-- Navbar end -->
 
-<!-- <div class="ui container" style="margin-top:3%;"> -->
+<div class="ui container" style="margin-top:3%;">
 
 
-
+  <div class="ui raised segment">
   <h4 class="ui header">PHD Guide</h4>
 
   <form method="post">
     {% csrf_token %}
 
-    <table class="ui celled table" style="margin-right:200%;">
-    <thead>
-      <tr><th>Internal or External</th>
-      <th>Area / Domain</th>
-      <th>Year of registrations</th>
-      <th>University name</th>
-      <th>Research center name</th>
-      <th>Name of student</th>
-      <th>PHD status</th>
-    </tr></thead>
-    <tbody>
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_1 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_1 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+    <div class="ui form">
+  <div class="seven fields">
+
+    <div class="field">
+      <label>Internal or External</label>
+      {% render_field form.int_ext_1 class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Area / Domain</label>
+      {% render_field form.area_1 class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Year of registration</label>
       {% render_field form.year_1 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_1 class="form-control" %}
+    <div class="field">
+      <label>University name</label>
+      {% render_field form.name_university_1 class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Research center name</label>
+      {% render_field form.name_research_centre_1 class="form-control" %}
+    </div>
+    <div class="field">
+      <label>Name of student</label>
+      {% render_field form.name_student_1 class="form-control" %}
+    </div>
+    <div class="field">
+      <label>PHD status</label>
+      {% render_field form.phd_status_1 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_1 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_1 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_1 class="form-control" %}
-</div>
-</td>
 
-      </tr>
+  <div class="seven fields">
 
+    <div class="field">
 
+      {% render_field form.int_ext_2 class="form-control" %}
+    </div>
+    <div class="field">
 
+      {% render_field form.area_2 class="form-control" %}
+    </div>
+    <div class="field">
 
-
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_2 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_2 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
       {% render_field form.year_2 class="form-control" %}
     </div>
-    </td>
-    <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_2 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_2 class="form-control" %}
     </div>
-    </td>
-    <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_research_centre_2 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_research_centre_2 class="form-control" %}
     </div>
-    </td>
-    <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_student_2 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_student_2 class="form-control" %}
     </div>
-    </td>
-    <td data-label="">
-    <div class="ui input">
-    {% render_field form.phd_status_2 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.phd_status_2 class="form-control" %}
     </div>
-    </td>
 
-      </tr>
+  </div>
 
+  <div class="seven fields">
 
+    <div class="field">
 
+      {% render_field form.int_ext_3 class="form-control" %}
+    </div>
+    <div class="field">
 
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_3 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_3 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+      {% render_field form.area_3 class="form-control" %}
+    </div>
+    <div class="field">
+
       {% render_field form.year_3 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_3 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_3 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_research_centre_3 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_student_3 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.phd_status_3 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_3 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_3 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_3 class="form-control" %}
-</div>
-</td>
 
-      </tr>
+  <div class="seven fields">
 
+    <div class="field">
 
+      {% render_field form.int_ext_4 class="form-control" %}
+    </div>
+    <div class="field">
 
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_4 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_4 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+      {% render_field form.area_4 class="form-control" %}
+    </div>
+    <div class="field">
+
       {% render_field form.year_4 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_4 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_4 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_research_centre_4 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_student_4 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.phd_status_4 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_4 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_4 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_4 class="form-control" %}
-</div>
-</td>
-
-      </tr>
 
 
 
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_5 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_5 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+  <div class="seven fields">
+
+    <div class="field">
+
+      {% render_field form.int_ext_5 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.area_5 class="form-control" %}
+    </div>
+    <div class="field">
+
       {% render_field form.year_5 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_5 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_5 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_research_centre_5 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_student_5 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.phd_status_5 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_5 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_5 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_5 class="form-control" %}
-</div>
-</td>
-
-      </tr>
 
 
+  <div class="seven fields">
 
+    <div class="field">
 
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_6 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_6 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+      {% render_field form.int_ext_6 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.area_6 class="form-control" %}
+    </div>
+    <div class="field">
+
       {% render_field form.year_6 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_6 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_6 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_research_centre_6 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_student_6 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.phd_status_6 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_6 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_6 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_6 class="form-control" %}
-</div>
-</td>
 
-      </tr>
+  <div class="seven fields">
 
+    <div class="field">
 
+      {% render_field form.int_ext_7 class="form-control" %}
+    </div>
+    <div class="field">
 
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_7 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_7 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+      {% render_field form.area_7 class="form-control" %}
+    </div>
+    <div class="field">
+
       {% render_field form.year_7 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_7 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_7 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_research_centre_7 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_student_7 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.phd_status_7 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_7 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_7 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_7 class="form-control" %}
-</div>
-</td>
-
-      </tr>
 
 
 
-      <tr>
-        <td data-label="">
-          <div class="ui input">
-          {% render_field form.int_ext_8 class="form-control" %}
-        </div>
-      </td>
-      <td data-label="">
-        <div class="ui input">
-        {% render_field form.area_8 class="form-control" %}
-      </div>
-    </td>
-    <td data-label="">
-      <div class="ui input">
+  <div class="seven fields">
+
+    <div class="field">
+
+      {% render_field form.int_ext_8 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.area_8 class="form-control" %}
+    </div>
+    <div class="field">
+
       {% render_field form.year_8 class="form-control" %}
     </div>
-  </td>
-  <td data-label="">
-    <div class="ui input">
-    {% render_field form.name_university_8 class="form-control" %}
+    <div class="field">
+
+      {% render_field form.name_university_8 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_research_centre_8 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.name_student_8 class="form-control" %}
+    </div>
+    <div class="field">
+
+      {% render_field form.phd_status_8 class="form-control" %}
+    </div>
+
   </div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_research_centre_8 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.name_student_8 class="form-control" %}
-</div>
-</td>
-<td data-label="">
-  <div class="ui input">
-  {% render_field form.phd_status_8 class="form-control" %}
-</div>
-</td>
 
-      </tr>
 
-    </tbody>
-  </table>
+
+
+
+
+</div>
 
   </form>
 
 
 
-<!-- </div> -->
+</div>
 
 
 <!-- Attended -->
@@ -398,7 +331,7 @@
 
 
 
-
+</div>
 
 
 
