@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^sttp/', views.sttp, name="sttp"),
     url(r'^book/', views.book, name="book"),
     url(r'^interaction/', views.interaction, name="interaction"),
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 =======
@@ -29,5 +30,8 @@ urlpatterns = [
 
 =======
 >>>>>>> 8875cd6a93047497d31a8fe9b13c1d23aae9d4ab
+=======
+
+>>>>>>> Stashed changes
 
 ]

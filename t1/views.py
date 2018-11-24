@@ -19,6 +19,7 @@ def sttp(request):
     return render(request,'sttp.html',{'form':form})
 
 def book(request):
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 =======
@@ -65,3 +66,9 @@ def funded_projects(request):
 =======
 
 >>>>>>> 8875cd6a93047497d31a8fe9b13c1d23aae9d4ab
+=======
+    return render(request,'book.html')
+
+def interaction(request):
+    return render(request,'interaction.html')
+>>>>>>> Stashed changes
