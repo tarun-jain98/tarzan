@@ -28,7 +28,7 @@ class author_type(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name	
+		return self.name
 
 class agency_type(models.Model):
 	"""
@@ -37,7 +37,7 @@ class agency_type(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name	
+		return self.name
 
 class consultancy_type(models.Model):
 	"""
@@ -46,7 +46,7 @@ class consultancy_type(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name		
+		return self.name
 
 class investigator_type(models.Model):
 	"""
@@ -64,7 +64,7 @@ class yes_no(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name		
+		return self.name
 
 class index_type(models.Model):
 	"""
@@ -82,7 +82,7 @@ class int_ext(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name		
+		return self.name
 
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
@@ -185,7 +185,7 @@ class refreshers_course(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class sttp(models.Model):
 	conducted_name = models.CharField(max_length=50, blank=True, null=True)
@@ -205,7 +205,7 @@ class sttp(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name				
+		return self.info.first_name
 
 class interaction(models.Model):
 	date = models.DateField(blank=True, null=True)
@@ -215,7 +215,7 @@ class interaction(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class open_courses(models.Model):
 	name_coordinator = models.CharField(max_length=50, blank=True, null=True)
@@ -224,7 +224,7 @@ class open_courses(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class online_courses(models.Model):
 	name_course = models.CharField(max_length=50, blank=True, null=True)
@@ -235,7 +235,7 @@ class online_courses(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class honours(models.Model):
 	national_name_award = models.CharField(max_length=50, blank=True, null=True)
@@ -247,7 +247,7 @@ class honours(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name		
+		return self.info.first_name
 
 
 class counsltancy(models.Model):
@@ -258,11 +258,11 @@ class counsltancy(models.Model):
 	amount = models.CharField(max_length=10, blank=True, null=True)
 	consultancy_status = models.CharField(max_length=10, blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class funding(models.Model):
 	title_1 = models.CharField(max_length=50, blank=True, null=True)
@@ -280,7 +280,7 @@ class funding(models.Model):
 	yes_no_1 = models.ForeignKey('yes_no', on_delete=models.CASCADE,null=True,related_name='yes_no_1')
 	amount_additional_1 = models.CharField(max_length=10, blank=True, null=True)
 	brief_remarks_1 = models.TextField( blank=True, null=True)
-	
+
 	title_2 = models.CharField(max_length=50, blank=True, null=True)
 	name_agency_2 = models.CharField(max_length=50, blank=True, null=True)
 	agency_type_2 = models.ForeignKey('agency_type', on_delete=models.CASCADE,null=True,related_name='agency_type_2')
@@ -316,7 +316,7 @@ class funding(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class exclusive_research(models.Model):
 	name_organization = models.CharField(max_length=50, blank=True, null=True)
@@ -324,11 +324,11 @@ class exclusive_research(models.Model):
 	to_date = models.DateField(blank=True, null=True)
 	total_exp = models.CharField(max_length=10, blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class conference_journal(models.Model):
 
@@ -478,7 +478,7 @@ class conference_journal(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 
 
@@ -486,11 +486,11 @@ class book(models.Model):
 	number = models.CharField(max_length=50, blank=True, null=True)
 	author =	models.ForeignKey('author_type', on_delete=models.CASCADE,null=True)
 	name_publisher = models.CharField(max_length=50, blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 
 class phd_guide(models.Model):
@@ -562,7 +562,7 @@ class phd_guide(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
 
 class phd_self(models.Model):
 
@@ -572,11 +572,11 @@ class phd_self(models.Model):
 	name_university = models.CharField(max_length=50, blank=True, null=True)
 	name_research_centre = models.CharField(max_length=50, blank=True, null=True)
 	name_student = models.CharField(max_length=50, blank=True, null=True)
-	phd_status = models.CharField(max_length=50, blank=True, null=True)		
+	phd_status = models.CharField(max_length=50, blank=True, null=True)
 	name_guide = models.CharField(max_length=50, blank=True, null=True)
 	name_co_guide = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.first_name	
+		return self.info.first_name
