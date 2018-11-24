@@ -29,3 +29,11 @@ def interaction(request):
 def honours(request):
     form = forms.form_honours()
     return render(request,'honours.html',{'form':form})
+
+def online_courses(request):
+    form = forms.form_online_courses()
+    return render(request,'online_courses.html',{'form':form})
+
+def consultancy(request):
+    form = forms.form_counsltancy()
+    return render(request,'consultancy.html',{'form':form})

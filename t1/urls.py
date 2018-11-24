@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^book/', views.book, name="book"),
     url(r'^interaction/', views.interaction, name="interaction"),
     url(r'^honours/', views.honours, name="honours"),
+    url(r'^online_courses/', views.online_courses, name="online_courses"),
+    url(r'^consultancy/', views.consultancy, name="consultancy"),
 
 
 ]
