@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -37,12 +40,13 @@
   <h4 class="ui header">Conducted/Organised</h4>
 
   <form method="post">
+    {% csrf_token %}
 
     <div class="ui form">
   <div class="one fields">
     <div class="six wide field">
       <label>Name</label>
-      <input type="text" placeholder="Name">
+        {% render_field form.conducted_name class="form-control" %}
     </div>
 
   </div>
@@ -50,19 +54,19 @@
   <div class="two fields">
     <div class="field">
       <label>Date from</label>
-      <input type="text" placeholder="12-AUG-19">
+        {% render_field form.conducted_from class="form-control" %}
     </div>
 
     <div class="field">
       <label>Date to</label>
-      <input type="text" placeholder="23-AUG-20">
+      {% render_field form.conducted_to class="form-control" %}
     </div>
 </div>
 
 <div class="one fields">
   <div class="ten wide field">
     <label>Topic</label>
-    <input type="text" placeholder="Topic">
+      {% render_field form.conducted_topic class="form-control" %}
   </div>
 
 </div>
@@ -71,12 +75,12 @@
 <div class="two fields">
   <div class="field">
     <label>No. of participants</label>
-    <input type="number" placeholder="1">
+    {% render_field form.conducted_participants class="form-control" %}
   </div>
 
   <div class="field">
     <label>No. of speakers invited</label>
-    <input type="number" placeholder="4">
+      {% render_field form.conducted_speakers class="form-control" %}
   </div>
 </div>
 
@@ -96,12 +100,13 @@
 <h4 class="ui header">Attended</h4>
 
 <form method="post">
+  {% csrf_token %}
 
   <div class="ui form">
 <div class="one fields">
   <div class="six wide field">
     <label>Name</label>
-    <input type="text" placeholder="Name">
+      {% render_field form.attended_name class="form-control" %}
   </div>
 
 </div>
@@ -109,19 +114,19 @@
 <div class="two fields">
   <div class="field">
     <label>Date from</label>
-    <input type="text" placeholder="12-AUG-19">
+      {% render_field form.attended_from class="form-control" %}
   </div>
 
   <div class="field">
     <label>Date to</label>
-    <input type="text" placeholder="23-AUG-20">
+      {% render_field form.attended_to class="form-control" %}
   </div>
 </div>
 
 <div class="one fields">
 <div class="ten wide field">
   <label>Topic</label>
-  <input type="text" placeholder="Topic">
+    {% render_field form.attended_topic class="form-control" %}
 </div>
 
 </div>
@@ -130,7 +135,7 @@
 <div class="one fields">
 <div class="field">
   <label>Venue</label>
-  <input type="text" placeholder="Bangalore">
+{% render_field form.attended_venue class="form-control" %}
 </div>
 
 </div>
@@ -138,7 +143,7 @@
 <div class="one fields">
 <div class="field">
   <label>Name of college</label>
-  <input type="text" placeholder="BMSIT">
+  {% render_field form.attended_college class="form-control" %}
 </div>
 
 </div>

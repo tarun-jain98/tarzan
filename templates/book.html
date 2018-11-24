@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+% load staticfiles %}
+
+{% load widget_tweaks %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -42,7 +45,7 @@
   <div class="one fields">
     <div class="six wide field">
       <label>No. of books</label>
-      <input type="number" placeholder="6">
+      {% render_field form.number class="form-control" %}
     </div>
 
   </div>
@@ -50,7 +53,7 @@
   <div class="one fields">
     <div class="six wide field">
       <label>Author type</label>
-      <input type="text" placeholder="Sole">
+    {% render_field form.author class="form-control" %}
     </div>
 
 </div>
@@ -58,7 +61,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Name of Publishers</label>
-    <input type="text" placeholder="ABC">
+    {% render_field form.name_publisher class="form-control" %}
   </div>
 
 </div>

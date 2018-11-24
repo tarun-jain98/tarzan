@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -37,12 +40,13 @@
   <h4 class="ui header">Seminar/Technical Talk/BOS/BOE/Academic Coucil/BOG</h4>
 
   <form method="post">
+    {% csrf_token %}
 
     <div class="ui form">
   <div class="one fields">
     <div class="six wide field">
       <label>Date</label>
-      <input type="number" placeholder="12-AUG-2019">
+      {% render_field form.date class="form-control" %}
     </div>
 
   </div>
@@ -50,7 +54,7 @@
   <div class="one fields">
     <div class="six wide field">
       <label>Venue</label>
-      <input type="text" placeholder="Bangalore">
+      {% render_field form.venue class="form-control" %}
     </div>
 
 </div>
@@ -58,7 +62,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Breif Remarks</label>
-    <input type="text" placeholder="ABC">
+    {% render_field form.brief_remarks class="form-control" %}
   </div>
 
 </div>

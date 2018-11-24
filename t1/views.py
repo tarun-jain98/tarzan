@@ -11,13 +11,21 @@ def fdp(request):
     return render(request,'fdp.html',{'form':form})
 
 def ref_course(request):
-    return render(request,'ref_course.html')
+    form = forms.form_refreshers_course()
+    return render(request,'ref_course.html',{'form':form})
 
 def sttp(request):
-    return render(request,'sttp.html')
+    form = forms.form_sttp()
+    return render(request,'sttp.html',{'form':form})
 
 def book(request):
-    return render(request,'book.html')
+    form = forms.form_book()
+    return render(request,'book.html',{'form':form})
 
 def interaction(request):
-    return render(request,'interaction.html')
+    form = forms.form_interaction()
+    return render(request,'interaction.html',{'form':form})
+
+def honours(request):
+    form = forms.form_honours()
+    return render(request,'honours.html',{'form':form})

@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^sttp/', views.sttp, name="sttp"),
     url(r'^book/', views.book, name="book"),
     url(r'^interaction/', views.interaction, name="interaction"),
+    url(r'^honours/', views.honours, name="honours"),
 
 
 ]
