@@ -21,6 +21,7 @@ class Department(models.Model):
 	def __str__(self):
 		return self.name
 
+
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
@@ -33,7 +34,7 @@ class User(AbstractUser):
 		return self.username
 
 	def is_assistant_professor(self):
-		faculty = Designation.objects.get(pk=6)
+		faculty = Designation.objects.get(pk=11)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -41,7 +42,7 @@ class User(AbstractUser):
 		return False
 
 	def is_associate_professor(self):
-		faculty = Designation.objects.get(pk=5)
+		faculty = Designation.objects.get(pk=9)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -49,7 +50,7 @@ class User(AbstractUser):
 		return False
 
 	def is_professor(self):
-		faculty = Designation.objects.get(pk=4)
+		faculty = Designation.objects.get(pk=10)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -57,7 +58,7 @@ class User(AbstractUser):
 		return False
 
 	def is_hod(self):
-		faculty = Designation.objects.get(pk=3)
+		faculty = Designation.objects.get(pk=8)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -65,7 +66,7 @@ class User(AbstractUser):
 		return False
 
 	def is_principal(self):
-		faculty = Designation.objects.get(pk=2)
+		faculty = Designation.objects.get(pk=7)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -73,7 +74,7 @@ class User(AbstractUser):
 		return False
 
 	def is_ao(self):
-		faculty = Designation.objects.get(pk=1)
+		faculty = Designation.objects.get(pk=6)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:

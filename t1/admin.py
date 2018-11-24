@@ -5,16 +5,12 @@ from import_export import resources
 from .models import *
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
-
-# Register your models here.
-
 admin.site.site_header = "Tarzan System";
 
 admin.site.register(Designation)
 
 admin.site.register(Department)
 
-# Register your models here.
 class UserResource(resources.ModelResource):
 	class Meta:
 		model = User
@@ -29,7 +25,7 @@ class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 		(('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
 									   )}),
 
-		(('Status'), {'fields': ('teach_status')}),
+		(('Status'), {'fields': ('teach_status',)}),
 
 		(('Designation'), {'fields': ('designation',)}),
 		(('Important dates'), {'fields': ('last_login', 'date_joined')}),

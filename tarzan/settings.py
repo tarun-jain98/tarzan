@@ -25,6 +25,7 @@ SECRET_KEY = '@otdlmho*36xt3#&emtylz_5j@cxu(*-85&@qsnl8*e$+hi_xq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+AUTH_USER_MODEL = 't1.User'
 ALLOWED_HOSTS = []
 
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
 ]
 
 MIDDLEWARE = [

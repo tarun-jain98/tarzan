@@ -6,5 +6,5 @@ from . import forms
 app_name = 't1'
 
 urlpatterns = [
-url(r'^$', views.index, name="index-view"),
+
 ]
