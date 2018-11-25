@@ -9,7 +9,7 @@ from . import forms
 
 
 
-def fdp(request):
+def fdp1(request):
     form = forms.form_fdp()
     if fdp.objects.filter(info = request.user).exists():
 
@@ -46,7 +46,7 @@ def fdp(request):
 
 
 
-def ref_course(request):
+def ref_course1(request):
     form = forms.form_refreshers_course()
     if refreshers_course.objects.filter(info = request.user).exists():
 
@@ -74,7 +74,7 @@ def ref_course(request):
 
     return render(request,'ref_course.html',{'form':form})
 
-def sttp(request):
+def sttp1(request):
     form = forms.form_sttp()
 
     if sttp.objects.filter(info = request.user).exists():
@@ -103,7 +103,7 @@ def sttp(request):
 
 
 
-def book(request):
+def book1(request):
     form = forms.form_book()
     if book.objects.filter(info = request.user).exists():
 
@@ -130,7 +130,7 @@ def book(request):
 
 
 
-def interaction(request):
+def interaction1(request):
     form = forms.form_interaction()
 
     if interaction.objects.filter(info = request.user).exists():
@@ -158,7 +158,7 @@ def interaction(request):
 
 
 
-def honours(request):
+def honours1(request):
     form = forms.form_honours()
 
     if honours.objects.filter(info = request.user).exists():
@@ -188,7 +188,7 @@ def honours(request):
 
 
 
-def online_courses(request):
+def online_courses1(request):
     form = forms.form_online_courses()
 
     if online_courses.objects.filter(info = request.user).exists():
@@ -216,7 +216,7 @@ def online_courses(request):
 
 
 
-def consultancy(request):
+def consultancy1(request):
     form = forms.form_counsltancy()
 
     if counsltancy.objects.filter(info = request.user).exists():
@@ -246,7 +246,7 @@ def consultancy(request):
 
 
 
-def phd_guide(request):
+def phd_guide1(request):
     form = forms.form_phd_guide()
 
     if phd_guide.objects.filter(info = request.user).exists():
@@ -274,7 +274,7 @@ def phd_guide(request):
 
 
 
-def phd_self(request):
+def phd_self1(request):
     form = forms.form_phd_self()
 
     if phd_self.objects.filter(info = request.user).exists():
@@ -302,7 +302,7 @@ def phd_self(request):
 
 
 
-def conference_journal(request):
+def conference_journal1(request):
     form = forms.form_conference_journal()
 
     if conference_journal.objects.filter(info = request.user).exists():
@@ -330,7 +330,7 @@ def conference_journal(request):
 
 
 
-def funded_projects(request):
+def funded_projects1(request):
     form = forms.form_funding()
 
     if funding.objects.filter(info = request.user).exists():

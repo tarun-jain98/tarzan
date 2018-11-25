@@ -7,19 +7,19 @@ app_name = 't1'
 
 urlpatterns = [
 
-    url(r'^fdp/', views.fdp, name="fdp"),
-    url(r'^ref_course/', views.ref_course, name="ref_course"),
-    url(r'^sttp/', views.sttp, name="sttp"),
-    url(r'^book/', views.book, name="book"),
-    url(r'^interaction/', views.interaction, name="interaction"),
+    url(r'^fdp/', views.fdp1, name="fdp1"),
+    url(r'^ref_course/', views.ref_course1, name="ref_course1"),
+    url(r'^sttp/', views.sttp1, name="sttp1"),
+    url(r'^book/', views.book1, name="book1"),
+    url(r'^interaction/', views.interaction1, name="interaction1"),
 
-    url(r'^honours/', views.honours, name="honours"),
-    url(r'^online_courses/', views.online_courses, name="online_courses"),
-    url(r'^consultancy/', views.consultancy, name="consultancy"),
-    url(r'^phd_guide/', views.phd_guide, name="phd_guide"),
-    url(r'^phd_self/', views.phd_self, name="phd_self"),
-    url(r'^conference_journal/', views.conference_journal, name="conference_journal"),
-    url(r'^funded_projects/', views.funded_projects, name="funded_projects"),
+    url(r'^honours/', views.honours1, name="honours1"),
+    url(r'^online_courses/', views.online_courses1, name="online_courses1"),
+    url(r'^consultancy/', views.consultancy1, name="consultancy1"),
+    url(r'^phd_guide/', views.phd_guide1, name="phd_guide1"),
+    url(r'^phd_self/', views.phd_self1, name="phd_self1"),
+    url(r'^conference_journal/', views.conference_journal1, name="conference_journal1"),
+    url(r'^funded_projects/', views.funded_projects1, name="funded_projects1"),
 
 
 ]
