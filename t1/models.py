@@ -12,6 +12,24 @@ class Designation(models.Model):
 	def __str__(self):
 		return self.name
 
+class Field(models.Model):
+	"""
+	Description: Holds the Designations avbailable
+	"""
+	name = models.CharField(max_length=30, blank=True, null=True)
+
+	def __str__(self):
+		return self.name		
+
+class Year(models.Model):
+	"""
+	Description: Holds the Designations avbailable
+	"""
+	year = models.CharField(max_length=20, blank=True, null=True)
+
+	def __str__(self):
+		return self.year	
+
 class Department(models.Model):
 	"""
 	Description: Model Description
@@ -83,10 +101,6 @@ class int_ext(models.Model):
 
 	def __str__(self):
 		return self.name
-
-
-class Year(models.Model):
-	year = models.DateField(blank=True, null=True)
 
 
 

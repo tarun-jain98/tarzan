@@ -61,12 +61,12 @@
 
     <div class="field">
       <label>Date</label>
-      {% render_field form.c1_date class="form-control" %}
+      {% render_field form.c1_date class="form-control" id="datepicker" %}
     </div>
 
     <div class="field">
       <label>Author type</label>
-      {% render_field form.c1_author_type class="form-control" %}
+      {% render_field form.c1_author_type class="form-control" id="datepicker1" %}
     </div>
 
     <div class="field">
@@ -591,7 +591,16 @@
 
   </form>
 
-
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker1" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  } );
+  </script>
 
 
 

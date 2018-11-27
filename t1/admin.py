@@ -10,6 +10,8 @@ admin.site.site_header = "Tarzan System";
 admin.site.register(Designation)
 
 admin.site.register(Department)
+admin.site.register(Field)
+admin.site.register(Year)
 
 admin.site.register(author_type)
 admin.site.register(agency_type)
