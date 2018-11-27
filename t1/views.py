@@ -11,6 +11,7 @@ from django.contrib.auth.hashers import make_password, check_password
 
 
 def login(request):
+<<<<<<< Updated upstream
     if(request.method=='POST'):
 
         userna = request.POST.get('username')
@@ -61,6 +62,11 @@ def decide_view(request):
 
 
 
+=======
+    return render(request,'login.html')
+
+
+>>>>>>> Stashed changes
 
 def fdp1(request):
     form = forms.form_fdp()
