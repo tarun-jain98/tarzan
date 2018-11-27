@@ -155,7 +155,6 @@ class User(AbstractUser):
 
 
 class fdp(models.Model):
-	# fdp_id = models.AutoField(primary_key=True)
 	conducted_name = models.CharField(max_length=50, blank=True, null=True)
 	conducted_from = models.DateField(blank=True, null=True)
 	conducted_to = models.DateField(blank=True, null=True)

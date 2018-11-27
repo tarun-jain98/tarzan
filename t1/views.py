@@ -2,9 +2,62 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
 from . import forms
+from django.contrib.auth.hashers import make_password, check_password
+
 
 # Create your views here.
 
+
+
+
+def login(request):
+    if(request.method=='POST'):
+
+        userna = request.POST.get('username')
+        username = userna.upper()
+
+        if(User.objects.filter(username=username).exists()):
+            user = User.objects.get(username=username)
+            first_name = user.first_name
+            email = user.email
+            phone = user.phone
+            # random_otp = r''.join(random.choice('0123456789') for i in range(4))
+            # phone_otp(random_otp,phone)
+
+            random_otp = '1234'
+
+            hashed_pwd = make_password(random_otp)
+            User.objects.filter(username=username).update(password=hashed_pwd)
+
+            return HttpResponseRedirect("/login/user=" + username)
+
+    return render(request,'login.html')
+
+
+def decide_view(request):
+    if request.user.is_assistant_professor():
+        return HttpResponseRedirect("/fdp/")
+       
+    elif request.user.is_associate_professor():
+        if request.user.teach_status == True:
+            return HttpResponseRedirect("/associate_preview/")
+        return HttpResponseRedirect("/associate_form1/")
+
+    elif request.user.is_professor():
+        if request.user.teach_status == True:
+            return HttpResponseRedirect("/associate_preview/")
+        return HttpResponseRedirect("/associate_form1/")
+
+    elif request.user.is_hod():
+        # print('hod')
+        return HttpResponseRedirect("/hod_first/")
+
+    elif request.user.is_principal():
+        print('princy')
+        return HttpResponseRedirect("/principal_first/")
+
+    elif request.user.is_ao():
+        return HttpResponseRedirect("/ao_first/")
 
 
 

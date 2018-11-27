@@ -30,6 +30,8 @@ DEBUG = True
 AUTH_USER_MODEL = 't1.User'
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/main'
+
 
 # Application definition
 
