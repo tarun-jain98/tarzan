@@ -11,7 +11,6 @@ from django.contrib.auth.hashers import make_password, check_password
 
 
 def login(request):
-<<<<<<< Updated upstream
     if(request.method=='POST'):
 
         userna = request.POST.get('username')
@@ -40,33 +39,27 @@ def decide_view(request):
         return HttpResponseRedirect("/fdp/")
        
     elif request.user.is_associate_professor():
-        if request.user.teach_status == True:
-            return HttpResponseRedirect("/associate_preview/")
-        return HttpResponseRedirect("/associate_form1/")
+        print("ASS")
+        
 
     elif request.user.is_professor():
-        if request.user.teach_status == True:
-            return HttpResponseRedirect("/associate_preview/")
-        return HttpResponseRedirect("/associate_form1/")
+        print("ASS")
+        
 
     elif request.user.is_hod():
-        # print('hod')
-        return HttpResponseRedirect("/hod_first/")
+        print("ASS")
+       
 
     elif request.user.is_principal():
-        print('princy')
-        return HttpResponseRedirect("/principal_first/")
+        print("ASS")
+       
 
     elif request.user.is_ao():
-        return HttpResponseRedirect("/ao_first/")
+        print("AO")
+        
 
 
 
-=======
-    return render(request,'login.html')
-
-
->>>>>>> Stashed changes
 
 def fdp1(request):
     form = forms.form_fdp()
