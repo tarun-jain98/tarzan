@@ -168,7 +168,7 @@ def ref_course1_preview(request,year):
 
 
 
-def sttp1(request):
+def sttp1(request,year):
     form = forms.form_sttp()
     if sttp.objects.filter(info=request.user).filter(year=year):
         
@@ -204,7 +204,7 @@ def sttp1_preview(request,year):
 
 
 
-def book1(request):
+def book1(request,year):
     form = forms.form_book()
     if book.objects.filter(info=request.user).filter(year=year):
         
@@ -235,7 +235,7 @@ def book1_preview(request,year):
 
 
 
-def interaction1(request):
+def interaction1(request,year):
     form = forms.form_interaction()
     if interaction.objects.filter(info=request.user).filter(year=year):
         
@@ -268,7 +268,7 @@ def interaction1_preview(request,year):
 
 
 
-def honours1(request):
+def honours1(request,year):
     form = forms.form_honours()
     if honours.objects.filter(info=request.user).filter(year=year):
         
@@ -300,7 +300,7 @@ def honours1_preview(request,year):
     return render(request,'preview_honours.html',context=context) 
 
 
-def online_courses1(request):
+def online_courses1(request,year):
     form = forms.form_online_courses()
     if online_courses.objects.filter(info=request.user).filter(year=year):
         
@@ -328,7 +328,7 @@ def online_courses1_preview(request,year):
     return render(request,'preview_online_courses.html',context=context) 
 
 
-def consultancy1(request):
+def consultancy1(request,year):
     form = forms.form_counsltancy()
     if consultancy.objects.filter(info=request.user).filter(year=year):
         
@@ -357,7 +357,7 @@ def consultancy1_preview(request,year):
     print(data1)
     return render(request,'preview_consultancy.html',context=context) 
 
-def phd_guide1(request):
+def phd_guide1(request,year):
     form = forms.form_phd_guide()
     if phd_guide.objects.filter(info=request.user).filter(year=year):
         
@@ -384,7 +384,7 @@ def phd_guide1_preview(request,year):
     print(data1)
     return render(request,'preview_phd_guide.html',context=context) 
 
-def phd_self1(request):
+def phd_self1(request,year):
     form = forms.form_phd_self()
     if phd_self.objects.filter(info=request.user).filter(year=year):
         
@@ -411,7 +411,7 @@ def phd_self1_preview(request,year):
     print(data1)
     return render(request,'preview_phd_self.html',context=context) 
 
-def conference_journal1(request):
+def conference_journal1(request,year):
     form = forms.form_conference_journal()
     if conference_journal.objects.filter(info=request.user).filter(year=year):
         
@@ -440,7 +440,7 @@ def conference_journal1_preview(request,year):
     return render(request,'preview_conference_journal.html',context=context)
 
 
-def funded_projects1(request):
+def funded_projects1(request,year):
     form = forms.form_funding()
     if funded_projects.objects.filter(info=request.user).filter(year=year):
         
