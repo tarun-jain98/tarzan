@@ -58,7 +58,7 @@
   <div class="one fields">
     <div class="six wide field">
       <label>Name of Organisation</label>
-      {% render_field form.name_organization_1="form-control" %}
+      {% render_field form.name_organization_1 class="form-control" %}
     </div>
 
 </div>
@@ -90,8 +90,8 @@
       <label>Date to</label>
       {% render_field form.to_date_3 class="form-control" id="datepicker6" %}
     </div>
-
-  </div>
+</div>
+  
 
   <div class="one fields">
     <div class="six wide field">
@@ -128,7 +128,7 @@
 
   </form>
 
-
+</div>
 
 </div>
 
@@ -136,9 +136,6 @@
 <!-- Attended -->
 
 
-
-
-</div>
 <script>
   $( function() {
     $( "#datepicker1" ).datepicker({
