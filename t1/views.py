@@ -11,13 +11,7 @@ from django.contrib.auth.hashers import make_password, check_password
 
 
 def login(request):
-<<<<<<< Updated upstream
     if(request.method=='POST'):
-=======
-    return render(request,'login.html')
-
-
->>>>>>> Stashed changes
 
         userna = request.POST.get('username')
         username = userna.upper()
