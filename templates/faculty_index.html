@@ -39,7 +39,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Department of {{data0.department}}<span class="sr-only">(current)</span></a>
       {% if data0.designation.name == "HOD" %}
-      <a class="nav-item nav-link " href="/faculty_index">View Faculty Data  <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link " href="/index">Fill Own Data  <span class="sr-only">(current)</span></a>
       {% endif %}
       
     </div>
@@ -81,7 +81,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 											{% if form_name.pk == 1 %}
 										
-											<option value="/fdp/{{year.year}}">
+											<option value="/fdp_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -91,7 +91,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 2 %}
 											
 										
-											<option value="/ref_course/{{year.year}}">
+											<option value="/ref_course_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -102,7 +102,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 3 %}
 											
 										
-											<option value="/sttp/{{year.year}}">
+											<option value="/sttp_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -113,7 +113,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 4 %}
 											
 										
-											<option value="/book/{{year.year}}">
+											<option value="/book_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -125,7 +125,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 5 %}
 											
 										
-											<option value="/interaction/{{year.year}}">
+											<option value="/interaction_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -136,7 +136,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 6 %}
 											
 										
-											<option value="/honours/{{year.year}}">
+											<option value="/honours_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -147,7 +147,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 7 %}
 											
 										
-											<option value="/online_courses/{{year.year}}">
+											<option value="/online_courses_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -159,7 +159,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 8 %}
 											
 										
-											<option value="/consultancy/{{year.year}}">
+											<option value="/consultancy_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -171,7 +171,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 9 %}
 											
 										
-											<option value="/phd_guide/{{year.year}}">
+											<option value="/phd_guide_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -182,7 +182,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 10 %}
 											
 										
-											<option value="/phd_self/{{year.year}}">
+											<option value="/phd_self_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -194,7 +194,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 11 %}
 											
 										
-											<option value="/conference_journal/{{year.year}}">
+											<option value="/conference_journal_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -206,7 +206,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 12 %}
 											
 										
-											<option value="/funded_projects/{{year.year}}">
+											<option value="/funded_projects_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -218,7 +218,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 13 %}
 											
 										
-											<option value="/open_courses/{{year.year}}">
+											<option value="/open_courses_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										
@@ -229,7 +229,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											{% if form_name.pk == 14 %}
 											
 										
-											<option value="/exclusive_research/{{year.year}}">
+											<option value="/exclusive_research_preview_hod/{{year.year}}">
 										{{year.year}}
 										</option>
 										

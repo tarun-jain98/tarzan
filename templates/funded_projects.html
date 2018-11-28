@@ -73,7 +73,7 @@
 
   <div class="four wide field">
     <label>Date of sanction</label>
-    {% render_field form.date_sanction_1 class="form-control" %}
+    {% render_field form.date_sanction_1 class="form-control" id="datepicker1" %}
 
   </div>
   <div class="four wide field">
@@ -88,13 +88,13 @@
 <div class="two fields">
   <div class="six wide field">
     <label>Date from</label>
-    {% render_field form.from_date_1 class="form-control" %}
+    {% render_field form.from_date_1 class="form-control" id="datepicker2" %}
     
   </div>
 
   <div class="six wide field">
     <label>Date to</label>
-    {% render_field form.to_date_1 class="form-control" %}
+    {% render_field form.to_date_1 class="form-control" id="datepicker3" %}
     
   </div>
 
@@ -124,7 +124,7 @@
   </div>
   <div class="six wide field">
     <label>Date released</label>
-    {% render_field form.date_released_1 class="form-control" %}
+    {% render_field form.date_released_1 class="form-control" id="datepicker4" %}
     
   </div>
 
@@ -133,7 +133,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Extended duration</label>
-     {% render_field form.date_released_1 class="form-control" %}
+     {% render_field form.extended_duration_1 class="form-control" %}
   </div>
 
 </div>
@@ -192,7 +192,7 @@
 
   <div class="four wide field">
     <label>Date of sanction</label>
-    {% render_field form.date_sanction_2 class="form-control" %}
+    {% render_field form.date_sanction_2 class="form-control" id="datepicker5" %}
 
   </div>
   <div class="four wide field">
@@ -207,13 +207,13 @@
 <div class="two fields">
   <div class="six wide field">
     <label>Date from</label>
-    {% render_field form.from_date_2 class="form-control" %}
+    {% render_field form.from_date_2 class="form-control" id="datepicker6" %}
     
   </div>
 
   <div class="six wide field">
     <label>Date to</label>
-    {% render_field form.to_date_2 class="form-control" %}
+    {% render_field form.to_date_2 class="form-control" id="datepicker7" %}
     
   </div>
 
@@ -243,7 +243,7 @@
   </div>
   <div class="six wide field">
     <label>Date released</label>
-    {% render_field form.date_released_2 class="form-control" %}
+    {% render_field form.date_released_2 class="form-control" id="datepicker8" %}
     
   </div>
 
@@ -252,7 +252,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Extended duration</label>
-     {% render_field form.date_released_2 class="form-control" %}
+     {% render_field form.extended_duration_2 class="form-control" %}
   </div>
 
 </div>
@@ -308,7 +308,7 @@
 
   <div class="four wide field">
     <label>Date of sanction</label>
-    {% render_field form.date_sanction_3 class="form-control" %}
+    {% render_field form.date_sanction_3 class="form-control" id="datepicker9" %}
 
   </div>
   <div class="four wide field">
@@ -323,13 +323,13 @@
 <div class="two fields">
   <div class="six wide field">
     <label>Date from</label>
-    {% render_field form.from_date_3 class="form-control" %}
+    {% render_field form.from_date_3 class="form-control" id="datepicker10" %}
     
   </div>
 
   <div class="six wide field">
     <label>Date to</label>
-    {% render_field form.to_date_3 class="form-control" %}
+    {% render_field form.to_date_3 class="form-control" id="datepicker11" %}
     
   </div>
 
@@ -359,7 +359,7 @@
   </div>
   <div class="six wide field">
     <label>Date released</label>
-    {% render_field form.date_released_3 class="form-control" %}
+    {% render_field form.date_released_3 class="form-control" id="datepicker12" %}
     
   </div>
 
@@ -368,7 +368,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Extended duration</label>
-     {% render_field form.date_released_3 class="form-control" %}
+     {% render_field form.extended_duration_3 class="form-control" %}
   </div>
 
 </div>
@@ -397,6 +397,46 @@
 
   </form>
 </div>
+<script>
+  $( function() {
+    $( "#datepicker1" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker2" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+    $( "#datepicker3" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker4" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  $( "#datepicker5" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker6" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+    $( "#datepicker7" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker8" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  $( "#datepicker9" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker10" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+    $( "#datepicker11" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker12" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  } );
+  </script>
 
 
 
