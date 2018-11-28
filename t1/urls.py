@@ -9,6 +9,7 @@ urlpatterns = [
 
     url(r'^$', views.login, name="login-username-view"),
     url(r'^login/', login, {'template_name': 'otp.html','authentication_form': forms.LoginForm}, name='login'),
+<<<<<<< Updated upstream
     url(r'^logout/$', logout, {'template_name': 'success.html'}, name='logout'),
     url(r'^main/', views.decide_view, name="decide-view"),
 
@@ -23,6 +24,12 @@ urlpatterns = [
 
     
     
+=======
+    
+    url(r'^otp/', views.login, name="login"),
+    url(r'^fdp/', views.fdp1, name="fdp1"),
+    url(r'^ref_course/', views.ref_course1, name="ref_course1"),
+>>>>>>> Stashed changes
     url(r'^sttp/', views.sttp1, name="sttp1"),
     url(r'^book/', views.book1, name="book1"),
     url(r'^interaction/', views.interaction1, name="interaction1"),
