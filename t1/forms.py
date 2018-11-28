@@ -31,83 +31,83 @@ class form_refreshers_course(forms.ModelForm):
 	class Meta:
 		model = refreshers_course
 		fields = '__all__'
-		exclude = ['info']
+		exclude = ['info','year']
 
 
 class form_sttp(forms.ModelForm):
 	class Meta:
 		model = sttp
 		fields = '__all__'
-		exclude = ['info']		
+		exclude = ['info','year']		
 
 
 class form_interaction(forms.ModelForm):
 	class Meta:
 		model = interaction
 		fields = '__all__'
-		exclude = ['info']
+		exclude = ['info','year']
 
 
 class form_open_courses(forms.ModelForm):
 	class Meta:
 		model = open_courses
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 class form_honours(forms.ModelForm):
 	class Meta:
 		model = honours
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 class form_online_courses(forms.ModelForm):
 	class Meta:
 		model = online_courses
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 class form_counsltancy(forms.ModelForm):
 	class Meta:
 		model = counsltancy
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 
 class form_funding(forms.ModelForm):
 	class Meta:
 		model = funding
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 class form_exclusive_research(forms.ModelForm):
 	class Meta:
 		model = exclusive_research
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 
 class form_conference_journal(forms.ModelForm):
 	class Meta:
 		model = conference_journal
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 class form_book(forms.ModelForm):
 	class Meta:
 		model = book
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 
 class form_phd_guide(forms.ModelForm):
 	class Meta:
 		model = phd_guide
 		fields = '__all__'
-		exclude = ['info']		
+		exclude = ['info','year']		
 
 
 class form_phd_self(forms.ModelForm):
 	class Meta:
 		model = phd_self
 		fields = '__all__'
-		exclude = ['info']	
+		exclude = ['info','year']	
 

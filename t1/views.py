@@ -466,3 +466,65 @@ def funded_projects1_preview(request,year):
         }
     print(data1)
     return render(request,'preview_funded_projects.html',context=context)
+
+
+
+
+def open_courses1(request,year):
+    form = forms.form_funding()
+    if open_courses.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_open_courses/'+year)
+    if request.method == 'POST':
+
+        form = forms.form_open_courses(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
+    return render(request,'open_courses.html',{'form':form})
+
+
+def open_courses1_preview(request,year):
+    data1 = open_courses.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
+        }
+    print(data1)
+    return render(request,'preview_open_courses.html',context=context)
+
+
+
+    
+
+
+def exclusive_research1(request,year):
+    form = forms.form_funding()
+    if exclusive_research.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_exclusive_research/'+year)
+    if request.method == 'POST':
+
+        form = forms.form_exclusive_research(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
+    return render(request,'exclusive_research.html',{'form':form})
+
+
+def exclusive_research1_preview(request,year):
+    data1 = exclusive_research.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
+        }
+    print(data1)
+    return render(request,'preview_exclusive_research.html',context=context)
