@@ -91,8 +91,13 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											
 
 											{% if form_name.pk == 1 %}
+
+											{% if data3 %}
+											<option value="{{data3}}/review_fdp/{{year.year}}">
+											{% else %}
 										
 											<option value="{{data0.department.name}}/review_fdp/{{year.year}}">
+											{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -100,6 +105,7 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 2 %}
+											
 											
 										
 											<option value="{{data0.department.name}}/review_ref_course/{{year.year}}">

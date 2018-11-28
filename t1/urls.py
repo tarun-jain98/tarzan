@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^faculty_index/', views.faculty_index, name="faculty_index"),
 
 
-    url(r'^/(?P<dept>[\w\-]+)$', views.index, name="index"),
+    url(r'^(?P<dept>[\w\-]+)$', views.principal_second, name="principal_second"),
 
 
     
