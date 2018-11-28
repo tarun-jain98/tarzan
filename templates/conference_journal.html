@@ -61,12 +61,12 @@
 
     <div class="field">
       <label>Date</label>
-      {% render_field form.c1_date class="form-control" id="datepicker" %}
+      {% render_field form.c1_date class="form-control" id="datepicker1" %}
     </div>
 
     <div class="field">
       <label>Author type</label>
-      {% render_field form.c1_author_type class="form-control" id="datepicker1" %}
+      {% render_field form.c1_author_type class="form-control" %}
     </div>
 
     <div class="field">
@@ -103,7 +103,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.c2_date class="form-control" %}
+      {% render_field form.c2_date class="form-control" id="datepicker2" %}
     </div>
 
     <div class="field">
@@ -138,7 +138,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.c3_date class="form-control" %}
+      {% render_field form.c3_date class="form-control" id="datepicker3" %}
     </div>
 
     <div class="field">
@@ -173,7 +173,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.c4_date class="form-control" %}
+      {% render_field form.c4_date class="form-control"id="datepicker4"  %}
     </div>
 
     <div class="field">
@@ -208,7 +208,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.c5_date class="form-control" %}
+      {% render_field form.c5_date class="form-control" id="datepicker5" %}
     </div>
 
     <div class="field">
@@ -243,7 +243,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.c6_date class="form-control" %}
+      {% render_field form.c6_date class="form-control" id="datepicker6" %}
     </div>
 
     <div class="field">
@@ -278,7 +278,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.c7_date class="form-control" %}
+      {% render_field form.c7_date class="form-control" id="datepicker7" %}
     </div>
 
     <div class="field">
@@ -320,7 +320,7 @@
 
     <div class="field">
       <label>Date</label>
-      {% render_field form.j1_date class="form-control" %}
+      {% render_field form.j1_date class="form-control" id="datepicker8" %}
     </div>
 
     <div class="field">
@@ -367,7 +367,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.j2_date class="form-control" %}
+      {% render_field form.j2_date class="form-control" id="datepicker9" %}
     </div>
 
     <div class="field">
@@ -406,7 +406,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.j3_date class="form-control" %}
+      {% render_field form.j3_date class="form-control" id="datepicker10" %}
     </div>
 
     <div class="field">
@@ -445,7 +445,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.j4_date class="form-control" %}
+      {% render_field form.j4_date class="form-control" id="datepicker11" %}
     </div>
 
     <div class="field">
@@ -484,7 +484,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.j5_date class="form-control" %}
+      {% render_field form.j5_date class="form-control" id="datepicker12" %}
     </div>
 
     <div class="field">
@@ -522,7 +522,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.j6_date class="form-control" %}
+      {% render_field form.j6_date class="form-control" id="datepicker13" %}
     </div>
 
     <div class="field">
@@ -561,7 +561,7 @@
     </div>
 
     <div class="field">
-      {% render_field form.j7_date class="form-control" %}
+      {% render_field form.j7_date class="form-control" id="datepicker14" %}
     </div>
 
     <div class="field">
@@ -590,17 +590,53 @@
 </div>
 
   </form>
-
 <script>
   $( function() {
-    $( "#datepicker" ).datepicker({
+    $( "#datepicker1" ).datepicker({
     dateFormat: "dd/mm/yyyy"
   });
-   $( "#datepicker1" ).datepicker({
+   $( "#datepicker2" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+    $( "#datepicker3" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker4" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  $( "#datepicker5" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker6" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+    $( "#datepicker7" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker8" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  $( "#datepicker9" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker10" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+    $( "#datepicker11" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker12" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker13" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+     $( "#datepicker14" ).datepicker({
     dateFormat: "dd/mm/yyyy"
   });
   } );
   </script>
+
 
 
 

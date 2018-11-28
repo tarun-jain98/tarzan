@@ -61,12 +61,12 @@
     <div class="two fields">
     <div class="field">
       <label>from</label>
-      {% render_field form.from_date class="form-control" %}
+      {% render_field form.from_date class="form-control" id="datepicker1" %}
     </div>
 
     <div class="field">
       <label>to</label>
-      {% render_field form.to_date class="form-control" %}
+      {% render_field form.to_date class="form-control" id="datepicker2" %}
     </div>
 </div>
 
@@ -98,6 +98,17 @@
 </div>
 
   </form>
+<script>
+  $( function() {
+    $( "#datepicker1" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker2" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  
+  } );
+  </script>
 
 
 
