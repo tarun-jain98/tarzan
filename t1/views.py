@@ -104,6 +104,7 @@ def fdp1(request,year):
 
 
         if form.is_valid():
+            print(year)
             
             obj = form.save(commit=False)
             obj.info = request.user

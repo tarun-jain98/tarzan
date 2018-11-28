@@ -24,7 +24,7 @@ class form_fdp(forms.ModelForm):
 	class Meta:
 		model = fdp
 		fields = '__all__'
-		exclude = ['info']
+		exclude = ['info','year']
 
 
 class form_refreshers_course(forms.ModelForm):
