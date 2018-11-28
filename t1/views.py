@@ -33,17 +33,51 @@ def login(request):
 
     return render(request,'login.html')
 
+def index(request):
+
+    # form1 = forms.form_test_year()
+
+    year_ftp = {}
+
+    data0 = User.objects.get(username=request.user)
+    print(data0.department)
+
+    data1 = Field.objects.all()
+    data2 = Year.objects.all()
+    data3 = zip(data1,data2)
+
+    for i in data2:
+
+        if fdp.objects.filter(info=request.user).filter(year=i).exists():
+            year_ftp[i] = i
+
+
+
+
+
+
+    context = {
+            'data0':data0,
+            'data1':data1,
+            'data2':data2,
+            'data3':data3,
+            'year_ftp':year_ftp
+            
+        }
+
+    return render(request,'index.html',context = context)
+
 
 def decide_view(request):
     if request.user.is_assistant_professor():
-        return HttpResponseRedirect("/fdp/")
+        return HttpResponseRedirect("/index/")
        
     elif request.user.is_associate_professor():
-        print("ASS")
+        return HttpResponseRedirect("/index/")
         
 
     elif request.user.is_professor():
-        print("ASS")
+        return HttpResponseRedirect("/index/")
         
 
     elif request.user.is_hod():
@@ -61,33 +95,28 @@ def decide_view(request):
 
 
 
-def fdp1(request):
+def fdp1(request,year):
     form = forms.form_fdp()
-    if fdp.objects.filter(info = request.user).exists():
+    
+    if request.method == 'POST':
+        # status = User.objects.get(username=request.user)
+        form = forms.form_fdp(request.POST)
 
-        data = fdp.objects.filter(info = request.user)
-        context = {
-            'key':data
-        }
-        return render(request,'preview_fdp.html',context=context)
 
-    else:
-        if request.method == 'POST':
-            # status = User.objects.get(username=request.user)
-            form = forms.form_fdp(request.POST)
+        if form.is_valid():
+            
+            obj = form.save(commit=False)
+            obj.info = request.user
+            obj.year = year
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+            obj.save()
 
-                obj.save()
+            return HttpResponseRedirect('/index')
 
-                return HttpResponseRedirect('/index')
-
-                # if status.teach_status == False:
-                #     status.teach_status = True
-                #     status.save()
-                #     return HttpResponseRedirect('/index')
+            # if status.teach_status == False:
+            #     status.teach_status = True
+            #     status.save()
+            #     return HttpResponseRedirect('/index')
 
 
 
@@ -98,28 +127,21 @@ def fdp1(request):
 
 
 
-def ref_course1(request):
+def ref_course1(request,year):
     form = forms.form_refreshers_course()
-    if refreshers_course.objects.filter(info = request.user).exists():
+    
+    if request.method == 'POST':
 
-        data = refreshers_course.objects.filter(info = request.user)
-        context = {
-            'key':data
-        }
-        return render(request,'preview_ref_course.html',context=context)
+        form = forms.form_refreshers_course(request.POST)
 
-    else:
-        if request.method == 'POST':
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+            obj.year = year
 
-            form = forms.form_refreshers_course(request.POST)
+            obj.save()
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
-
-                obj.save()
-
-                return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('/index')
 
 
 

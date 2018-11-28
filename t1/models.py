@@ -30,6 +30,21 @@ class Year(models.Model):
 	def __str__(self):
 		return self.year	
 
+
+# class test_year(models.Model):
+# 	"""
+# 	Description: Holds the Designations avbailable
+# 	"""
+# 	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+# 	feild = models.ForeignKey('Feild', on_delete=models.CASCADE,null=True)
+
+# 	def __str__(self):
+# 		return self.year	
+
+
+
+
+
 class Department(models.Model):
 	"""
 	Description: Model Description
@@ -166,6 +181,8 @@ class User(AbstractUser):
 
 	def get_designation(self):
 		return self.designation.name
+
+
 
 
 class fdp(models.Model):
