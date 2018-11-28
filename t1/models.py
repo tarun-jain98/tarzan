@@ -30,6 +30,21 @@ class Year(models.Model):
 	def __str__(self):
 		return self.year	
 
+
+# class test_year(models.Model):
+# 	"""
+# 	Description: Holds the Designations avbailable
+# 	"""
+# 	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+# 	feild = models.ForeignKey('Feild', on_delete=models.CASCADE,null=True)
+
+# 	def __str__(self):
+# 		return self.year	
+
+
+
+
+
 class Department(models.Model):
 	"""
 	Description: Model Description
@@ -168,6 +183,8 @@ class User(AbstractUser):
 		return self.designation.name
 
 
+
+
 class fdp(models.Model):
 	conducted_name = models.CharField(max_length=50, blank=True, null=True)
 	conducted_from = models.DateField(blank=True, null=True)
@@ -180,11 +197,11 @@ class fdp(models.Model):
 	attended_from = models.DateField(blank=True, null=True)
 	attended_to = models.DateField(blank=True, null=True)
 	attended_topic = models.CharField(max_length=50, blank=True, null=True)
-	attended_venue = models.CharField(max_length=10, blank=True, null=True)
-	attended_college = models.CharField(max_length=10, blank=True, null=True)
+	attended_venue = models.CharField(max_length=50, blank=True, null=True)
+	attended_college = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -202,11 +219,11 @@ class refreshers_course(models.Model):
 	attended_from = models.DateField(blank=True, null=True)
 	attended_to = models.DateField(blank=True, null=True)
 	attended_topic = models.CharField(max_length=50, blank=True, null=True)
-	attended_venue = models.CharField(max_length=10, blank=True, null=True)
-	attended_college = models.CharField(max_length=10, blank=True, null=True)
+	attended_venue = models.CharField(max_length=50, blank=True, null=True)
+	attended_college = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -224,11 +241,11 @@ class sttp(models.Model):
 	attended_from = models.DateField(blank=True, null=True)
 	attended_to = models.DateField(blank=True, null=True)
 	attended_topic = models.CharField(max_length=50, blank=True, null=True)
-	attended_venue = models.CharField(max_length=10, blank=True, null=True)
-	attended_college = models.CharField(max_length=10, blank=True, null=True)
+	attended_venue = models.CharField(max_length=50, blank=True, null=True)
+	attended_college = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -240,7 +257,7 @@ class interaction(models.Model):
 	brief_remarks = models.TextField( blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -251,7 +268,7 @@ class open_courses(models.Model):
 	name_course = models.CharField(max_length=50, blank=True, null=True)
 	number_beneficiaries = models.CharField(max_length=10, blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -265,7 +282,7 @@ class online_courses(models.Model):
 	grade = models.CharField(max_length=10, blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -280,7 +297,7 @@ class honours(models.Model):
 	international_brief_remarks = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -297,7 +314,7 @@ class counsltancy(models.Model):
 	brief_remarks = models.TextField( blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -354,21 +371,30 @@ class funding(models.Model):
 	brief_remarks_3 = models.TextField( blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
 
 class exclusive_research(models.Model):
 	# exclusive_research_id = models.AutoField(primary_key=True)
-	name_organization = models.CharField(max_length=50, blank=True, null=True)
-	from_date = models.DateField(blank=True, null=True)
-	to_date = models.DateField(blank=True, null=True)
+	name_organization_1 = models.CharField(max_length=50, blank=True, null=True)
+	from_date_1 = models.DateField(blank=True, null=True)
+	to_date_1 = models.DateField(blank=True, null=True)
+
+	name_organization_2 = models.CharField(max_length=50, blank=True, null=True)
+	from_date_2 = models.DateField(blank=True, null=True)
+	to_date_2 = models.DateField(blank=True, null=True)
+
+	name_organization_3 = models.CharField(max_length=50, blank=True, null=True)
+	from_date_3 = models.DateField(blank=True, null=True)
+	to_date_3 = models.DateField(blank=True, null=True)
+
 	total_exp = models.CharField(max_length=10, blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -520,7 +546,7 @@ class conference_journal(models.Model):
 	j7_url = models.CharField(max_length=500,blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -534,7 +560,7 @@ class book(models.Model):
 	name_publisher = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -608,7 +634,7 @@ class phd_guide(models.Model):
 	phd_status_8 = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -627,7 +653,7 @@ class phd_self(models.Model):
 	name_co_guide = models.CharField(max_length=50, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	year = models.ForeignKey('Year', on_delete=models.CASCADE,null=True)
+	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name

@@ -33,17 +33,44 @@ def login(request):
 
     return render(request,'login.html')
 
+def index(request):
+
+    # form1 = forms.form_test_year()
+
+   
+
+    data0 = User.objects.get(username=request.user)
+    print(data0.department)
+
+    data1 = Field.objects.all()
+    data2 = Year.objects.all()
+    data3 = zip(data1,data2)
+
+   
+
+
+    context = {
+            'data0':data0,
+            'data1':data1,
+            'data2':data2,
+            'data3':data3,
+            
+            
+        }
+
+    return render(request,'index.html',context = context)
+
 
 def decide_view(request):
     if request.user.is_assistant_professor():
-        return HttpResponseRedirect("/fdp/")
+        return HttpResponseRedirect("/index/")
        
     elif request.user.is_associate_professor():
-        print("ASS")
+        return HttpResponseRedirect("/index/")
         
 
     elif request.user.is_professor():
-        print("ASS")
+        return HttpResponseRedirect("/index/")
         
 
     elif request.user.is_hod():
@@ -61,348 +88,443 @@ def decide_view(request):
 
 
 
-def fdp1(request):
+def fdp1(request,year):
     form = forms.form_fdp()
-    if fdp.objects.filter(info = request.user).exists():
-
-        data = fdp.objects.filter(info = request.user)
-        context = {
-            'key':data
-        }
-        return render(request,'preview_fdp.html',context=context)
-
-    else:
-        if request.method == 'POST':
-            # status = User.objects.get(username=request.user)
-            form = forms.form_fdp(request.POST)
-
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
-
-                obj.save()
-
-                return HttpResponseRedirect('/index')
-
-                # if status.teach_status == False:
-                #     status.teach_status = True
-                #     status.save()
-                #     return HttpResponseRedirect('/index')
 
 
+    if fdp.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_fdp/'+year)
+
+    
+    if request.method == 'POST':
+        # status = User.objects.get(username=request.user)
+        form = forms.form_fdp(request.POST)
 
 
+        if form.is_valid():
+            print(year)
+            
+            obj = form.save(commit=False)
+            obj.info = request.user
+            obj.year = year
 
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
     return render(request,'fdp.html',{'form':form})
 
 
+def fdp1_preview(request,year):
 
-def ref_course1(request):
-    form = forms.form_refreshers_course()
-    if refreshers_course.objects.filter(info = request.user).exists():
 
-        data = refreshers_course.objects.filter(info = request.user)
-        context = {
-            'key':data
+    data1 = fdp.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_ref_course.html',context=context)
-
-    else:
-        if request.method == 'POST':
-
-            form = forms.form_refreshers_course(request.POST)
-
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
-
-                obj.save()
-
-                return HttpResponseRedirect('/index')
+    print(data1)
+    return render(request,'preview_fdp.html',context=context)
 
 
 
+
+
+
+
+def ref_course1(request,year):
+    form = forms.form_refreshers_course()
+    if ref_course.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_ref_course/'+year)
+
+    if request.method == 'POST':
+
+        form = forms.form_refreshers_course(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+            obj.year = year
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
     return render(request,'ref_course.html',{'form':form})
 
-def sttp1(request):
-    form = forms.form_sttp()
 
-    if sttp.objects.filter(info = request.user).exists():
 
-        data = sttp.objects.filter(info = request.user)
-        context = {
-            'key':data
+def ref_course1_preview(request,year):
+
+
+    data1 = ref_course.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_sttp.html',context=context)
+    print(data1)
+    return render(request,'preview_ref_course.html',context=context)
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_sttp(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
 
-                obj.save()
+def sttp1(request,year):
+    form = forms.form_sttp()
+    if sttp.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_sttp/'+year)
+    
+    if request.method == 'POST':
 
-                return HttpResponseRedirect('/index')
+
+        form = forms.form_sttp(request.POST)
+
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
 
     return render(request,'sttp.html',{'form':form})
 
 
+def sttp1_preview(request,year):
 
-def book1(request):
-    form = forms.form_book()
-    if book.objects.filter(info = request.user).exists():
 
-        data = book.objects.filter(info = request.user)
-        context = {
-            'key':data
+    data1 = sttp.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_book.html',context=context)
+    print(data1)
+    return render(request,'preview_sttp.html',context=context)    
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_book(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+def book1(request,year):
+    form = forms.form_book()
+    if book.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_book/'+year)
+    if request.method == 'POST':
 
-                obj.save()
+        form = forms.form_book(request.POST)
 
-                return HttpResponseRedirect('/index')
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
     return render(request,'book.html',{'form':form})
 
+def book1_preview(request,year):
 
 
-def interaction1(request):
-    form = forms.form_interaction()
-
-    if interaction.objects.filter(info = request.user).exists():
-
-        data = interaction.objects.filter(info = request.user)
-        context = {
-            'key':data
+    data1 = book.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_interaction.html',context=context)
+    print(data1)
+    return render(request,'preview_book.html',context=context) 
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_interaction(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+def interaction1(request,year):
+    form = forms.form_interaction()
+    if interaction.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_interaction/'+year)
 
-                obj.save()
+    if request.method == 'POST':
 
-                return HttpResponseRedirect('/index')
+        form = forms.form_interaction(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
     return render(request,'interaction.html',{'form':form})
 
 
+def interaction1_preview(request,year):
 
-def honours1(request):
-    form = forms.form_honours()
 
-    if honours.objects.filter(info = request.user).exists():
-
-        data = honours.objects.filter(info = request.user)
-        context = {
-            'key':data
+    data1 = interaction.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_honours.html',context=context)
+    print(data1)
+    return render(request,'preview_interaction.html',context=context)     
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_honours(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+def honours1(request,year):
+    form = forms.form_honours()
+    if honours.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_honours/'+year)
+    if request.method == 'POST':
 
-                obj.save()
+        form = forms.form_honours(request.POST)
 
-                return HttpResponseRedirect('/index')
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
 
 
     return render(request,'honours.html',{'form':form})
 
+def honours1_preview(request,year):
 
 
-def online_courses1(request):
-    form = forms.form_online_courses()
-
-    if online_courses.objects.filter(info = request.user).exists():
-
-        data = online_courses.objects.filter(info = request.user)
-        context = {
-            'key':data
+    data1 = honours.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_online_courses.html',context=context)
+    print(data1)
+    return render(request,'preview_honours.html',context=context) 
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_online_courses(request.POST)
+def online_courses1(request,year):
+    form = forms.form_online_courses()
+    if online_courses.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_online_courses/'+year)
+    if request.method == 'POST':
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+        form = forms.form_online_courses(request.POST)
 
-                obj.save()
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
 
-                return HttpResponseRedirect('/index')
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
     return render(request,'online_courses.html',{'form':form})
 
-
-
-def consultancy1(request):
-    form = forms.form_counsltancy()
-
-    if counsltancy.objects.filter(info = request.user).exists():
-
-        data = counsltancy.objects.filter(info = request.user)
-        context = {
-            'key':data
+def online_courses1_preview(request,year):
+    data1 = online_courses.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_counsltancy.html',context=context)
+    print(data1)
+    return render(request,'preview_online_courses.html',context=context) 
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_counsltancy(request.POST)
+def consultancy1(request,year):
+    form = forms.form_counsltancy()
+    if consultancy.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_consultancy/'+year)
+    if request.method == 'POST':
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+        form = forms.form_counsltancy(request.POST)
 
-                obj.save()
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
 
-                return HttpResponseRedirect('/index')
+            obj.save()
+
+            return HttpResponseRedirect('/index')
 
 
 
     return render(request,'consultancy.html',{'form':form})
 
-
-
-def phd_guide1(request):
-    form = forms.form_phd_guide()
-
-    if phd_guide.objects.filter(info = request.user).exists():
-
-        data = phd_guide.objects.filter(info = request.user)
-        context = {
-            'key':data
+def consultancy1_preview(request,year):
+    data1 = consultancy.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_phd_guide.html',context=context)
+    print(data1)
+    return render(request,'preview_consultancy.html',context=context) 
 
-    else:
-        if request.method == 'POST':
+def phd_guide1(request,year):
+    form = forms.form_phd_guide()
+    if phd_guide.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_phd_guide/'+year)
+    if request.method == 'POST':
 
-            form = forms.form_phd_guide(request.POST)
+        form = forms.form_phd_guide(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
 
-                obj.save()
+            obj.save()
 
-                return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('/index')
 
     return render(request,'phd_guide.html',{'form':form})
 
-
-
-def phd_self1(request):
-    form = forms.form_phd_self()
-
-    if phd_self.objects.filter(info = request.user).exists():
-
-        data = phd_self.objects.filter(info = request.user)
-        context = {
-            'key':data
+def phd_guide1_preview(request,year):
+    data1 = phd_guide.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_phd_self.html',context=context)
+    print(data1)
+    return render(request,'preview_phd_guide.html',context=context) 
 
-    else:
-        if request.method == 'POST':
+def phd_self1(request,year):
+    form = forms.form_phd_self()
+    if phd_self.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_phd_self/'+year)
+    if request.method == 'POST':
 
-            form = forms.form_phd_self(request.POST)
+        form = forms.form_phd_self(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
 
-                obj.save()
+            obj.save()
 
-                return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('/index')
 
     return render(request,'phd_self.html',{'form':form})
 
-
-
-def conference_journal1(request):
-    form = forms.form_conference_journal()
-
-    if conference_journal.objects.filter(info = request.user).exists():
-
-        data = conference_journal.objects.filter(info = request.user)
-        context = {
-            'key':data
+def phd_self1_preview(request,year):
+    data1 = phd_self.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_conference_journal.html',context=context)
+    print(data1)
+    return render(request,'preview_phd_self.html',context=context) 
 
-    else:
-        if request.method == 'POST':
+def conference_journal1(request,year):
+    form = forms.form_conference_journal()
+    if conference_journal.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_conference_journal/'+year)
+    if request.method == 'POST':
 
-            form = forms.form_conference_journal(request.POST)
+        form = forms.form_conference_journal(request.POST)
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
 
-                obj.save()
+            obj.save()
 
-                return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('/index')
 
     return render(request,'conference_journal.html',{'form':form})
 
 
-
-def funded_projects1(request):
-    form = forms.form_funding()
-
-    if funding.objects.filter(info = request.user).exists():
-
-        data = funding.objects.filter(info = request.user)
-        context = {
-            'key':data
+def conference_journal1_preview(request,year):
+    data1 = conference_journal.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
         }
-        return render(request,'preview_funded_projects.html',context=context)
+    print(data1)
+    return render(request,'preview_conference_journal.html',context=context)
 
-    else:
-        if request.method == 'POST':
 
-            form = forms.form_funding(request.POST)
+def funded_projects1(request,year):
+    form = forms.form_funding()
+    if funded_projects.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_funded_projects/'+year)
+    if request.method == 'POST':
 
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.info = request.user
+        form = forms.form_funding(request.POST)
 
-                obj.save()
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
 
-                return HttpResponseRedirect('/index')
+            obj.save()
+
+            return HttpResponseRedirect('/index')
     return render(request,'funded_projects.html',{'form':form})
+
+
+def funded_projects1_preview(request,year):
+    data1 = funded_projects.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
+        }
+    print(data1)
+    return render(request,'preview_funded_projects.html',context=context)
+
+
+
+
+def open_courses1(request,year):
+    form = forms.form_funding()
+    if open_courses.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_open_courses/'+year)
+    if request.method == 'POST':
+
+        form = forms.form_open_courses(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
+    return render(request,'open_courses.html',{'form':form})
+
+
+def open_courses1_preview(request,year):
+    data1 = open_courses.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
+        }
+    print(data1)
+    return render(request,'preview_open_courses.html',context=context)
+
+
+
+    
+
+
+def exclusive_research1(request,year):
+    form = forms.form_funding()
+    if exclusive_research.objects.filter(info=request.user).filter(year=year):
+        
+        return HttpResponseRedirect('/preview_exclusive_research/'+year)
+    if request.method == 'POST':
+
+        form = forms.form_exclusive_research(request.POST)
+
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.info = request.user
+
+            obj.save()
+
+            return HttpResponseRedirect('/index')
+    return render(request,'exclusive_research.html',{'form':form})
+
+
+def exclusive_research1_preview(request,year):
+    data1 = exclusive_research.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
+        }
+    print(data1)
+    return render(request,'preview_exclusive_research.html',context=context)
