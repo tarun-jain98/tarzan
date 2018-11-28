@@ -22,10 +22,6 @@ urlpatterns = [
 
     url(r'^ref_course/(?P<year>[\w\-]+)$',views.ref_course1,name="ref_course1"),
 
-    
-    url(r'^otp/', views.login, name="login"),
-    url(r'^fdp/', views.fdp1, name="fdp1"),
-    url(r'^ref_course/', views.ref_course1, name="ref_course1"),
     url(r'^sttp/', views.sttp1, name="sttp1"),
     url(r'^book/', views.book1, name="book1"),
     url(r'^interaction/', views.interaction1, name="interaction1"),
@@ -37,6 +33,17 @@ urlpatterns = [
     url(r'^phd_self/', views.phd_self1, name="phd_self1"),
     url(r'^conference_journal/', views.conference_journal1, name="conference_journal1"),
     url(r'^funded_projects/', views.funded_projects1, name="funded_projects1"),
+
+
+
+# preview
+
+
+    url(r'^preview_fdp/(?P<year>[\w\-]+)$',views.fdp1_preview,name="fdp1_preview"),
+
+
+
+
 
 
 ]

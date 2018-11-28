@@ -37,7 +37,7 @@ def index(request):
 
     # form1 = forms.form_test_year()
 
-    year_ftp = {}
+   
 
     data0 = User.objects.get(username=request.user)
     print(data0.department)
@@ -46,14 +46,7 @@ def index(request):
     data2 = Year.objects.all()
     data3 = zip(data1,data2)
 
-    for i in data2:
-
-        if fdp.objects.filter(info=request.user).filter(year=i).exists():
-            year_ftp[i] = i
-
-
-
-
+   
 
 
     context = {
@@ -61,7 +54,7 @@ def index(request):
             'data1':data1,
             'data2':data2,
             'data3':data3,
-            'year_ftp':year_ftp
+            
             
         }
 
@@ -97,6 +90,11 @@ def decide_view(request):
 
 def fdp1(request,year):
     form = forms.form_fdp()
+
+    if fdp.objects.filter(info=request.user).filter(year=year):
+        print("hello")
+        
+        return HttpResponseRedirect('/preview_fdp/'+year)
     
     if request.method == 'POST':
         # status = User.objects.get(username=request.user)
@@ -127,6 +125,21 @@ def fdp1(request,year):
     return render(request,'fdp.html',{'form':form})
 
 
+def fdp1_preview(request,year):
+
+
+    data1 = fdp.objects.filter(info=request.user).get(year=year)
+    context={
+            'key':data1
+        }
+    print(data1)
+    return render(request,'preview_fdp.html',context=context)
+
+
+
+
+
+
 
 def ref_course1(request,year):
     form = forms.form_refreshers_course()
@@ -152,7 +165,7 @@ def ref_course1(request,year):
 def sttp1(request):
     form = forms.form_sttp()
 
-    if sttp.objects.filter(info = request.user).exists():
+    if sttp.objects.filter(info = request.user).filter():
 
         data = sttp.objects.filter(info = request.user)
         context = {
