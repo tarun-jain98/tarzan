@@ -1,10 +1,21 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Tarzan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+
+   <!--    For date picker  --> 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!--  date picker ends  --> 
   </head>
   <body style="background: #c850c0;
   background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
@@ -20,12 +31,12 @@
       </a>
 
       <a class="item" style="color:#ffffff;">
-        <i class="columns icon" style="color:#ffffff;"></i> Interaction with outside world Preview
+        <i class="columns icon" style="color:#ffffff;"></i> Online Course Preview
       </a>
 
       <div class="right item">
 
-         <a class="item" style="color:#ffffff;" href="/logout/">
+        <a class="item" style="color:#ffffff;" href="/logout/">
         <i class="power off icon" style="color:#ffffff;"></i></a>
 
       </div>
@@ -38,53 +49,73 @@
 
 
   <div class="ui raised segment">
-  <h4 class="ui header">Seminar/Technical Talk/BOS/BOE/Academic Coucil/BOG</h4>
+  <h4 class="ui header">Online Courses</h4>
 
   <form method="post">
 
     <div class="ui form">
   <div class="one fields">
     <div class="six wide field">
-      <label>Date</label>
-      <input type="number" disabled value="{{key.date}}">
+      <label>Name of course</label>
+      <input type="text" disabled value="{{key.name_course}}">
+     
+  </div>
     </div>
 
-  </div>
+ 
 
   <div class="one fields">
     <div class="six wide field">
-      <label>Venue</label>
-      <input type="text" disabled value="{{key.venue}}">
+      <label>Organisation/Agency Name</label>
+      <input type="text" disabled value="{{key.name_organization}}">
+      
+  </div>
     </div>
 
-</div>
+
 
 <div class="one fields">
   <div class="six wide field">
-    <label>Breif Remarks</label>
+    <label>Date of completion</label>
+     
+     <input type="text" disabled value="{{key.date_completed}}">
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+    
     <input type="text" disabled value="{{key.brief_remarks}}">
+
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Grade (If any)</label>
+   
+    <input type="text" disabled value="{{key.grade}}">
+    
   </div>
 
 </div>
 
+ </div>
 
 
 
-</div>
 
   </form>
 
+<script>
+  $( function() {
+    $( "#datepicker1" ).datepicker({
+    dateFormat: "dd/mm/yy"
+  });
+  } );
+  </script>
 
-
-</div>
-
-
-<!-- Attended -->
-
-
-
-
-</div>
 
 
 

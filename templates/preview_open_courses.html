@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -20,7 +23,7 @@
       </a>
 
       <a class="item" style="color:#ffffff;">
-        <i class="columns icon" style="color:#ffffff;"></i> Interaction with outside world Preview
+        <i class="columns icon" style="color:#ffffff;"></i> Open Courses Preview
       </a>
 
       <div class="right item">
@@ -38,57 +41,50 @@
 
 
   <div class="ui raised segment">
-  <h4 class="ui header">Seminar/Technical Talk/BOS/BOE/Academic Coucil/BOG</h4>
+  <h4 class="ui header">Open Courses</h4>
 
   <form method="post">
 
     <div class="ui form">
   <div class="one fields">
     <div class="six wide field">
-      <label>Date</label>
-      <input type="number" disabled value="{{key.date}}">
+      <label>Name of the co-ordinator</label>
+     
+       <input type="text" disabled value="{{key.name_coordinator}}">
+  </div>
     </div>
 
-  </div>
+ 
 
   <div class="one fields">
     <div class="six wide field">
-      <label>Venue</label>
-      <input type="text" disabled value="{{key.venue}}">
+      <label>Name of course</label>
+     
+       <input type="text" disabled value="{{key.name_course}}">
+  </div>
     </div>
 
-</div>
+
 
 <div class="one fields">
   <div class="six wide field">
-    <label>Breif Remarks</label>
-    <input type="text" disabled value="{{key.brief_remarks}}">
+    <label>Name of beneficiary</label>
+     
+      <input type="text" disabled value="{{key.number_beneficiaries}}">
   </div>
 
 </div>
 
 
+ </div>
 
 
-</div>
+
 
   </form>
 
-
-
 </div>
-
-
-<!-- Attended -->
-
-
-
-
 </div>
-
-
-
-
 
 
   </body>

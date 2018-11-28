@@ -46,6 +46,8 @@ def index(request):
 
     data0 = User.objects.get(username=request.user)
     print(data0.department)
+    print(data0.first_name)
+
 
     data1 = Field.objects.all()
     data2 = Year.objects.all()
@@ -123,8 +125,10 @@ def principal_first(request):
 
 
 
-def decide_view(request):
-   
+
+
+def decide(request):
+
     if request.user.is_assistant_professor():
        
         return HttpResponseRedirect("/index/")
@@ -227,7 +231,7 @@ def fdp1_review(request,dept,year):
 
 def ref_course1(request,year):
     form = forms.form_refreshers_course()
-    if ref_course.objects.filter(info=request.user).filter(year=year):
+    if refreshers_course.objects.filter(info=request.user).filter(year=year):
         
         return HttpResponseRedirect('/preview_ref_course/'+year)
 
@@ -251,7 +255,7 @@ def ref_course1(request,year):
 def ref_course1_preview(request,year):
 
 
-    data1 = ref_course.objects.filter(info=request.user).get(year=year)
+    data1 = refreshers_course.objects.filter(info=request.user).get(year=year)
     context={
             'key':data1
         }
@@ -270,7 +274,7 @@ def ref_course1_review(request,dept,year):
 
         dic["name"].append(data['first_name'])
 
-    df = pd.DataFrame(list(ref_course.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df = pd.DataFrame(list(refreshers_course.objects.filter(info__department__name=dept).filter(year=year).values()))
     df1 = pd.DataFrame.from_dict(dic)
 
     df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
@@ -594,7 +598,7 @@ def online_courses1_review(request,dept,year):
 
 def consultancy1(request,year):
     form = forms.form_counsltancy()
-    if consultancy.objects.filter(info=request.user).filter(year=year):
+    if counsltancy.objects.filter(info=request.user).filter(year=year):
         
         return HttpResponseRedirect('/preview_consultancy/'+year)
     if request.method == 'POST':
@@ -614,7 +618,7 @@ def consultancy1(request,year):
     return render(request,'consultancy.html',{'form':form})
 
 def consultancy1_preview(request,year):
-    data1 = consultancy.objects.filter(info=request.user).get(year=year)
+    data1 = counsltancy.objects.filter(info=request.user).get(year=year)
     context={
             'key':data1
         }
@@ -632,7 +636,7 @@ def consultancy1_review(request,dept,year):
 
         dic["name"].append(data['first_name'])
 
-    df = pd.DataFrame(list(consultancy.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df = pd.DataFrame(list(counsltancy.objects.filter(info__department__name=dept).filter(year=year).values()))
     df1 = pd.DataFrame.from_dict(dic)
 
     df2 = pd.merge(df1, df, left_on='info', right_on='info_id')

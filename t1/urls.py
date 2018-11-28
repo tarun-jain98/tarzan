@@ -7,11 +7,14 @@ app_name = 't1'
 
 urlpatterns = [
 
+
+
     url(r'^$', views.login, name="login-username-view"),
     url(r'^login/', login, {'template_name': 'otp.html','authentication_form': forms.LoginForm}, name='login'),
 
     url(r'^logout/$', logout, {'template_name': 'success.html'}, name='logout'),
-    url(r'^main/', views.decide_view, name="decide-view"),
+    url(r'^main/', views.decide, name="decide"),
+
 
     url(r'^index/', views.index, name="index"),
 
