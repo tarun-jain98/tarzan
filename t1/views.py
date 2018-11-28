@@ -74,7 +74,7 @@ def decide_view(request):
         
 
     elif request.user.is_hod():
-        print("ASS")
+        return HttpResponseRedirect("/index/")
        
 
     elif request.user.is_principal():
