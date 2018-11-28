@@ -41,9 +41,9 @@ urlpatterns = [
 
     url(r'^funded_projects/(?P<year>[\w\-]+)$',views.funded_projects1,name="funded_projects1"),
 
-    url(r'^open_courses/(?P<year>[\w\-]+)$',views.open_courses1,name="open_courses1"),
+    # url(r'^open_courses/(?P<year>[\w\-]+)$',views.open_courses1,name="open_courses1"),
 
-    url(r'^exclusive_research/(?P<year>[\w\-]+)$',views.ex_research1,name="ex_research1"),
+    # url(r'^exclusive_research/(?P<year>[\w\-]+)$',views.ex_research1,name="ex_research1"),
 
 
 
@@ -79,9 +79,9 @@ urlpatterns = [
 
     url(r'^funded_projects/(?P<year>[\w\-]+)$',views.funded_projects1_preview,name="funded_projects1_preview"),
 
-    url(r'^open_courses/(?P<year>[\w\-]+)$',views.open_courses1_preview,name="open_courses1_preview"),
+    # url(r'^open_courses/(?P<year>[\w\-]+)$',views.open_courses1_preview,name="open_courses1_preview"),
 
-    url(r'^exclusive_research/(?P<year>[\w\-]+)$',views.oexclusive_research1_preview,name="exclusive_research1_preview"),
+    # url(r'^exclusive_research/(?P<year>[\w\-]+)$',views.oexclusive_research1_preview,name="exclusive_research1_preview"),
     
 
 
