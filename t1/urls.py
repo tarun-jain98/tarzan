@@ -14,6 +14,25 @@ urlpatterns = [
     url(r'^main/', views.decide_view, name="decide-view"),
 
     url(r'^index/', views.index, name="index"),
+
+    url(r'^first/', views.principal_first, name="principal_first"),
+
+    url(r'^faculty_index/', views.faculty_index, name="faculty_index"),
+
+
+    url(r'^fims/(?P<dept>[\w\-]+)$', views.principal_second, name="principal_second"),
+
+
+    
+
+
+
+
+
+
+
+
+
     
 
 
@@ -87,7 +106,7 @@ urlpatterns = [
 
 
 
-#review
+# review
 
     # url(r'^(?P<dept>[\w\-]+)/review_fdp/(?P<year>[\w\-]+)$',views.fdp1_review,name="fdp1_review"),
 

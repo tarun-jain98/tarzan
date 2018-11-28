@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/main'
 
-DATE_INPUT_FORMATS = ['%d-%m-%Y']
+# DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 
 # Application definition

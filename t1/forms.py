@@ -111,3 +111,18 @@ class form_phd_self(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info','year']	
 
+
+class form_open_courses(forms.ModelForm):
+	class Meta:
+		model = open_courses
+		fields = '__all__'
+		exclude = ['info','year']	
+
+
+
+class form_exclusive_research(forms.ModelForm):
+	class Meta:
+		model = exclusive_research
+		fields = '__all__'
+		exclude = ['info','year']	
+

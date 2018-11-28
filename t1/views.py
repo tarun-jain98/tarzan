@@ -61,11 +61,12 @@ def index(request):
     return render(request,'index.html',context = context)
 
 
-def hod_index(request):
+def faculty_index(request):
 
     data0 = User.objects.get(username=request.user)
     data1 = Field.objects.all()
     data2 = Year.objects.all()
+
 
     context = {
             'data0':data0,
@@ -76,14 +77,51 @@ def hod_index(request):
             
         }
 
-    return render(request,'hod_index.html',context = context)
+    return render(request,'faculty_index.html',context = context)
 
+
+def principal_second(request,dept):
+
+    data0 = User.objects.get(username=request.user)
+    data1 = Field.objects.all()
+    data2 = Year.objects.all()
+
+    context = {
+            'data0':data0,
+            'data1':data1,
+            'data2':data2,
+            'data3':dept
+            
+            
+            
+        }
+
+    return render(request,'faculty_index.html',context = context)
+
+
+
+
+
+
+def principal_first(request):
+    
+
+    data1 = Department.objects.all()
+
+    context = {
+
+        'data1':data1
+    }
+
+    return render(request,'principal_first.html',context=context)
 
 
 
 
 def decide_view(request):
+   
     if request.user.is_assistant_professor():
+       
         return HttpResponseRedirect("/index/")
        
     elif request.user.is_associate_professor():
@@ -95,15 +133,17 @@ def decide_view(request):
         
 
     elif request.user.is_hod():
+       
         return HttpResponseRedirect("/index/")
        
 
     elif request.user.is_principal():
-        print("ASS")
+        return HttpResponseRedirect("/first/")
+        
        
 
     elif request.user.is_ao():
-        print("AO")
+        return HttpResponseRedirect("/first/")
         
 
 
@@ -496,7 +536,7 @@ def funded_projects1_preview(request,year):
 
 
 def open_courses1(request,year):
-    form = forms.form_funding()
+    form = forms.form_open_courses()
     if open_courses.objects.filter(info=request.user).filter(year=year):
         
         return HttpResponseRedirect('/preview_open_courses/'+year)
@@ -528,7 +568,7 @@ def open_courses1_preview(request,year):
 
 
 def exclusive_research1(request,year):
-    form = forms.form_funding()
+    form = forms.form_exclusive_research()
     if exclusive_research.objects.filter(info=request.user).filter(year=year):
         
         return HttpResponseRedirect('/preview_exclusive_research/'+year)

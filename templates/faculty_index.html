@@ -37,7 +37,14 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Department of {{data0.department}}<span class="sr-only">(current)</span></a>
+    	 {% if data0.designation.name == "HOD" %}
+      <a class="nav-item nav-link active" href="#">Department of {{data0.department.name}}<span class="sr-only">(current)</span></a>
+      {% else %}
+      <a class="nav-item nav-link active" href="#">Department of {{data3}}<span class="sr-only">(current)</span></a>
+
+
+      {% endif %}
+
       {% if data0.designation.name == "HOD" %}
       <a class="nav-item nav-link " href="/index">Fill Own Data  <span class="sr-only">(current)</span></a>
       {% endif %}
@@ -48,7 +55,11 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
    <span class="navbar-text">
      <div class="navbar-nav">
+     	{% if data0.designation.name == "PRINCIPAL" %}
+      <a class="nav-item nav-link active" href="#">WELCOME, PRINCIPAL</a>
+      {% else %}
       <a class="nav-item nav-link active" href="#">WELCOME, {{data0.first_name}}</a>
+      {% endif %}
 
     </span>
 </nav>
@@ -80,8 +91,13 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 											
 
 											{% if form_name.pk == 1 %}
+
+											{% if data3 %}
+											<option value="/{{data3}}/review_fdp/{{year.year}}">
+											{% else %}
 										
-											<option value="{{data0.department.name}}/review_fdp/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_fdp/{{year.year}}">
+											{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -89,9 +105,15 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 2 %}
+
+											{% if data3 %}
+											<option value="/{{data3}}/review_ref_course/{{year.year}}">
+											{% else %}
+											
 											
 										
-											<option value="{{data0.department.name}}/review_ref_course/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_ref_course/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -100,9 +122,14 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 3 %}
+											{% if data3 %}
+											<option value="/{{data3}}/review_sttp/{{year.year}}">
+												{% else%}
 											
 										
-											<option value="{{data0.department.name}}/review_sttp/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_sttp/{{year.year}}">
+											{% endif %}
+												
 										{{year.year}}
 										</option>
 										
@@ -111,9 +138,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 4 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_book/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_book/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_book/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -123,9 +153,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 5 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_interaction/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_interaction/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_interaction/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -134,9 +167,13 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 6 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_honours/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_honours/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_honours/{{year.year}}">
+
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -146,8 +183,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 											{% if form_name.pk == 7 %}
 											
-										
-											<option value="{{data0.department.name}}/review_online_courses/{{year.year}}">
+											{% if data3 %}
+											<option value="/{{data3}}/review_online_courses/{{year.year}}">
+												{% else%}
+											<option value="/{{data0.department.name}}/review_online_courses/{{year.year}}">
+
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -157,9 +198,13 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 8 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_consultancy/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_consultancy/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_consultancy/{{year.year}}">
+
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -169,9 +214,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 9 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_phd_guide/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_phd_guide/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_phd_guide/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -180,9 +228,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 10 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_phd_self/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_phd_self/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_phd_self/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -193,8 +244,11 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 											{% if form_name.pk == 11 %}
 											
-										
-											<option value="{{data0.department.name}}/review_conference_journal/{{year.year}}">
+											{% if data3 %}
+											<option value="/{{data3}}/review_conference_journal/{{year.year}}">
+												{% else%}
+											<option value="/{{data0.department.name}}/review_conference_journal/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -205,8 +259,11 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 											{% if form_name.pk == 12 %}
 											
-										
-											<option value="{{data0.department.name}}/review_funded_projects/{{year.year}}">
+											{% if data3 %}
+											<option value="/{{data3}}/review_funded_projects/{{year.year}}">
+												{% else%}
+											<option value="/{{data0.department.name}}/review_funded_projects/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -217,8 +274,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 											{% if form_name.pk == 13 %}
 											
+											{% if data3 %}
+											<option value="/{{data3}}/review_open_courses/{{year.year}}">
+												{% else%}
 										
-											<option value="{{data0.department.name}}/review_open_courses/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_open_courses/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
@@ -227,9 +288,12 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
 
 											{% if form_name.pk == 14 %}
-											
+											{% if data3 %}
+											<option value="/{{data3}}/review_exclusive_research/{{year.year}}">
+												{% else%}	
 										
-											<option value="{{data0.department.name}}/review_exclusive_research/{{year.year}}">
+											<option value="/{{data0.department.name}}/review_exclusive_research/{{year.year}}">
+												{% endif %}
 										{{year.year}}
 										</option>
 										
