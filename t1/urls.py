@@ -41,9 +41,9 @@ urlpatterns = [
 
     url(r'^funded_projects/(?P<year>[\w\-]+)$',views.funded_projects1,name="funded_projects1"),
 
-    # url(r'^open_courses/(?P<year>[\w\-]+)$',views.open_courses1,name="open_courses1"),
+    url(r'^open_courses/(?P<year>[\w\-]+)$',views.open_courses1,name="open_courses1"),
 
-    # url(r'^exclusive_research/(?P<year>[\w\-]+)$',views.ex_research1,name="ex_research1"),
+    url(r'^exclusive_research/(?P<year>[\w\-]+)$',views.ex_research1,name="ex_research1"),
 
 
 
