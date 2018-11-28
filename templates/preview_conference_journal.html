@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  </head>
+  <body style="background:#6099a6;">
+
+    <!-- Navbar -->
+    <div class="ui attached stackable menu" style="background:#225f73;">
+    <div class="ui container">
+      <a class="item" style="color:#ffffff;">
+        <i class="home icon" style="color:#ffffff;"></i> <span style="font-size:20px;">Tarzan</span>
+      </a>
+
+      <a class="item" style="color:#ffffff;">
+        <i class="columns icon" style="color:#ffffff;"></i> Book
+      </a>
+
+      <div class="right item">
+
+        <a class="item" style="color:#ffffff;">
+        <i class="power off icon" style="color:#ffffff;"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar end -->
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  
+
+  <form method="post">
+
+    <div class="ui form">
+      <div class="ui raised segment">
+    <h3 class="ui header">Conference</h3>
+    <div class="eight fields">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" disabled value="{{key.c1_name}}">
+      
+    </div>
+
+    <div class="field">
+      <label>title</label>
+      <input type="text" disabled value="{{key.c1_title}}">
+     
+    </div>
+
+    <div class="field">
+      <label>Place</label>
+      <input type="text" disabled value="{{key.c1_place}}">
+      
+    </div>
+
+    <div class="field">
+      <label>Date</label>
+      <input type="text" disabled value="{{key.c1_date}}">
+      
+    </div>
+
+    <div class="field">
+      <label>Author type</label>
+      <input type="text" disabled value="{{key.c1_author_type}}">
+      
+    </div>
+
+    <div class="field">
+      <label>Index</label>
+      <input type="text" disabled value="{{key.c1_index_type}}">
+      
+    </div>
+
+    <div class="field">
+      <label>DOI</label>
+      <input type="text" disabled value="{{key.c1_doi}}">
+      
+    </div>
+
+    <div class="field">
+      <label>Url</label>
+      <input type="text" disabled value="{{key.c1_url}}">
+      
+    </div>
+
+</div>
+
+
+
+
+   <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.c2_name}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.c2_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.c2_place}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.c2_date}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.c2_author_type}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.c2_index_type}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.c2_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.c2_url}}">
+    </div>
+
+</div>
+
+ <div class="eight fields">
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_name}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_title}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_place}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_date}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_author_type}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_index_type}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_doi}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c3_url}}">
+    
+    </div>
+
+</div>
+
+  <div class="eight fields">
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_name}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_title}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_place}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_date}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_author_type}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_index_type}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_doi}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c4_url}}">
+    
+    </div>
+
+</div>
+
+ <div class="eight fields">
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_name}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_title}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_place}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_date}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_author_type}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_index_type}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_doi}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c5_url}}">
+    
+    </div>
+
+</div>
+
+
+ <div class="eight fields">
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_name}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_title}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_place}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_date}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_author_type}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_index_type}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_doi}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c6_url}}">
+    
+    </div>
+
+</div>
+
+ <div class="eight fields">
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_name}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_title}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_place}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_date}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_author_type}}">
+     
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_index_type}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_doi}}">
+      
+    </div>
+
+    <div class="field">
+       <input type="text" disabled value="{{key.c7_url}}">
+    
+    </div>
+
+</div>
+
+</div>
+ <div class="ui raised segment">
+    <h3 class="ui header">Journals</h3>
+    <div class="eight fields">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" disabled value="{{key.j1_name}}">
+      
+    </div>
+
+    <div class="field">
+      <label>Title</label>
+     
+      <input type="text" disabled value="{{key.j1_title}}">
+    </div>
+
+    <div class="field">
+      <label>Volume</label>
+      
+      <input type="text" disabled value="{{key.j1_volume}}">
+    </div>
+
+    <div class="field">
+      <label>Date</label>
+      
+      <input type="text" disabled value="{{key.j1_date}}">
+    </div>
+
+    <div class="field">
+      <label>Author type</label>
+      
+      <input type="text" disabled value="{{key.j1_author}}">
+    </div>
+
+    <div class="field">
+      <label>Page</label>
+      
+      <input type="text" disabled value="{{key.j1_page}}">
+    </div>
+
+    <div class="field">
+      <label>Index</label>
+      
+      <input type="text" disabled value="{{key.j1_index}}">
+    </div>
+
+    <div class="field">
+      <label>DOI</label>
+      
+      <input type="text" disabled value="{{key.j1_doi}}">
+    </div>
+
+    <div class="field">
+      <label>Url</label>
+     
+      <input type="text" disabled value="{{key.j1_url}}">
+    </div>
+
+</div>
+
+
+
+
+   <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j2_name}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j2_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j2_volume}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j2_date}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j2_author}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j2_page}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j2_index}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j2_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j2_url}}">
+    </div>
+
+</div>
+
+   <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j3_name}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j3_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j3_volume}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j3_date}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j3_author}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j3_page}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j3_index}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j3_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j3_url}}">
+    </div>
+
+</div>
+
+   <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j4_name}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j4_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j4_volume}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j4_date}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j4_author}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j4_page}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j4_index}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j4_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j4_url}}">
+    </div>
+
+</div>
+
+  <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j5_name}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j5_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j5_volume}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j5_date}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j5_author}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j5_page}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j5_index}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j5_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j5_url}}">
+    </div>
+
+</div>
+   <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j6_name}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j6_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j6_volume}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j6_date}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j6_author}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j6_page}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j6_index}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j6_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j6_url}}">
+    </div>
+
+</div>
+
+   <div class="eight fields">
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j7_name}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j7_title}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j7_volume}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j7_date}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j7_author}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j7_page}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j7_index}}">
+    </div>
+
+    <div class="field">
+     
+      <input type="text" disabled value="{{key.j7_doi}}">
+    </div>
+
+    <div class="field">
+      
+      <input type="text" disabled value="{{key.j7_url}}">
+    </div>
+
+</div>
+
+</div>
+</div>
+
+  </form>
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+   $( "#datepicker1" ).datepicker({
+    dateFormat: "dd/mm/yyyy"
+  });
+  } );
+  </script>
+
+
+
+
+
+  </body>
+</html>

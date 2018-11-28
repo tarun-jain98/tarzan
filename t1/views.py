@@ -53,12 +53,33 @@ def index(request):
             'data0':data0,
             'data1':data1,
             'data2':data2,
-            'data3':data3,
+            'data3':data3
             
             
         }
 
     return render(request,'index.html',context = context)
+
+
+def hod_index(request):
+
+    data0 = User.objects.get(username=request.user)
+    data1 = Field.objects.all()
+    data2 = Year.objects.all()
+
+    context = {
+            'data0':data0,
+            'data1':data1,
+            'data2':data2
+            
+            
+            
+        }
+
+    return render(request,'hod_index.html',context = context)
+
+
+
 
 
 def decide_view(request):
@@ -288,6 +309,10 @@ def honours1(request,year):
 
 
     return render(request,'honours.html',{'form':form})
+
+
+
+
 
 def honours1_preview(request,year):
 

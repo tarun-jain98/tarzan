@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  </head>
+  <body style="background:#6099a6;">
+
+    <!-- Navbar -->
+    <div class="ui attached stackable menu" style="background:#225f73;">
+    <div class="ui container">
+      <a class="item" style="color:#ffffff;">
+        <i class="home icon" style="color:#ffffff;"></i> <span style="font-size:20px;">Tarzan</span>
+      </a>
+
+      <a class="item" style="color:#ffffff;">
+        <i class="columns icon" style="color:#ffffff;"></i> PHD Guide
+      </a>
+
+      <div class="right item">
+
+        <a class="item" style="color:#ffffff;">
+        <i class="power off icon" style="color:#ffffff;"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar end -->
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+  <h4 class="ui header">PHD Guide</h4>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="ui form">
+  <div class="seven fields">
+
+    <div class="field">
+      <label>Internal or External</label>
+      
+      <input type="text" disabled value="{{key.int_ext_1}}">
+    </div>
+    <div class="field">
+      <label>Area / Domain</label>
+      
+      <input type="text" disabled value="{{key.area_1}}">
+    </div>
+    <div class="field">
+      <label>Year of registration</label>
+      
+      <input type="text" disabled value="{{key.year_1}}">
+    </div>
+    <div class="field">
+      <label>University name</label>
+      
+      <input type="text" disabled value="{{key.name_university_1}}">
+    </div>
+    <div class="field">
+      <label>Research center name</label>
+      
+      <input type="text" disabled value="{{key.name_research_centre_1}}">
+    </div>
+    <div class="field">
+      <label>Name of student</label>
+      
+      <input type="text" disabled value="{{key.name_student_1}}">
+    </div>
+    <div class="field">
+      <label>PHD status</label>
+      
+      <input type="text" disabled value="{{key.phd_status_1}}">
+    </div>
+
+  </div>
+
+  <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_2}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_2}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_2}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_2}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_2}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_2}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_2}}">
+    </div>
+
+  </div>
+
+   <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_3}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_3}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_3}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_3}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_3}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_3}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_3}}">
+    </div>
+
+  </div>
+
+   <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_4}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_4}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_4}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_4}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_4}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_4}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_4}}">
+    </div>
+
+  </div>
+
+
+
+   <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_5}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_5}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_5}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_5}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_5}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_5}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_5}}">
+    </div>
+
+  </div>
+
+
+   <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_6}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_6}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_6}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_6}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_6}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_6}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_6}}">
+    </div>
+
+  </div>
+
+   <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_7}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_7}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_7}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_7}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_7}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_7}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_7}}">
+    </div>
+
+  </div>
+
+
+   <div class="seven fields">
+
+    <div class="field">
+
+     
+      <input type="text" disabled value="{{key.int_ext_8}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.area_8}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.year_8}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_university_8}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_research_centre_8}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.name_student_8}}">
+    </div>
+    <div class="field">
+
+      
+      <input type="text" disabled value="{{key.phd_status_8}}">
+    </div>
+
+  </div>
+
+
+
+
+
+</div>
+
+  </form>
+
+
+
+</div>
+
+
+<!-- Attended -->
+
+
+
+
+</div>
+
+
+
+
+
+
+  </body>
+</html>
