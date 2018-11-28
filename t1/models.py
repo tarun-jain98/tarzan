@@ -378,9 +378,18 @@ class funding(models.Model):
 
 class exclusive_research(models.Model):
 	# exclusive_research_id = models.AutoField(primary_key=True)
-	name_organization = models.CharField(max_length=50, blank=True, null=True)
-	from_date = models.DateField(blank=True, null=True)
-	to_date = models.DateField(blank=True, null=True)
+	name_organization_1 = models.CharField(max_length=50, blank=True, null=True)
+	from_date_1 = models.DateField(blank=True, null=True)
+	to_date_1 = models.DateField(blank=True, null=True)
+
+	name_organization_2 = models.CharField(max_length=50, blank=True, null=True)
+	from_date_2 = models.DateField(blank=True, null=True)
+	to_date_2 = models.DateField(blank=True, null=True)
+
+	name_organization_3 = models.CharField(max_length=50, blank=True, null=True)
+	from_date_3 = models.DateField(blank=True, null=True)
+	to_date_3 = models.DateField(blank=True, null=True)
+
 	total_exp = models.CharField(max_length=10, blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
 
