@@ -19,7 +19,7 @@
       </a>
 
       <a class="item" style="color:#ffffff;">
-        <i class="columns icon" style="color:#ffffff;"></i> Book
+        <i class="columns icon" style="color:#ffffff;"></i> Open_courses
       </a>
 
       <div class="right item">
@@ -37,82 +37,44 @@
 
 
   <div class="ui raised segment">
-  <h4 class="ui header">Consultancy</h4>
+  <h4 class="ui header">Open Courses</h4>
 
   <form method="post">
 
     <div class="ui form">
   <div class="one fields">
     <div class="six wide field">
-      <label>Name of organisation</label>
-      {% render_field form.name_organization class="form-control" %}
+      <label>Name of the co-ordinator</label>
+      {% render_field form.name_coordinator class="form-control" %}
   </div>
     </div>
 
-  
+ 
 
   <div class="one fields">
     <div class="six wide field">
-      <label>Type of consultancy</label>
-      {% render_field form.consultancy_type class="form-control" %}
+      <label>Name of course</label>
+      {% render_field form.name_course class="form-control" %}
   </div>
     </div>
-
-    <div class="two fields">
-    <div class="field">
-      <label>from</label>
-      {% render_field form.from_date class="form-control" id="datepicker1" %}
-    </div>
-
-    <div class="field">
-      <label>to</label>
-      {% render_field form.to_date class="form-control" id="datepicker2" %}
-    </div>
-</div>
-
-<div class="two fields">
-    <div class="field">
-      <label>Amount</label>
-      {% render_field form.amount class="form-control" %}
-    </div>
-
-    <div class="field">
-      <label>Consultancy status</label>
-      {% render_field form.consultancy_status class="form-control" %}
-    </div>
-</div>
-
 
 
 
 <div class="one fields">
-  <div class="twelve wide field">
-    <label>Remarks</label>
-    {% render_field form.brief_remarks class="form-control" %}
-    
+  <div class="six wide field">
+    <label>Name of beneficiary</label>
+     {% render_field form.number_beneficiaries class="form-control" id="datepicker1" %}
   </div>
 
 </div>
 
 
-</div>
+ </div>
+
+
+
 
   </form>
-<script>
-  $( function() {
-    $( "#datepicker1" ).datepicker({
-    dateFormat: "dd/mm/yyyy"
-  });
-   $( "#datepicker2" ).datepicker({
-    dateFormat: "dd/mm/yyyy"
-  });
-  
-  } );
-  </script>
-
-
-
-
 
 
 
