@@ -91,9 +91,16 @@ def decide_view(request):
 def fdp1(request,year):
     form = forms.form_fdp()
 
+<<<<<<< Updated upstream
     if fdp.objects.filter(info=request.user).filter(year=year):
         
         return HttpResponseRedirect('/preview_fdp/'+year)
+=======
+    if fdp.objects.filter(info=requst.user).fliter(year=year).exists():
+        data1 = fdp.objects.filter(info=request.user).filter(year=year)
+
+        return render(request,'preview_fdp.html',{'key':data1})
+>>>>>>> Stashed changes
     
     if request.method == 'POST':
         # status = User.objects.get(username=request.user)
@@ -174,7 +181,11 @@ def sttp1(request):
     
     if request.method == 'POST':
 
+<<<<<<< Updated upstream
         form = forms.form_sttp(request.POST)
+=======
+    if sttp.objects.filter(info = request.user).filter():
+>>>>>>> Stashed changes
 
         if form.is_valid():
             obj = form.save(commit=False)
