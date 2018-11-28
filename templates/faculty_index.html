@@ -37,7 +37,14 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Department of {{data0.department}}<span class="sr-only">(current)</span></a>
+    	 {% if data0.designation.name == "HOD" %}
+      <a class="nav-item nav-link active" href="#">Department of {{data0.department.name}}<span class="sr-only">(current)</span></a>
+      {% else %}
+      <a class="nav-item nav-link active" href="#">Department of {{data3}}<span class="sr-only">(current)</span></a>
+
+
+      {% endif %}
+
       {% if data0.designation.name == "HOD" %}
       <a class="nav-item nav-link " href="/index">Fill Own Data  <span class="sr-only">(current)</span></a>
       {% endif %}
@@ -48,7 +55,11 @@ background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
 
    <span class="navbar-text">
      <div class="navbar-nav">
+     	{% if data0.designation.name == "PRINCIPAL" %}
+      <a class="nav-item nav-link active" href="#">WELCOME, PRINCIPAL</a>
+      {% else %}
       <a class="nav-item nav-link active" href="#">WELCOME, {{data0.first_name}}</a>
+      {% endif %}
 
     </span>
 </nav>

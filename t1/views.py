@@ -61,11 +61,12 @@ def index(request):
     return render(request,'index.html',context = context)
 
 
-def hod_index(request):
+def faculty_index(request):
 
     data0 = User.objects.get(username=request.user)
     data1 = Field.objects.all()
     data2 = Year.objects.all()
+
 
     context = {
             'data0':data0,
@@ -76,7 +77,47 @@ def hod_index(request):
             
         }
 
-    return render(request,'hod_index.html',context = context)
+    return render(request,'faculty_index.html',context = context)
+
+
+def principal_second(request,dept):
+
+    data0 = User.objects.get(username=request.user)
+    data1 = Field.objects.all()
+    data2 = Year.objects.all()
+
+    context = {
+            'data0':data0,
+            'data1':data1,
+            'data2':data2,
+            'data3':dept
+            
+            
+            
+        }
+
+    return render(request,'faculty_index.html',context = context)
+
+
+
+
+
+
+def principal_first(request):
+    
+
+    data1 = Department.objects.all()
+
+    context = {
+
+        'data1':data1
+    }
+
+    return render(request,'principal_first.html',context=context)
+
+
+
+
 
 
 
@@ -99,7 +140,8 @@ def decide_view(request):
        
 
     elif request.user.is_principal():
-        print("ASS")
+        return HttpResponseRedirect("/principal_first/")
+        
        
 
     elif request.user.is_ao():
