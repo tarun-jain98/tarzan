@@ -108,33 +108,33 @@ urlpatterns = [
 
 # review
 
-    # url(r'^(?P<dept>[\w\-]+)/review_fdp/(?P<year>[\w\-]+)$',views.fdp1_review,name="fdp1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_fdp/(?P<year>[\w\-]+)$',views.fdp1_review,name="fdp1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_ref_course/(?P<year>[\w\-]+)$',views.ref_course1_review,name="ref_course1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_ref_course/(?P<year>[\w\-]+)$',views.ref_course1_review,name="ref_course1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_sttp/(?P<year>[\w\-]+)$',views.sttp1_review,name="sttp1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_sttp/(?P<year>[\w\-]+)$',views.sttp1_review,name="sttp1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_book/(?P<year>[\w\-]+)$',views.book1_review,name="book1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_book/(?P<year>[\w\-]+)$',views.book1_review,name="book1_review"),
 
-    # url(r'^interaction/(?P<year>[\w\-]+)$',views.interaction1_preview,name="interaction1_review"),
+    url(r'^interaction/(?P<year>[\w\-]+)$',views.interaction1_preview,name="interaction1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_honours/(?P<year>[\w\-]+)$',views.honours1_review,name="honours1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_honours/(?P<year>[\w\-]+)$',views.honours1_review,name="honours1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_online_courses/(?P<year>[\w\-]+)$',views.online_courses1_review,name="online_courses1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_online_courses/(?P<year>[\w\-]+)$',views.online_courses1_review,name="online_courses1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_consultancy/(?P<year>[\w\-]+)$',views.consultancy1_review,name="consultancy1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_consultancy/(?P<year>[\w\-]+)$',views.consultancy1_review,name="consultancy1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_phd_guide/(?P<year>[\w\-]+)$',views.phd_guide1_review,name="phd_guide1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_phd_guide/(?P<year>[\w\-]+)$',views.phd_guide1_review,name="phd_guide1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_phd_self/(?P<year>[\w\-]+)$',views.phd_self1_review,name="phd_self1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_phd_self/(?P<year>[\w\-]+)$',views.phd_self1_review,name="phd_self1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_conference_journal/(?P<year>[\w\-]+)$',views.conference_journal1_review,name="conference_journal1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_conference_journal/(?P<year>[\w\-]+)$',views.conference_journal1_review,name="conference_journal1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_funded_projects/(?P<year>[\w\-]+)$',views.funded_projects1_review,name="funded_projects1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_funded_projects/(?P<year>[\w\-]+)$',views.funded_projects1_review,name="funded_projects1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_open_courses/(?P<year>[\w\-]+)$',views.open_courses1_review,name="open_courses1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_open_courses/(?P<year>[\w\-]+)$',views.open_courses1_review,name="open_courses1_review"),
 
-    # url(r'^(?P<dept>[\w\-]+)/review_exclusive_research/(?P<year>[\w\-]+)$',views.oexclusive_research1_review,name="exclusive_research1_review"),
+    url(r'^(?P<dept>[\w\-]+)/review_exclusive_research/(?P<year>[\w\-]+)$',views.exclusive_research1_review,name="exclusive_research1_review"),
 
 
 

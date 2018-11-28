@@ -2,7 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
 from . import forms
+import pandas as pd
+import openpyxl
+from openpyxl import Workbook
+from pandas import ExcelWriter
 from django.contrib.auth.hashers import make_password, check_password
+from openpyxl.writer.excel import save_virtual_workbook
 
 
 # Create your views here.
@@ -188,6 +193,33 @@ def fdp1_preview(request,year):
     return render(request,'preview_fdp.html',context=context)
 
 
+def fdp1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(fdp.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="fdp_report.xlsx"'
+    return response
 
 
 
@@ -227,6 +259,33 @@ def ref_course1_preview(request,year):
     return render(request,'preview_ref_course.html',context=context)
 
 
+def ref_course1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(ref_course.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="ref_course_report.xlsx"'
+    return response
 
 
 def sttp1(request,year):
@@ -263,6 +322,33 @@ def sttp1_preview(request,year):
     print(data1)
     return render(request,'preview_sttp.html',context=context)    
 
+def sttp1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(sttp.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="sttp_report.xlsx"'
+    return response
 
 
 def book1(request,year):
@@ -294,6 +380,33 @@ def book1_preview(request,year):
     print(data1)
     return render(request,'preview_book.html',context=context) 
 
+def book1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(book.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="book_report.xlsx"'
+    return response
 
 
 def interaction1(request,year):
@@ -327,7 +440,33 @@ def interaction1_preview(request,year):
     print(data1)
     return render(request,'preview_interaction.html',context=context)     
 
+def interaction1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
 
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(interaction.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="interaction_report.xlsx"'
+    return response
 
 def honours1(request,year):
     form = forms.form_honours()
@@ -365,6 +504,36 @@ def honours1_preview(request,year):
     return render(request,'preview_honours.html',context=context) 
 
 
+def honours1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(honours.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="honours_report.xlsx"'
+    return response
+
+
+
 def online_courses1(request,year):
     form = forms.form_online_courses()
     if online_courses.objects.filter(info=request.user).filter(year=year):
@@ -391,6 +560,36 @@ def online_courses1_preview(request,year):
         }
     print(data1)
     return render(request,'preview_online_courses.html',context=context) 
+
+
+def online_courses1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(online_courses.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="online_courses_report.xlsx"'
+    return response
+
 
 
 def consultancy1(request,year):
@@ -422,6 +621,35 @@ def consultancy1_preview(request,year):
     print(data1)
     return render(request,'preview_consultancy.html',context=context) 
 
+def consultancy1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(consultancy.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="consultancy_report.xlsx"'
+    return response
+
+
 def phd_guide1(request,year):
     form = forms.form_phd_guide()
     if phd_guide.objects.filter(info=request.user).filter(year=year):
@@ -449,6 +677,36 @@ def phd_guide1_preview(request,year):
     print(data1)
     return render(request,'preview_phd_guide.html',context=context) 
 
+def phd_guide1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(phd_guide.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="phd_guide_report.xlsx"'
+    return response
+
+
+
 def phd_self1(request,year):
     form = forms.form_phd_self()
     if phd_self.objects.filter(info=request.user).filter(year=year):
@@ -475,6 +733,36 @@ def phd_self1_preview(request,year):
         }
     print(data1)
     return render(request,'preview_phd_self.html',context=context) 
+
+
+def phd_self1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(phd_self.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="phd_self_report.xlsx"'
+    return response
+
 
 def conference_journal1(request,year):
     form = forms.form_conference_journal()
@@ -505,6 +793,36 @@ def conference_journal1_preview(request,year):
     return render(request,'preview_conference_journal.html',context=context)
 
 
+def conference_journal1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(conference_journal.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="conference_journal_report.xlsx"'
+    return response
+
+
+
 def funded_projects1(request,year):
     form = forms.form_funding()
     if funded_projects.objects.filter(info=request.user).filter(year=year):
@@ -532,6 +850,34 @@ def funded_projects1_preview(request,year):
     print(data1)
     return render(request,'preview_funded_projects.html',context=context)
 
+
+def funded_projects1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(funded_projects.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="funded_projects_report.xlsx"'
+    return response
 
 
 
@@ -563,6 +909,33 @@ def open_courses1_preview(request,year):
     return render(request,'preview_open_courses.html',context=context)
 
 
+def open_courses1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(open_courses.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="open_courses_report.xlsx"'
+    return response
 
     
 
@@ -593,3 +966,33 @@ def exclusive_research1_preview(request,year):
         }
     print(data1)
     return render(request,'preview_exclusive_research.html',context=context)
+
+
+def exclusive_research1_review(request,dept,year):
+    data1 = User.objects.filter(department__name=dept).values()
+    dic = {'info':[],
+    'name':[]
+    }
+
+    for data in data1:
+        dic["info"].append(data['id'])
+
+        dic["name"].append(data['first_name'])
+
+    df = pd.DataFrame(list(exclusive_research.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df1 = pd.DataFrame.from_dict(dic)
+
+    df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
+
+    df3 = df2.drop(columns=['info','id','info_id'])
+    df4 = df3.set_index('name')
+
+    writer = ExcelWriter('PythonExport.xlsx')
+    df4.to_excel(writer,'Sheet1')
+    writer.save()
+    wb = openpyxl.load_workbook('PythonExport.xlsx')
+
+    response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="exclusive_research_report.xlsx"'
+    return response
+
