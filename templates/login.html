@@ -38,7 +38,10 @@
 	<div class="limiter">
 
 
-		<div class="container-login100" style="background-image: url('https://wallpapertag.com/wallpaper/full/d/5/c/116692-amazing-cool-background-hd-1920x1200-download.jpg');">
+		<div class="container-login100" style="background: #b92b27;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
 			<div class="wrap-login100">
 				  <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">
 				  	{% csrf_token %}
