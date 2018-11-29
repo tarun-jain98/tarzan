@@ -829,7 +829,7 @@ def conference_journal1_review(request,dept,year):
 
 def funded_projects1(request,year):
     form = forms.form_funding()
-    if funded_projects.objects.filter(info=request.user).filter(year=year):
+    if funding.objects.filter(info=request.user).filter(year=year):
         
         return HttpResponseRedirect('/preview_funded_projects/'+year)
     if request.method == 'POST':
@@ -847,7 +847,7 @@ def funded_projects1(request,year):
 
 
 def funded_projects1_preview(request,year):
-    data1 = funded_projects.objects.filter(info=request.user).get(year=year)
+    data1 = funding.objects.filter(info=request.user).get(year=year)
     context={
             'key':data1
         }
@@ -866,7 +866,7 @@ def funded_projects1_review(request,dept,year):
 
         dic["name"].append(data['first_name'])
 
-    df = pd.DataFrame(list(funded_projects.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df = pd.DataFrame(list(funding.objects.filter(info__department__name=dept).filter(year=year).values()))
     df1 = pd.DataFrame.from_dict(dic)
 
     df2 = pd.merge(df1, df, left_on='info', right_on='info_id')

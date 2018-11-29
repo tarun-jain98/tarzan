@@ -72,14 +72,14 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Name of the funding agency</label>
-     {% render_field form.name_agency_1 class="form-control" %}
+     {% render_field form.name_agency_1 class="form-control " %}
   </div>
 
 </div>
 <div class="three fields">
   <div class="four wide field">
     <label>Type of funding agency</label>
-    {% render_field form.agency_type_1 class="form-control" %}
+    {% render_field form.agency_type_1 class="form-control agency_type_1" %}
 
   </div>
 
@@ -152,12 +152,12 @@
 <div class="two fields">
   <div class="six wide field">
     <label>Additional money</label>
-    {% render_field form.yes_no_1 class="form-control" %}
+    {% render_field form.yes_no_1 class="form-control yes_no_1" %}
     
   </div>
   <div class="six wide field">
     <label>Value</label>
-    {% render_field form.amount_additional_1 class="form-control" %}
+    {% render_field form.amount_additional_1   class="form-control  amount_additional_1"  %}
     
   </div>
 
@@ -271,12 +271,12 @@
 <div class="two fields">
   <div class="six wide field">
     <label>Additional money</label>
-    {% render_field form.yes_no_2 class="form-control" %}
+    {% render_field form.yes_no_2 class="form-control yes_no_2 " %}
     
   </div>
   <div class="six wide field">
     <label>Value</label>
-    {% render_field form.amount_additional_2 class="form-control" %}
+    {% render_field form.amount_additional_2  class="form-control  amount_additional_2"  %}
     
   </div>
 
@@ -387,12 +387,12 @@
 <div class="two fields">
   <div class="six wide field">
     <label>Additional money</label>
-    {% render_field form.yes_no_3 class="form-control" %}
+    {% render_field form.yes_no_3 class="form-control yes_no_3" %}
     
   </div>
   <div class="six wide field">
     <label>Value</label>
-    {% render_field form.amount_additional_3 class="form-control" %}
+    {% render_field form.amount_additional_3   class="form-control amount_additional_3 "    %}
     
   </div>
 
@@ -411,6 +411,41 @@
 </div>
 <script>
   $( function() {
+
+     $('.yes_no_1').change(function(){
+  if ($(this).val() == 1){
+    $('.amount_additional_1').attr('disabled',false)
+    $('.amount_additional_1').val("None")
+  }
+  else{
+    $('.amount_additional_1').attr('disabled',true)
+  }
+
+ });
+
+      $('.yes_no_2').change(function(){
+  if ($(this).val() == 1){
+    $('.amount_additional_2').attr('disabled',false)
+    $('.amount_additional_2').val("None")
+  }
+  else{
+    $('.amount_additional_2').attr('disabled',true)
+  }
+
+ });
+
+  $('.yes_no_3').change(function(){
+  if ($(this).val() == 1){
+    $('.amount_additional_3').attr('disabled',false)
+    $('.amount_additional_3').val("None")
+  }
+  else{
+    $('.amount_additional_3').attr('disabled',true)
+  }
+
+ });
+
+
     $( "#datepicker1" ).datepicker({
     dateFormat: "dd/mm/yy"
   });
