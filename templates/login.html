@@ -2,11 +2,11 @@
 {% load staticfiles %}
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>FIMS - BMSIT&M</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{% static "images/icons/favicon.ico" %}"/>
+	<link rel="icon" type="image/png" href="{% static "images/bmsit.png" %}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
 <!--===============================================================================================-->
@@ -46,7 +46,7 @@ background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, F
 				  <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">
 				  	{% csrf_token %}
 
-	
+
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
@@ -60,16 +60,16 @@ background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, F
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					
 
-					
+
+
 
 					<div class="container-login100-form-btn">
 
 
 						<button type="submit" class="login100-form-btn">
 
-					
+
 							Login
 						</button>
 					</div>
