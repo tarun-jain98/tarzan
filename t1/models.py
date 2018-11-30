@@ -19,7 +19,7 @@ class Field(models.Model):
 	name = models.CharField(max_length=30, blank=True, null=True)
 
 	def __str__(self):
-		return self.name		
+		return self.name
 
 class Year(models.Model):
 	"""
@@ -28,7 +28,7 @@ class Year(models.Model):
 	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
-		return self.year	
+		return self.year
 
 
 
@@ -75,7 +75,7 @@ class status(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name		
+		return self.name
 
 class investigator_type(models.Model):
 	"""
@@ -190,7 +190,7 @@ class User(AbstractUser):
 
 
 class fdp(models.Model):
-	
+
 	type_fdp = models.ForeignKey('agency_type', on_delete=models.CASCADE,null=True,related_name='type_fdp')
 	name = models.CharField(max_length=50, blank=True, null=True)
 	supported_by = models.ForeignKey('support', on_delete=models.CASCADE,null=True,related_name='supported_by')
@@ -198,7 +198,7 @@ class fdp(models.Model):
 	date_to = models.DateField(blank=True, null=True)
 	venue = models.CharField(max_length=50, blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	year = models.CharField(max_length=20, blank=True, null=True)
 
@@ -307,7 +307,7 @@ class online_courses(models.Model):
 	date_completed = models.DateField(blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
 	grade = models.CharField(max_length=10, blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	year = models.CharField(max_length=20, blank=True, null=True)
 
@@ -628,7 +628,7 @@ class book(models.Model):
 	publisher = models.CharField(max_length=50, blank=True, null=True)
 	isbn = models.CharField(max_length=50, blank=True, null=True)
 	brief_remarks = models.TextField( blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	year = models.CharField(max_length=20, blank=True, null=True)
 
@@ -651,7 +651,7 @@ class chapter(models.Model):
 	year = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):
-		return self.info.first_name		
+		return self.info.first_name
 
 
 class phd_guide(models.Model):
@@ -746,7 +746,7 @@ class phd_self(models.Model):
 	area = models.CharField(max_length=50, blank=True, null=True)
 	year = models.CharField(max_length=50, blank=True, null=True)
 	phd_status = models.ForeignKey('status', on_delete=models.CASCADE,null=True,related_name='status')
-	
+
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	year = models.CharField(max_length=20, blank=True, null=True)

@@ -44,7 +44,7 @@ class form_workshop(forms.ModelForm):
 	class Meta:
 		model = workshop
 		fields = '__all__'
-		exclude = ['info','year']	
+		exclude = ['info','year']
 
 
 class form_seminar(forms.ModelForm):
@@ -60,12 +60,12 @@ class form_technical_talk(forms.ModelForm):
 
 		exclude = ['info','year']
 
-		
+
 class form_session_chair(forms.ModelForm):
 	class Meta:
 		model = session_chair
 		fields = '__all__'
-		exclude = ['info','year']			
+		exclude = ['info','year']
 
 
 
@@ -83,7 +83,7 @@ class form_online_courses(forms.ModelForm):
 
 class form_counsltancy(forms.ModelForm):
 	class Meta:
-		model = counsltancy
+		model = consultancy
 		fields = '__all__'
 		exclude = ['info','year']
 
@@ -98,7 +98,7 @@ class form_funding(forms.ModelForm):
 # 	class Meta:
 # 		model = exclusive_research
 # 		fields = '__all__'
-# 		exclude = ['info','year']	
+# 		exclude = ['info','year']
 
 
 class form_conference(forms.ModelForm):
@@ -139,6 +139,3 @@ class form_phd_self(forms.ModelForm):
 		model = phd_self
 		fields = '__all__'
 		exclude = ['info','year']
-
-
-

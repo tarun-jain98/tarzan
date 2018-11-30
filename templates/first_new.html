@@ -22,9 +22,9 @@
        <a class="item">
         Department of {{data0.department.name}}
       </a>
-     
-    
-     
+
+
+
       <div class="right item">
          <a class="item">
         Welcome, {{data0.first_name}}
@@ -86,7 +86,7 @@
 </div>
 
 </div>
-  
+
 
 <div class="ui bottom attached tab segment" data-tab="first_first">
 <!-- 	FDP
@@ -101,7 +101,7 @@
 
 
   <div class="ui raised segment">
-  
+
 
   <form method="post">
     {% csrf_token %}
@@ -162,12 +162,12 @@
 
 </div>
 
- </form>
- </div> 
+
+ </div>
 </div>
 </div>
 
-	
+
 
 
 <div class="ui bottom attached tab segment" data-tab="first_second">
@@ -180,16 +180,15 @@
   <a class="item" data-tab="first_fourth">Workshop</a>
 </div>
 
-     
+
 
 	<div class="ui container" style="margin-top:3%;">
 
 
   <div class="ui raised segment">
-  
 
-  <form method="post">
-    {% csrf_token %}
+
+
 
     <div class="ui form">
       <div class="one fields">
@@ -247,8 +246,8 @@
 
 </div>
 
- </form>
- </div> 
+
+ </div>
 </div>
 
 </div>
@@ -272,16 +271,15 @@
   <a class="item" data-tab="first_fourth">Workshop</a>
 </div>
 
-     
+
 
 <div class="ui container" style="margin-top:3%;">
 
 
   <div class="ui raised segment">
-  
 
-  <form method="post">
-    {% csrf_token %}
+
+
 
     <div class="ui form">
       <div class="one fields">
@@ -339,8 +337,8 @@
 
 </div>
 
- </form>
- </div> 
+
+ </div>
 </div>
 
 
@@ -375,10 +373,9 @@
 
 
   <div class="ui raised segment">
-  
 
-  <form method="post">
-    {% csrf_token %}
+
+
 
     <div class="ui form">
       <div class="one fields">
@@ -448,14 +445,14 @@
 
 </div>
 
- </form>
- </div> 
+
+ </div>
 </div>
 
 
-     
 
-	
+
+
 
 </div>
 
@@ -471,7 +468,7 @@
   <div class="ui top attached tabular menu">
   <a class="item" data-tab="second_first">Books</a>
   <a class="item" data-tab="second_second">Chapters</a>
- 
+
 </div>
 
 </div>
@@ -493,14 +490,14 @@
 	<div class="ui top attached tabular menu">
   <a class="item active" data-tab="second_first">Book</a>
   <a class="item" data-tab="second_second">Chapter</a>
- 
+
 </div>
 
 <div class="ui container" style="margin-top:3%;">
 
 
   <div class="ui raised segment">
-<p><form method="post">
+
 
     <div class="ui form">
   <div class="one fields">
@@ -563,13 +560,12 @@
 
 </div>
 
-  </form>
-</p>
+
 
  </div>
- </div>    
+ </div>
 
-	
+
 
 </div>
 
@@ -586,14 +582,14 @@
 	<div class="ui top attached tabular menu">
   <a class="item" data-tab="second_first">Book</a>
   <a class="item active" data-tab="second_second">Chapter</a>
- 
+
 </div>
 
 <div class="ui container" style="margin-top:3%;">
 
 
   <div class="ui raised segment">
-<p> <form method="post">
+
 
     <div class="ui form">
   <div class="one fields">
@@ -656,13 +652,9 @@
 
 </div>
 
-  </form>
 
 
-</p>
-     
 
-	
 
 </div>
 </div>
@@ -680,7 +672,7 @@
   <a class="item" data-tab="third_first">Seminar</a>
   <a class="item" data-tab="third_second">Technical Talks</a>
   <a class="item" data-tab="third_third">Session chair</a>
- 
+
 </div>
 
 </div>
@@ -697,11 +689,10 @@
  <a class="item active" data-tab="third_first">Seminar</a>
   <a class="item" data-tab="third_second">Technical Talks</a>
   <a class="item" data-tab="third_third">Session chair</a>
- 
+
 </div>
 
 
-<p> <form method="post">
 
     <div class="ui form">
   <div class="one fields">
@@ -730,7 +721,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Attendance No.</label>
-    {% render_field form_seminar.no_attended class="form-control" %}
+    {% render_field form_seminar.no_atttended class="form-control" %}
   </div>
 
 </div>
@@ -743,9 +734,7 @@
 </div>
 
 </div>
-</form>
 
-</p>
 
 </div>
 
@@ -764,11 +753,8 @@
  <a class="item" data-tab="third_first">Seminar</a>
   <a class="item active" data-tab="third_second">Technical Talks</a>
   <a class="item" data-tab="third_third">Session chair</a>
- 
+
 </div>
-
-
-<p><form method="post">
 
     <div class="ui form">
   <div class="one fields">
@@ -797,7 +783,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Attendance No.</label>
-    {% render_field form_technical_talk.no_attended class="form-control" %}
+    {% render_field form_technical_talk.no_atttended class="form-control" %}
   </div>
 
 </div>
@@ -810,8 +796,6 @@
 </div>
 
 </div>
-</form>
-</p>
 
 </div>
 
@@ -831,11 +815,9 @@
  <a class="item" data-tab="third_first">Seminar</a>
   <a class="item" data-tab="third_second">Technical Talks</a>
   <a class="item active" data-tab="third_third">Session chair</a>
- 
+
 </div>
 
-
-<p><form method="post">
 
     <div class="ui form">
   <div class="one fields">
@@ -864,7 +846,7 @@
 <div class="one fields">
   <div class="six wide field">
     <label>Attendance No.</label>
-    {% render_field form_session_chair.no_attended class="form-control" %}
+    {% render_field form_session_chair.no_atttended class="form-control" %}
   </div>
 
 </div>
@@ -877,8 +859,6 @@
 </div>
 
 </div>
-</form>
-</p>
 
 </div>
 
@@ -895,7 +875,7 @@
   <a class="item" data-tab="fourth_first">National</a>
   <a class="item" data-tab="fourth_second">International</a>
   <a class="item" data-tab="fourth_third">State</a>
- 
+
 </div>
 
 </div>
@@ -914,12 +894,11 @@
  <a class="item active" data-tab="fourth_first">National</a>
   <a class="item" data-tab="fourth_second">International</a>
   <a class="item" data-tab="fourth_third">State</a>
- 
+
 </div>
 
 
-<p><form method="post">
-    {% csrf_token %}
+
 <div class="ui form">
 <div class="one fields">
   <div class="six wide field">
@@ -955,7 +934,7 @@
 
 
 </div>
-</form></p>
+
 
 </div>
 
@@ -973,12 +952,11 @@
  <a class="item" data-tab="fourth_first">National</a>
   <a class="item active" data-tab="fourth_second">International</a>
   <a class="item" data-tab="fourth_third">State</a>
- 
+
 </div>
 
 
-<p><form method="post">
-    {% csrf_token %}
+
 <div class="ui form">
 <div class="one fields">
   <div class="six wide field">
@@ -1014,7 +992,6 @@
 
 
 </div>
-</form></p>
 
 </div>
 
@@ -1033,12 +1010,10 @@
  <a class="item" data-tab="fourth_first">National</a>
   <a class="item" data-tab="fourth_second">International</a>
   <a class="item active" data-tab="fourth_third">State</a>
- 
+
 </div>
 
 
-<p><form method="post">
-    {% csrf_token %}
 <div class="ui form">
 <div class="one fields">
   <div class="six wide field">
@@ -1074,7 +1049,6 @@
 
 
 </div>
-</form></p>
 
 </div>
 
@@ -1084,8 +1058,7 @@
 
 <div class="ui bottom attached tab segment" data-tab="five">
 <!-- online course
- --> 
-<p><form method="post">
+ -->
 
     <div class="ui form">
   <div class="one fields">
@@ -1095,7 +1068,7 @@
   </div>
     </div>
 
- 
+
 
   <div class="one fields">
     <div class="six wide field">
@@ -1125,7 +1098,7 @@
   <div class="six wide field">
     <label>Grade (If any)</label>
     {% render_field form_online_courses.grade class="form-control" %}
-    
+
   </div>
 
 </div>
@@ -1135,8 +1108,7 @@
 
 
 
-  </form>
-</p>
+
 
 </div>
 
@@ -1148,8 +1120,7 @@
 
 <div class="ui bottom attached tab segment" data-tab="six">
 <!-- consultancy
- --> 
-<p><form method="post">
+ -->
 
     <div class="ui form">
   <div class="one fields">
@@ -1159,7 +1130,7 @@
   </div>
     </div>
 
-  
+
 
   <div class="one fields">
     <div class="six wide field">
@@ -1190,7 +1161,7 @@
   <div class="twelve wide field">
     <label>Consultancy status</label>
     {% render_field form_consultancy.consultancy_status class="form-control" %}
-    
+
   </div>
 
 </div>
@@ -1200,7 +1171,7 @@
   <div class="twelve wide field">
     <label>Remarks</label>
     {% render_field form_consultancy.brief_remarks class="form-control" %}
-    
+
   </div>
 
 </div>
@@ -1209,8 +1180,6 @@
 
 </div>
 
-  </form>
- </p>
 
 </div>
 
@@ -1226,8 +1195,8 @@
   <div class="ui top attached tabular menu">
   <a class="item" data-tab="seven_first">Guidance</a>
   <a class="item" data-tab="seven_second">Pursuing Details</a>
- 
- 
+
+
 </div>
 
 </div>
@@ -1242,14 +1211,13 @@
 	<div class="ui top attached tabular menu">
   <a class="item active" data-tab="seven_first">Guidance</a>
   <a class="item" data-tab="seven_second">Pursuing Details</a>
- 
+
 </div>
 
 
 <p> <div class="ui container" style="margin-top:3%;">
 
   <div class="ui raised segment">
-    <form method="post">
 
     <div class="ui form">
     <div class="eight fields">
@@ -1297,27 +1265,26 @@
 
 <div class="eight fields">
     <div class="two wide field">
-      
-      {% render_field form_guidance.name_student_2 class="form-control" %}
+{% render_field form_guidance.name_student_2 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_2 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_2 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_2 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_2 class="form-control" %}
     </div>
 
@@ -1336,27 +1303,27 @@
 </div>
     <div class="eight fields">
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_student_3 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_3 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_3 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_3 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_3 class="form-control" %}
     </div>
 
@@ -1375,27 +1342,27 @@
 </div>
   <div class="eight fields">
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_student_4 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_4 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_4 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_4 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_4 class="form-control" %}
     </div>
 
@@ -1416,27 +1383,27 @@
 
 <div class="eight fields">
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_student_5 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_5 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_5 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_5 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_5 class="form-control" %}
     </div>
 
@@ -1457,27 +1424,27 @@
 
 <div class="eight fields">
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_student_6 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_6 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_6 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_6 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_6 class="form-control" %}
     </div>
 
@@ -1498,27 +1465,27 @@
 
 <div class="eight fields">
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_student_7 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_7 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_7 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_7 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_7 class="form-control" %}
     </div>
 
@@ -1539,27 +1506,27 @@
 
 <div class="eight fields">
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_student_8 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.int_ext_8 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_university_8 class="form-control" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.name_research_centre_8 class="form-control" id="datepicker1" %}
     </div>
 
     <div class="two wide field">
-      
+
       {% render_field form_guidance.year_8 class="form-control" %}
     </div>
 
@@ -1585,13 +1552,12 @@
 
 </div>
 
-</form>
+
 </div>
 </div>
 
 
 
-   </p>
 
 </div>
 
@@ -1606,16 +1572,14 @@
 	<div class="ui top attached tabular menu">
   <a class="item" data-tab="seven_first">Guidance</a>
   <a class="item active" data-tab="seven_second">Pursuing Details</a>
- 
+
 </div>
 
 
-<p><div class="ui container" style="margin-top:3%;">
+<div class="ui container" style="margin-top:3%;">
 
 
   <div class="ui raised segment">
-
-  <form method="post">
 
     <div class="ui form">
   <div class="one fields">
@@ -1671,14 +1635,11 @@
 
 </div>
 
-  </form>
-
 
 
 </div>
 </div>
 
-</p>
 
 </div>
 
@@ -1694,8 +1655,8 @@
   <div class="ui top attached tabular menu">
   <a class="item" data-tab="eight_first">Journals</a>
   <a class="item" data-tab="eight_second">Conferences</a>
- 
- 
+
+
 </div>
 
 </div>
@@ -1710,7 +1671,7 @@
 	<div class="ui top attached tabular menu">
   <a class="item active" data-tab="eight_first">Journals</a>
   <a class="item" data-tab="eight_second">Conferences</a>
- 
+
 </div>
 
 
@@ -1729,7 +1690,7 @@
 	<div class="ui top attached tabular menu">
  <a class="item" data-tab="eight_first">Journals</a>
   <a class="item active" data-tab="eight_second">Conferences</a>
- 
+
 </div>
 
 
@@ -1748,14 +1709,9 @@
 
 <div class="ui bottom attached tab segment" data-tab="nine">
 <!-- Funded projects
- --> 
-<p><div class="ui container" style="margin-top:3%;">
+ -->
+<div class="ui container" style="margin-top:3%;">
 
-
-  
-  
-
-  <form method="post">
 
     <div class="ui form">
 
@@ -1805,13 +1761,13 @@
   <div class="six wide field">
     <label>Date from</label>
     {% render_field form_funded_project.from_date_1 class="form-control" id="datepicker2" %}
-    
+
   </div>
 
   <div class="six wide field">
     <label>Date to</label>
     {% render_field form_funded_project.to_date_1 class="form-control" id="datepicker3" %}
-    
+
   </div>
 
 
@@ -1821,12 +1777,12 @@
   <div class="six wide field">
     <label>Place of execution</label>
     {% render_field form_funded_project.place_1 class="form-control" %}
-    
+
   </div>
   <div class="six wide field">
     <label>PI/Co-PI</label>
     {% render_field form_funded_project.investigator_type_1 class="form-control" %}
-    
+
   </div>
 
 
@@ -1890,13 +1846,13 @@
   <div class="six wide field">
     <label>Date from</label>
     {% render_field form_funded_project.from_date_2 class="form-control" id="datepicker6" %}
-    
+
   </div>
 
   <div class="six wide field">
     <label>Date to</label>
     {% render_field form_funded_project.to_date_2 class="form-control" id="datepicker7" %}
-    
+
   </div>
 
 
@@ -1906,12 +1862,12 @@
   <div class="six wide field">
     <label>Place of execution</label>
     {% render_field form_funded_project.place_2 class="form-control" %}
-    
+
   </div>
   <div class="six wide field">
     <label>PI/Co-PI</label>
     {% render_field form_funded_project.investigator_type_2 class="form-control" %}
-    
+
   </div>
 
 
@@ -1972,13 +1928,13 @@
   <div class="six wide field">
     <label>Date from</label>
     {% render_field form_funded_project.from_date_3 class="form-control" id="datepicker10" %}
-    
+
   </div>
 
   <div class="six wide field">
     <label>Date to</label>
     {% render_field form_funded_project.to_date_3 class="form-control" id="datepicker11" %}
-    
+
   </div>
 
 
@@ -1988,12 +1944,12 @@
   <div class="six wide field">
     <label>Place of execution</label>
     {% render_field form_funded_project.place_3 class="form-control" %}
-    
+
   </div>
   <div class="six wide field">
     <label>PI/Co-PI</label>
     {% render_field form_funded_project.investigator_type_3 class="form-control" %}
-    
+
   </div>
 
 
@@ -2009,10 +1965,15 @@
 </div>
 </div>
 
+
+<button class="fluid ui primary button" type="submit" style="margin-top:4%;">
+  <i class="right arrow icon"></i>
+  Submit
+</button>
+
   </form>
 </div>
 
-</p>
 
 </div>
 

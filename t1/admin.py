@@ -88,7 +88,7 @@ class Refreshers_course(ImportExportModelAdmin):
 	resource_class = refreshers_coursE
 
 	def name(self, instance):
-		return instance.info.first_name		
+		return instance.info.first_name
 
 
 class sttP(resources.ModelResource):
@@ -106,7 +106,7 @@ class Sttp(ImportExportModelAdmin):
 	resource_class = sttP
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class workshoP(resources.ModelResource):
@@ -124,7 +124,7 @@ class Workshop(ImportExportModelAdmin):
 	resource_class = workshoP
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 
@@ -143,7 +143,7 @@ class Seminar(ImportExportModelAdmin):
 	resource_class = seminaR
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class technical_talK(resources.ModelResource):
@@ -161,7 +161,7 @@ class Technical_talk(ImportExportModelAdmin):
 	resource_class = technical_talK
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class session_chaiR(resources.ModelResource):
@@ -179,7 +179,7 @@ class Session_chair(ImportExportModelAdmin):
 	resource_class = session_chaiR
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 
@@ -198,7 +198,7 @@ class Online_courses(ImportExportModelAdmin):
 	resource_class = online_courseS
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class honourS(resources.ModelResource):
@@ -216,15 +216,15 @@ class Honours(ImportExportModelAdmin):
 	resource_class = honourS
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class counsltancY(resources.ModelResource):
 	class Meta:
-		model = counsltancy
+		model = consultancy
 
 
-@admin.register(counsltancy)
+@admin.register(consultancy)
 class Counsltancy(ImportExportModelAdmin):
 
 
@@ -270,7 +270,7 @@ class Funding(ImportExportModelAdmin):
 # 	resource_class = exclusive_researcH
 
 # 	def name(self, instance):
-# 		return instance.info.first_name	
+# 		return instance.info.first_name
 
 class conferencE(resources.ModelResource):
 	class Meta:
@@ -287,7 +287,7 @@ class Conference(ImportExportModelAdmin):
 	resource_class = conferencE
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 class journaL(resources.ModelResource):
 	class Meta:
@@ -304,7 +304,7 @@ class Journal(ImportExportModelAdmin):
 	resource_class = journaL
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class booK(resources.ModelResource):
@@ -322,7 +322,7 @@ class Book(ImportExportModelAdmin):
 	resource_class = booK
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 class chapteR(resources.ModelResource):
 	class Meta:
@@ -339,7 +339,7 @@ class Chapter(ImportExportModelAdmin):
 	resource_class = chapteR
 
 	def name(self, instance):
-		return instance.info.first_name	
+		return instance.info.first_name
 
 
 class phd_guidE(resources.ModelResource):
@@ -357,7 +357,7 @@ class Phd_guide(ImportExportModelAdmin):
 	resource_class = phd_guidE
 
 	def name(self, instance):
-		return instance.info.first_name		
+		return instance.info.first_name
 
 
 class phd_selF(resources.ModelResource):
@@ -375,7 +375,4 @@ class Phd_self(ImportExportModelAdmin):
 	resource_class = phd_selF
 
 	def name(self, instance):
-		return instance.info.first_name								
-
-
-
+		return instance.info.first_name

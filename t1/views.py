@@ -127,7 +127,7 @@ def first_new(request,year):
         return HttpResponseRedirect('/first_year')
 
     else:
-  
+
         form_fdp = forms.form_fdp()
         form_refreshers_course = forms.form_refreshers_course()
         form_sttp = forms.form_sttp()
@@ -144,7 +144,7 @@ def first_new(request,year):
 
         form_online_courses = forms.form_online_courses()
 
-        form_consultancy = forms.form_consultancy()
+        form_consultancy = forms.form_counsltancy()
 
         form_guidance = forms.form_phd_guide()
         form_pursuing_details = forms.form_phd_self()
@@ -164,10 +164,10 @@ def first_new(request,year):
         # data1 = Field.objects.all()
         data2 = Year.objects.all()
         # data3 = zip(data1,data2)
- 
+
         if request.method == 'POST':
 
-                
+
             form_fdp = forms.form_fdp(request.POST)
             form_refreshers_course = forms.form_refreshers_course(request.POST)
             form_sttp = forms.form_sttp(request.POST)
@@ -196,7 +196,7 @@ def first_new(request,year):
 
 
             if form_fdp.is_valid():
-                
+
 
                 obj1 = form_fdp.save(commit=False)
                 obj1.info = request.user
@@ -205,155 +205,155 @@ def first_new(request,year):
                 obj1.save()
 
             if form_refreshers_course.is_valid():
-                
+
 
                 obj1 = form_refreshers_course.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()    
+                obj1.save()
 
 
             if form_sttp.is_valid():
-                
+
 
                 obj1 = form_sttp.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_workshop.is_valid():
-                
+
 
                 obj1 = form_workshop.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_book.is_valid():
-                
+
 
                 obj1 = form_book.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
 
             if form_chapter.is_valid():
-                
+
 
                 obj1 = form_chapter.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
 
             if form_seminar.is_valid():
-                
+
 
                 obj1 = form_seminar.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_technical_talk.is_valid():
-                
+
 
                 obj1 = form_technical_talk.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_session_chair.is_valid():
-                
+
 
                 obj1 = form_session_chair.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
 
             if form_honours.is_valid():
-                
+
 
                 obj1 = form_honours.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_online_courses.is_valid():
-                
+
 
                 obj1 = form_online_courses.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save() 
+                obj1.save()
 
 
             if form_consultancy.is_valid():
-                
+
 
                 obj1 = form_consultancy.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save() 
+                obj1.save()
 
 
             if form_guidance.is_valid():
-                
+
 
                 obj1 = form_guidance.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save() 
+                obj1.save()
 
 
             if form_pursuing_details.is_valid():
-                
+
 
                 obj1 = form_pursuing_details.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
             if form_conference.is_valid():
-                
+
 
                 obj1 = form_conference.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_journal.is_valid():
-                
+
 
                 obj1 = form_journal.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
-                obj1.save()  
+                obj1.save()
 
 
             if form_funded_project.is_valid():
@@ -392,9 +392,9 @@ def first_new(request,year):
                 'form_journal':form_journal,
 
                 'form_funded_project':form_funded_project
-               
-                
-                
+
+
+
             }
 
         return render(request,'first_new.html',context = context)
