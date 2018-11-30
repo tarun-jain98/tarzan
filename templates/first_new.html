@@ -104,7 +104,7 @@
 
 
   <form method="post">
-    {% csrf_token %}
+
 
     <div class="ui form">
       <div class="one fields">
@@ -188,6 +188,7 @@
   <div class="ui raised segment">
 
 
+  <form method="post">
 
 
     <div class="ui form">
@@ -277,8 +278,6 @@
 
 
   <div class="ui raised segment">
-
-
 
 
     <div class="ui form">
@@ -373,8 +372,6 @@
 
 
   <div class="ui raised segment">
-
-
 
 
     <div class="ui form">
@@ -1138,33 +1135,44 @@
       {% render_field form_consultancy.title class="form-control" %}
   </div>
     </div>
-    <div class="one fields">
+    <div class="two fields">
     <div class="six wide field">
       <label>Consultancy Type</label>
       {% render_field form_consultancy.consultancy_type class="form-control" %}
   </div>
+  <div class="six wide field">
+    <label>Date approval</label>
+    {% render_field form_consultancy.consultancy_status class="form-control" %}
+
+  </div>
+
+
+
     </div>
 
 
     <div class="two fields">
-    <div class="field">
-      <label>Approval Date</label>
+    <div class="six wide field">
+      <label>Value</label>
       {% render_field form_consultancy.date_approval class="form-control" id="datepicker1" %}
     </div>
 
-    <div class="field">
-      <label>Value</label>
+    <div class="six wide field">
+      <label>Consutancy status</label>
       {% render_field form_consultancy.value class="form-control" id="datepicker2" %}
     </div>
 </div>
+
 <div class="one fields">
   <div class="twelve wide field">
     <label>Consultancy status</label>
     {% render_field form_consultancy.consultancy_status class="form-control" %}
 
   </div>
-
 </div>
+
+
+
 
 
 <div class="one fields">
