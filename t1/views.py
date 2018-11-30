@@ -42,7 +42,7 @@ def index(request):
 
     # form1 = forms.form_test_year()
 
-   
+
 
     data0 = User.objects.get(username=request.user)
     print(data0.department)
@@ -53,7 +53,7 @@ def index(request):
     data2 = Year.objects.all()
     data3 = zip(data1,data2)
 
-   
+
 
 
     context = {
@@ -61,8 +61,8 @@ def index(request):
             'data1':data1,
             'data2':data2,
             'data3':data3
-            
-            
+
+
         }
 
     return render(request,'index.html',context = context)
@@ -79,9 +79,9 @@ def faculty_index(request):
             'data0':data0,
             'data1':data1,
             'data2':data2
-            
-            
-            
+
+
+
         }
 
     return render(request,'faculty_index.html',context = context)
@@ -98,12 +98,107 @@ def principal_second(request,dept):
             'data1':data1,
             'data2':data2,
             'data3':dept
-            
-            
-            
+
+
+
         }
 
     return render(request,'faculty_index.html',context = context)
+
+
+
+def first_year(request):
+    data0 = Year.objects.all()
+
+    context = {
+            'data0':data0
+        }
+
+    return render(request,'first_year.html',context=context)
+
+
+
+
+def first_new(request,year):
+
+    if fdp.objects.filter(info=request.user).filter(year=year):
+        return HttpResponseRedirect('/first_year')
+
+    else:
+  
+        form1 = forms.form_fdp()
+        form4 = forms.form_book()
+
+
+        data0 = User.objects.get(username=request.user)
+        print(data0.department)
+        print(data0.first_name)
+
+
+        # data1 = Field.objects.all()
+        data2 = Year.objects.all()
+        # data3 = zip(data1,data2)
+
+        if request.method == 'POST':
+            # status = User.objects.get(username=request.user)
+            form1 = forms.form_fdp(request.POST)
+            # form2 = forms.form_refreshers_course(request.POST)
+            # form3 = forms.form_sttp(request.POST)
+            form4 = forms.form_book(request.POST)
+
+
+            if form1.is_valid():
+                print(year)
+
+                obj1 = form1.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()
+
+            #
+            # if form2.is_valid():
+            #     obj = form2.save(commit=False)
+            #     obj.info = request.user
+            #     obj.year = year
+            #
+            #     obj.save()
+            #
+            #
+            #
+            # if form3.is_valid():
+            #     obj = form3.save(commit=False)
+            #     obj.info = request.user
+            #
+            #     obj.save()
+
+
+
+            if form4.is_valid():
+                obj4 = form4.save(commit=False)
+                obj4.info = request.user
+                obj4.year = year
+
+                obj4.save()
+
+                return HttpResponseRedirect('/first_year')
+
+
+
+        context = {
+                'data0':data0,
+                # 'data1':data1,
+                'data2':data2,
+                # 'data3':data3,
+                'form1':form1,
+                # 'form2':form2,
+                # 'form3':form3,
+                'form4':form4,
+                'current_year':year
+            }
+
+        return render(request,'first_new.html',context = context)
+
 
 
 
@@ -111,7 +206,7 @@ def principal_second(request,dept):
 
 
 def principal_first(request):
-    
+
 
     data1 = Department.objects.all()
 
@@ -130,30 +225,30 @@ def principal_first(request):
 def decide(request):
 
     if request.user.is_assistant_professor():
-       
-        return HttpResponseRedirect("/index/")
-       
+
+        return HttpResponseRedirect("/first_year/")
+
     elif request.user.is_associate_professor():
         return HttpResponseRedirect("/index/")
-        
+
 
     elif request.user.is_professor():
         return HttpResponseRedirect("/index/")
-        
+
 
     elif request.user.is_hod():
-       
+
         return HttpResponseRedirect("/index/")
-       
+
 
     elif request.user.is_principal():
         return HttpResponseRedirect("/first/")
-        
-       
+
+
 
     elif request.user.is_ao():
         return HttpResponseRedirect("/first/")
-        
+
 
 
 
@@ -163,10 +258,10 @@ def fdp1(request,year):
 
 
     if fdp.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_fdp/'+year)
 
-    
+
     if request.method == 'POST':
         # status = User.objects.get(username=request.user)
         form = forms.form_fdp(request.POST)
@@ -174,7 +269,7 @@ def fdp1(request,year):
 
         if form.is_valid():
             print(year)
-            
+
             obj = form.save(commit=False)
             obj.info = request.user
             obj.year = year
@@ -232,7 +327,7 @@ def fdp1_review(request,dept,year):
 def ref_course1(request,year):
     form = forms.form_refreshers_course()
     if refreshers_course.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_ref_course/'+year)
 
     if request.method == 'POST':
@@ -295,9 +390,9 @@ def ref_course1_review(request,dept,year):
 def sttp1(request,year):
     form = forms.form_sttp()
     if sttp.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_sttp/'+year)
-    
+
     if request.method == 'POST':
 
 
@@ -324,7 +419,7 @@ def sttp1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_sttp.html',context=context)    
+    return render(request,'preview_sttp.html',context=context)
 
 def sttp1_review(request,dept,year):
     data1 = User.objects.filter(department__name=dept).values()
@@ -358,7 +453,7 @@ def sttp1_review(request,dept,year):
 def book1(request,year):
     form = forms.form_book()
     if book.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_book/'+year)
     if request.method == 'POST':
 
@@ -382,7 +477,7 @@ def book1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_book.html',context=context) 
+    return render(request,'preview_book.html',context=context)
 
 def book1_review(request,dept,year):
     data1 = User.objects.filter(department__name=dept).values()
@@ -416,7 +511,7 @@ def book1_review(request,dept,year):
 def interaction1(request,year):
     form = forms.form_interaction()
     if interaction.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_interaction/'+year)
 
     if request.method == 'POST':
@@ -442,7 +537,7 @@ def interaction1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_interaction.html',context=context)     
+    return render(request,'preview_interaction.html',context=context)
 
 def interaction1_review(request,dept,year):
     data1 = User.objects.filter(department__name=dept).values()
@@ -475,7 +570,7 @@ def interaction1_review(request,dept,year):
 def honours1(request,year):
     form = forms.form_honours()
     if honours.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_honours/'+year)
     if request.method == 'POST':
 
@@ -505,7 +600,7 @@ def honours1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_honours.html',context=context) 
+    return render(request,'preview_honours.html',context=context)
 
 
 def honours1_review(request,dept,year):
@@ -541,7 +636,7 @@ def honours1_review(request,dept,year):
 def online_courses1(request,year):
     form = forms.form_online_courses()
     if online_courses.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_online_courses/'+year)
     if request.method == 'POST':
 
@@ -563,7 +658,7 @@ def online_courses1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_online_courses.html',context=context) 
+    return render(request,'preview_online_courses.html',context=context)
 
 
 def online_courses1_review(request,dept,year):
@@ -599,7 +694,7 @@ def online_courses1_review(request,dept,year):
 def consultancy1(request,year):
     form = forms.form_counsltancy()
     if counsltancy.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_consultancy/'+year)
     if request.method == 'POST':
 
@@ -623,7 +718,7 @@ def consultancy1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_consultancy.html',context=context) 
+    return render(request,'preview_consultancy.html',context=context)
 
 def consultancy1_review(request,dept,year):
     data1 = User.objects.filter(department__name=dept).values()
@@ -657,7 +752,7 @@ def consultancy1_review(request,dept,year):
 def phd_guide1(request,year):
     form = forms.form_phd_guide()
     if phd_guide.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_phd_guide/'+year)
     if request.method == 'POST':
 
@@ -679,7 +774,7 @@ def phd_guide1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_phd_guide.html',context=context) 
+    return render(request,'preview_phd_guide.html',context=context)
 
 def phd_guide1_review(request,dept,year):
     data1 = User.objects.filter(department__name=dept).values()
@@ -714,7 +809,7 @@ def phd_guide1_review(request,dept,year):
 def phd_self1(request,year):
     form = forms.form_phd_self()
     if phd_self.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_phd_self/'+year)
     if request.method == 'POST':
 
@@ -736,7 +831,7 @@ def phd_self1_preview(request,year):
             'key':data1
         }
     print(data1)
-    return render(request,'preview_phd_self.html',context=context) 
+    return render(request,'preview_phd_self.html',context=context)
 
 
 def phd_self1_review(request,dept,year):
@@ -771,7 +866,7 @@ def phd_self1_review(request,dept,year):
 def conference_journal1(request,year):
     form = forms.form_conference_journal()
     if conference_journal.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_conference_journal/'+year)
     if request.method == 'POST':
 
@@ -830,7 +925,7 @@ def conference_journal1_review(request,dept,year):
 def funded_projects1(request,year):
     form = forms.form_funding()
     if funding.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_funded_projects/'+year)
     if request.method == 'POST':
 
@@ -888,7 +983,7 @@ def funded_projects1_review(request,dept,year):
 def open_courses1(request,year):
     form = forms.form_open_courses()
     if open_courses.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_open_courses/'+year)
     if request.method == 'POST':
 
@@ -941,13 +1036,13 @@ def open_courses1_review(request,dept,year):
     response['Content-Disposition'] = 'attachment; filename="open_courses_report.xlsx"'
     return response
 
-    
+
 
 
 def exclusive_research1(request,year):
     form = forms.form_exclusive_research()
     if exclusive_research.objects.filter(info=request.user).filter(year=year):
-        
+
         return HttpResponseRedirect('/preview_exclusive_research/'+year)
     if request.method == 'POST':
 
@@ -999,4 +1094,3 @@ def exclusive_research1_review(request,dept,year):
     response = HttpResponse(save_virtual_workbook(wb), content_type='application/vnd.ms-excel')
     response['Content-Disposition'] = 'attachment; filename="exclusive_research_report.xlsx"'
     return response
-

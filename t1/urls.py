@@ -25,18 +25,24 @@ urlpatterns = [
 
     url(r'^fims/(?P<dept>[\w\-]+)$', views.principal_second, name="principal_second"),
 
+    url(r'^first_year/', views.first_year, name="first_year"),
 
-    
-
-
-
+    url(r'^first_new/(?P<year>[\w\-]+)$',views.first_new,name="first_new"),
 
 
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
 
 
     url(r'^fdp/(?P<year>[\w\-]+)$',views.fdp1,name="fdp1"),
@@ -104,7 +110,7 @@ urlpatterns = [
     url(r'^preview_open_courses/(?P<year>[\w\-]+)$',views.open_courses1_preview,name="open_courses1_preview"),
 
     url(r'^preview_exclusive_research/(?P<year>[\w\-]+)$',views.exclusive_research1_preview,name="exclusive_research1_preview"),
-    
+
 
 
 
@@ -149,7 +155,7 @@ urlpatterns = [
 
 
 
-    
+
 
 
 

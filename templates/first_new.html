@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</head>
+<body>
+
+  <div class="ui attached stackable menu">
+    <div class="ui container">
+      <a class="item">
+        <i class="home icon"></i> Home
+      </a>
+      <a class="item">
+        <i class="grid layout icon"></i> Browse
+      </a>
+      <a class="item">
+        <i class="mail icon"></i> Messages
+      </a>
+      <div class="ui simple dropdown item">
+        More
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a class="item"><i class="globe icon"></i> Choose Language</a>
+          <a class="item"><i class="settings icon"></i> Account Settings</a>
+        </div>
+      </div>
+      <div class="right item">
+        <div class="ui input"><input type="text" placeholder="Search..."></div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div style="margin:3%;">
+
+	<div class="ui grid">
+  <div class="two wide column">
+    <div class="ui vertical fluid tabular menu">
+      {% for year in data2 %}
+      {% if current_year == year.year %}
+      <a class="item active">
+        {{year.year}}
+      </a>
+      {% else %}
+      <a class="item">
+        {{year.year}}
+      </a>
+      {% endif %}
+
+      {% endfor %}
+
+    </div>
+  </div>
+  <div class="fourteen wide stretched column">
+
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first">Program's attended</a>
+  <a class="item" data-tab="second">Books/Chapter</a>
+  <a class="item" data-tab="third">Interaction</a>
+  <a class="item" data-tab="fourth">Honours</a>
+  <a class="item" data-tab="five">Online courses</a>
+  <a class="item" data-tab="six">Counsultancy</a>
+  <a class="item" data-tab="seven">PHD Information</a>
+  <a class="item" data-tab="eight">Journal/Conference</a>
+  <a class="item" data-tab="nine">Funded Projects</a>
+</div>
+
+
+
+
+
+<div class="ui bottom attached tab segment active" data-tab="first">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">QIP</a>
+</div>
+
+</div>
+  
+
+<div class="ui bottom attached tab segment" data-tab="first_first">
+<!-- 	FDP
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">QIP</a>
+</div>
+ <div class="ui raised segment">
+
+		  <h4 class="ui header">Conducted/Organised</h4>
+
+		    <div class="ui form">
+		  <div class="one fields">
+		    <div class="six wide field">
+		      <label>Name</label>
+		      {% render_field form1.conducted_name class="form-control" %}
+		    </div>
+
+		  </div>
+
+		  <div class="two fields">
+		    <div class="field">
+		      <label>Date from</label>
+		      {% render_field form1.conducted_from class="form-control" id="datepicker1" %}
+		    </div>
+
+		    <div class="field">
+		      <label>Date to</label>
+		      {% render_field form1.conducted_to class="form-control" id="datepicker2" %}
+		    </div>
+		</div>
+
+		<div class="one fields">
+		  <div class="ten wide field">
+		    <label>Topic</label>
+		    {% render_field form1.conducted_topic class="form-control" %}
+		  </div>
+
+		</div>
+
+
+		<div class="two fields">
+		  <div class="field">
+		    <label>No. of participants</label>
+		    {% render_field form1.conducted_participants class="form-control" %}
+		  </div>
+
+		  <div class="field">
+		    <label>No. of speakers invited</label>
+		  {% render_field form1.conducted_speakers class="form-control" %}
+		  </div>
+		</div>
+
+
+
+		</div>
+
+
+
+
+
+		</div>
+
+
+		<!-- Attended -->
+
+		<div class="ui raised segment" style="margin-top:2%; margin-bottom:5%;">
+		<h4 class="ui header">Attended</h4>
+
+
+
+		  <div class="ui form">
+		<div class="one fields">
+		  <div class="six wide field">
+		    <label>Name</label>
+		    {% render_field form1.attended_name class="form-control" %}
+		  </div>
+
+		</div>
+
+		<div class="two fields">
+		  <div class="field">
+		    <label>Date from</label>
+		    {% render_field form1.attended_from class="form-control" id="datepicker3" %}
+		  </div>
+
+		  <div class="field">
+		    <label>Date to</label>
+		    {% render_field form1.attended_to class="form-control" id="datepicker4" %}
+		  </div>
+		</div>
+
+		<div class="one fields">
+		<div class="ten wide field">
+		  <label>Topic</label>
+		  {% render_field form1.attended_topic class="form-control" %}
+		</div>
+
+		</div>
+
+
+		<div class="one fields">
+		<div class="field">
+		  <label>Venue</label>
+		  {% render_field form1.attended_venue class="form-control" %}
+		</div>
+
+		</div>
+
+		<div class="one fields">
+		<div class="field">
+		  <label>Name of college</label>
+		  {% render_field form1.attended_college class="form-control" %}
+		</div>
+
+		</div>
+
+
+		</div>
+
+
+
+		</div>
+</div>
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="first_second">
+<!-- 	STTP
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item active" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">QIP</a>
+</div>
+
+     
+
+	No content STTP
+</div>
+
+
+
+<!-- -------------------------------------------------------------------
+ -->
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="first_third">
+<!-- 	Refresher's course
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item active" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">QIP</a>
+</div>
+
+     
+
+No content Refresher's course
+
+</div>
+
+
+
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="first_fourth">
+<!-- 	QIP
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item active" data-tab="first_fourth">QIP</a>
+</div>
+
+
+<p>No content QIP</p>
+
+     
+
+	
+
+</div>
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="second">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="second_first">Books</a>
+  <a class="item" data-tab="second_second">Chapters</a>
+ 
+</div>
+
+</div>
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="second_first">
+<!-- 	Books
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="second_first">Book</a>
+  <a class="item" data-tab="second_second">Chapter</a>
+ 
+</div>
+
+
+<p>No content Books</p>
+
+     
+
+	
+
+</div>
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="second_second">
+<!-- 	Chapters
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="second_first">Book</a>
+  <a class="item active" data-tab="second_second">Chapter</a>
+ 
+</div>
+
+
+<p>No content Chapters</p>
+
+     
+
+	
+
+</div>
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="third_first">Seminar</a>
+  <a class="item" data-tab="third_second">Technical Talks</a>
+  <a class="item" data-tab="third_third">Session chair</a>
+ 
+</div>
+
+</div>
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third_first">
+<!-- 	Seminars
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item active" data-tab="third_first">Seminar</a>
+  <a class="item" data-tab="third_second">Technical Talks</a>
+  <a class="item" data-tab="third_third">Session chair</a>
+ 
+</div>
+
+
+<p>No content Seminar</p>
+
+</div>
+
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third_second">
+<!-- 	Technical talks
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="third_first">Seminar</a>
+  <a class="item active" data-tab="third_second">Technical Talks</a>
+  <a class="item" data-tab="third_third">Session chair</a>
+ 
+</div>
+
+
+<p>No content Technical talks</p>
+
+</div>
+
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third_third">
+<!-- 	Session chair
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="third_first">Seminar</a>
+  <a class="item" data-tab="third_second">Technical Talks</a>
+  <a class="item active" data-tab="third_third">Session chair</a>
+ 
+</div>
+
+
+<p>No content Session chair</p>
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="fourth_first">National</a>
+  <a class="item" data-tab="fourth_second">International</a>
+  <a class="item" data-tab="fourth_third">State</a>
+ 
+</div>
+
+</div>
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth_first">
+<!-- 	National
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item active" data-tab="fourth_first">National</a>
+  <a class="item" data-tab="fourth_second">International</a>
+  <a class="item" data-tab="fourth_third">State</a>
+ 
+</div>
+
+
+<p>No content National</p>
+
+</div>
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth_second">
+<!-- 	Interational
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="fourth_first">National</a>
+  <a class="item active" data-tab="fourth_second">International</a>
+  <a class="item" data-tab="fourth_third">State</a>
+ 
+</div>
+
+
+<p>No content Interational</p>
+
+</div>
+
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth_third">
+<!-- 	state
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="fourth_first">National</a>
+  <a class="item" data-tab="fourth_second">International</a>
+  <a class="item active" data-tab="fourth_third">State</a>
+ 
+</div>
+
+
+<p>No content state</p>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="five">
+<!-- online course
+ --> 
+<p>No content online course</p>
+
+</div>
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="six">
+<!-- counsultancy
+ --> 
+<p>No content counsultancy </p>
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="seven">
+
+
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="seven_first">Guidance</a>
+  <a class="item" data-tab="seven_second">Pursuing Details</a>
+ 
+ 
+</div>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="seven_first">
+<!-- 	Guidance
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="seven_first">Guidance</a>
+  <a class="item" data-tab="seven_second">Pursuing Details</a>
+ 
+</div>
+
+
+<p>No content Guidance</p>
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="seven_second">
+<!-- 	Pursuing Details
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="seven_first">Guidance</a>
+  <a class="item active" data-tab="seven_second">Pursuing Details</a>
+ 
+</div>
+
+
+<p>No content Pursuing Details</p>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="eight">
+
+
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="eight_first">Journals</a>
+  <a class="item" data-tab="eight_second">Conferences</a>
+ 
+ 
+</div>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="eight_first">
+<!-- 	Journals
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="eight_first">Journals</a>
+  <a class="item" data-tab="eight_second">Conferences</a>
+ 
+</div>
+
+
+<p>No content Journals</p>
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="eight_second">
+<!-- 	Conferences
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="eight_first">Journals</a>
+  <a class="item active" data-tab="eight_second">Conferences</a>
+ 
+</div>
+
+
+<p>No content Conferences</p>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="nine">
+<!-- Funded projects
+ --> 
+<p>No content Funded projects</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$(function(){
+    $('.menu .item').tab();
+    });
+
+</script>
