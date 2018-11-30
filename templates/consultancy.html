@@ -64,36 +64,30 @@
 
   <div class="one fields">
     <div class="six wide field">
-      <label>Type of consultancy</label>
+      <label>Title</label>
       {% render_field form.consultancy_type class="form-control" %}
   </div>
     </div>
 
     <div class="two fields">
     <div class="field">
-      <label>from</label>
+      <label>Approval Date</label>
       {% render_field form.from_date class="form-control" id="datepicker1" %}
     </div>
 
     <div class="field">
-      <label>to</label>
+      <label>Value</label>
       {% render_field form.to_date class="form-control" id="datepicker2" %}
     </div>
 </div>
+<div class="one fields">
+  <div class="twelve wide field">
+    <label>Consultancy status</label>
+    {% render_field form.brief_remarks class="form-control" %}
+    
+  </div>
 
-<div class="two fields">
-    <div class="field">
-      <label>Amount</label>
-      {% render_field form.amount class="form-control" %}
-    </div>
-
-    <div class="field">
-      <label>Consultancy status</label>
-      {% render_field form.consultancy_status class="form-control" %}
-    </div>
 </div>
-
-
 
 
 <div class="one fields">
@@ -104,6 +98,7 @@
   </div>
 
 </div>
+
 
 
 </div>

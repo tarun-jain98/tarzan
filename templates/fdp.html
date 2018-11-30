@@ -57,6 +57,14 @@
     {% csrf_token %}
 
     <div class="ui form">
+      <div class="one fields">
+    <div class="six wide field">
+      <label>FDP type</label>
+      {% render_field form.conducted_name class="form-control" %}
+    </div>
+
+  </div>
+
   <div class="one fields">
     <div class="six wide field">
       <label>Name</label>
@@ -64,6 +72,14 @@
     </div>
 
   </div>
+  <div class="one fields">
+  <div class="six wide field">
+    <label>Supported by</label>
+    {% render_field form.conducted_topic class="form-control" %}
+  </div>
+
+</div>
+
 
   <div class="two fields">
     <div class="field">
@@ -77,23 +93,17 @@
     </div>
 </div>
 
+
+
 <div class="one fields">
-  <div class="ten wide field">
-    <label>Topic</label>
-    {% render_field form.conducted_topic class="form-control" %}
-  </div>
-
-</div>
-
-
-<div class="two fields">
-  <div class="field">
-    <label>No. of participants</label>
+  <div class="six wide field">
+    <label>Venue</label>
     {% render_field form.conducted_participants class="form-control" %}
   </div>
-
-  <div class="field">
-    <label>No. of speakers invited</label>
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
   {% render_field form.conducted_speakers class="form-control" %}
   </div>
 </div>

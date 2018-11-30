@@ -55,7 +55,7 @@
     <div class="ui form">
   <div class="one fields">
     <div class="six wide field">
-      <label>No. of books</label>
+      <label>Number</label>
       {% render_field form.number class="form-control" %}
     </div>
 
@@ -63,7 +63,7 @@
 
   <div class="one fields">
     <div class="six wide field">
-      <label>Author type</label>
+      <label>Title</label>
     {% render_field form.author class="form-control" %}
     </div>
 
@@ -71,7 +71,38 @@
 
 <div class="one fields">
   <div class="six wide field">
-    <label>Name of Publishers</label>
+    <label>Author</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Edition</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Volume</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Publisher</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>ISBN</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
     {% render_field form.name_publisher class="form-control" %}
   </div>
 

@@ -215,10 +215,78 @@ No content Refresher's course
  
 </div>
 
+<div class="ui container" style="margin-top:3%;">
 
-<p>No content Books</p>
 
-     
+  <div class="ui raised segment">
+<p><form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Number</label>
+      {% render_field form_book.number class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+    {% render_field form_book.title class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Author</label>
+    {% render_field form_book.author class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Edition</label>
+    {% render_field form_book.edition class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Volume</label>
+    {% render_field form_book.volume class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Publisher</label>
+    {% render_field form_book.publisher class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>ISBN</label>
+    {% render_field form.isbn class="form-control" %}
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_book.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+  </form>
+</p>
+
+ </div>
+ </div>    
 
 	
 
@@ -240,13 +308,83 @@ No content Refresher's course
  
 </div>
 
+<div class="ui container" style="margin-top:3%;">
 
-<p>No content Chapters</p>
 
+  <div class="ui raised segment">
+<p> <form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Number</label>
+      {% render_field form_chapter.number class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+    {% render_field form_chapter.title class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Author</label>
+    {% render_field form_chapter.author class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Name of the book</label>
+    {% render_field form_chapter.name_book class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Chapter No.</label>
+    {% render_field form_chapter.chapter_no class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Page No.</label>
+    {% render_field form_chapter.page_no class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Publisher</label>
+    {% render_field form_chapter.publisher class="form-control" %}
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_chapter.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+  </form>
+
+
+</p>
      
 
 	
 
+</div>
+</div>
 </div>
 
 
@@ -282,7 +420,51 @@ No content Refresher's course
 </div>
 
 
-<p>No content Seminar</p>
+<p> <form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_seminar.title class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Topic</label>
+    {% render_field form_seminar.topic class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_seminar.venue class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Attendance No.</label>
+    {% render_field form_seminar.no_attended class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_seminar.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+</form>
+
+</p>
 
 </div>
 
@@ -305,7 +487,50 @@ No content Refresher's course
 </div>
 
 
-<p>No content Technical talks</p>
+<p><form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_technical_talk.title class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Topic</label>
+    {% render_field form_technical_talk.topic class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_technical_talk.venue class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Attendance No.</label>
+    {% render_field form_technical_talk.no_attended class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_technical_talk.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+</form>
+</p>
 
 </div>
 
@@ -329,7 +554,50 @@ No content Refresher's course
 </div>
 
 
-<p>No content Session chair</p>
+<p><form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_session_chair.title class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Topic</label>
+    {% render_field form_session_chair.topic class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_session_chair.venue class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Attendance No.</label>
+    {% render_field form_session_chair.no_attended class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_session_chair.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+</form>
+</p>
 
 </div>
 
@@ -369,7 +637,44 @@ No content Refresher's course
 </div>
 
 
-<p>No content National</p>
+<p><form method="post">
+    {% csrf_token %}
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Award Name</label>
+    {% render_field form.national_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of the Organisation</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+<div class="one fields">
+<div class="ten wide field">
+  <label>Area of achievement</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form.national_brief_remarks class="form-control" %}
+</div>
+</div>
+
+
+</div>
+</form></p>
 
 </div>
 
@@ -391,7 +696,44 @@ No content Refresher's course
 </div>
 
 
-<p>No content Interational</p>
+<p><form method="post">
+    {% csrf_token %}
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Award Name</label>
+    {% render_field form.national_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of the Organisation</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+<div class="one fields">
+<div class="ten wide field">
+  <label>Area of achievement</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form.national_brief_remarks class="form-control" %}
+</div>
+</div>
+
+
+</div>
+</form></p>
 
 </div>
 
@@ -414,7 +756,44 @@ No content Refresher's course
 </div>
 
 
-<p>No content state</p>
+<p><form method="post">
+    {% csrf_token %}
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Award Name</label>
+    {% render_field form.national_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of the Organisation</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+<div class="one fields">
+<div class="ten wide field">
+  <label>Area of achievement</label>
+   {% render_field form.national_name_organization class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form.national_brief_remarks class="form-control" %}
+</div>
+</div>
+
+
+</div>
+</form></p>
 
 </div>
 
@@ -425,7 +804,58 @@ No content Refresher's course
 <div class="ui bottom attached tab segment" data-tab="five">
 <!-- online course
  --> 
-<p>No content online course</p>
+<p><form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of course</label>
+      {% render_field form.name_course class="form-control" %}
+  </div>
+    </div>
+
+ 
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Organisation/Agency Name</label>
+      {% render_field form.name_organization class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Date of completion</label>
+     {% render_field form.date_completed class="form-control" id="datepicker1" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+    {% render_field form.brief_remarks class="form-control" %}
+
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Grade (If any)</label>
+    {% render_field form.grade class="form-control" %}
+    
+  </div>
+
+</div>
+
+ </div>
+
+
+
+
+  </form>
+</p>
 
 </div>
 
@@ -438,7 +868,61 @@ No content Refresher's course
 <div class="ui bottom attached tab segment" data-tab="six">
 <!-- counsultancy
  --> 
-<p>No content counsultancy </p>
+<p><form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of organisation</label>
+      {% render_field form.name_organization class="form-control" %}
+  </div>
+    </div>
+
+  
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form.consultancy_type class="form-control" %}
+  </div>
+    </div>
+
+    <div class="two fields">
+    <div class="field">
+      <label>Approval Date</label>
+      {% render_field form.from_date class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="field">
+      <label>Value</label>
+      {% render_field form.to_date class="form-control" id="datepicker2" %}
+    </div>
+</div>
+<div class="one fields">
+  <div class="twelve wide field">
+    <label>Consultancy status</label>
+    {% render_field form.brief_remarks class="form-control" %}
+    
+  </div>
+
+</div>
+
+
+<div class="one fields">
+  <div class="twelve wide field">
+    <label>Remarks</label>
+    {% render_field form.brief_remarks class="form-control" %}
+    
+  </div>
+
+</div>
+
+
+
+</div>
+
+  </form>
+ </p>
 
 </div>
 
@@ -474,7 +958,352 @@ No content Refresher's course
 </div>
 
 
-<p>No content Guidance</p>
+<p> <div class="ui container" style="margin-top:3%;">
+
+  <div class="ui raised segment">
+    <form method="post">
+
+    <div class="ui form">
+    <div class="eight fields">
+    <div class="two wide field">
+      <label>Name of Student</label>
+      {% render_field form_guidance.name_student_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Type of Student</label>
+      {% render_field form_guidance.int_ext_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>University name</label>
+      {% render_field form_guidance.name_university_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Research Centre Name</label>
+      {% render_field form_guidance.name_research_centre_1 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Year of Registration</label>
+      {% render_field form_guidance.year_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Area/Domain</label>
+      {% render_field form_guidance.area_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>PHD Status</label>
+      {% render_field form_guidance.phd_status_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Co guide (if any)</label>
+      {% render_field form_guidance.co_guide_1 class="form-control" %}
+    </div>
+
+</div>
+
+<div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_2 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_2 class="form-control" %}
+    </div>
+
+</div>
+    <div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_3 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_3 class="form-control" %}
+    </div>
+
+</div>
+  <div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_4 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_4 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_5 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_5 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_6 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_6 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_7 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_7 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_student_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.int_ext_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_university_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.name_research_centre_8 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      
+      {% render_field form_guidance.year_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_8 class="form-control" %}
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+</form>
+</div>
+</div>
+
+
+
+   </p>
 
 </div>
 
@@ -493,10 +1322,77 @@ No content Refresher's course
 </div>
 
 
-<p>No content Pursuing Details</p>
+<p><div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+  <form method="post">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of Guide</label>
+      {% render_field form.number class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of Co-guide</label>
+    {% render_field form.author class="form-control" %}
+    </div>
 
 </div>
 
+<div class="one fields">
+  <div class="six wide field">
+    <label>University Name</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Research Centre Name</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Year of Registration</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Area/Domain</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>PHD Status</label>
+    {% render_field form.name_publisher class="form-control" %}
+  </div>
+
+
+</div>
+
+
+
+
+</div>
+
+  </form>
+
+
+
+</div>
+</div>
+
+</p>
+
+</div>
 
 <!-- -------------------------------------- -->
 
