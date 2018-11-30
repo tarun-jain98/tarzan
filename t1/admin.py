@@ -18,10 +18,15 @@ admin.site.register(agency_type)
 admin.site.register(consultancy_type)
 admin.site.register(investigator_type)
 
-admin.site.register(yes_no)
+
 admin.site.register(index_type)
 
 admin.site.register(int_ext)
+
+admin.site.register(status)
+admin.site.register(support)
+admin.site.register(skills)
+
 
 class UserResource(resources.ModelResource):
 	class Meta:
@@ -104,40 +109,79 @@ class Sttp(ImportExportModelAdmin):
 		return instance.info.first_name	
 
 
-class interactioN(resources.ModelResource):
+class workshoP(resources.ModelResource):
 	class Meta:
-		model = interaction
+		model = workshop
 
 
-@admin.register(interaction)
-class Interaction(ImportExportModelAdmin):
+@admin.register(workshop)
+class Workshop(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
-	resource_class = interactioN
+	resource_class = workshoP
 
 	def name(self, instance):
 		return instance.info.first_name	
 
 
-class open_courseS(resources.ModelResource):
+
+class seminaR(resources.ModelResource):
 	class Meta:
-		model = open_courses
+		model = seminar
 
 
-@admin.register(open_courses)
-class Open_courses(ImportExportModelAdmin):
+@admin.register(seminar)
+class Seminar(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
-	resource_class = open_courseS
+	resource_class = seminaR
 
 	def name(self, instance):
 		return instance.info.first_name	
+
+
+class technical_talK(resources.ModelResource):
+	class Meta:
+		model = technical_talk
+
+
+@admin.register(technical_talk)
+class Technical_talk(ImportExportModelAdmin):
+
+
+	list_display = ('name',)
+	search_fields = ('info__first_name',)
+	ordering = ('id',)
+	resource_class = technical_talK
+
+	def name(self, instance):
+		return instance.info.first_name	
+
+
+class session_chaiR(resources.ModelResource):
+	class Meta:
+		model = session_chair
+
+
+@admin.register(session_chair)
+class Session_chair(ImportExportModelAdmin):
+
+
+	list_display = ('name',)
+	search_fields = ('info__first_name',)
+	ordering = ('id',)
+	resource_class = session_chaiR
+
+	def name(self, instance):
+		return instance.info.first_name	
+
+
 
 class online_courseS(resources.ModelResource):
 	class Meta:
@@ -211,39 +255,57 @@ class Funding(ImportExportModelAdmin):
 		return instance.info.first_name
 
 
-class exclusive_researcH(resources.ModelResource):
+# class exclusive_researcH(resources.ModelResource):
+# 	class Meta:
+# 		model = exclusive_research
+
+
+# @admin.register(exclusive_research)
+# class Exclusive_research(ImportExportModelAdmin):
+
+
+# 	list_display = ('name',)
+# 	search_fields = ('info__first_name',)
+# 	ordering = ('id',)
+# 	resource_class = exclusive_researcH
+
+# 	def name(self, instance):
+# 		return instance.info.first_name	
+
+class conferencE(resources.ModelResource):
 	class Meta:
-		model = exclusive_research
+		model = conference
 
 
-@admin.register(exclusive_research)
-class Exclusive_research(ImportExportModelAdmin):
+@admin.register(conference)
+class Conference(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
-	resource_class = exclusive_researcH
+	resource_class = conferencE
 
 	def name(self, instance):
 		return instance.info.first_name	
 
-class conference_journaL(resources.ModelResource):
+class journaL(resources.ModelResource):
 	class Meta:
-		model = conference_journal
+		model = journal
 
 
-@admin.register(conference_journal)
-class Conference_journal(ImportExportModelAdmin):
+@admin.register(journal)
+class Journal(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
-	resource_class = conference_journaL
+	resource_class = journaL
 
 	def name(self, instance):
-		return instance.info.first_name		
+		return instance.info.first_name	
+
 
 class booK(resources.ModelResource):
 	class Meta:
@@ -261,6 +323,24 @@ class Book(ImportExportModelAdmin):
 
 	def name(self, instance):
 		return instance.info.first_name	
+
+class chapteR(resources.ModelResource):
+	class Meta:
+		model = chapter
+
+
+@admin.register(chapter)
+class Chapter(ImportExportModelAdmin):
+
+
+	list_display = ('name',)
+	search_fields = ('info__first_name',)
+	ordering = ('id',)
+	resource_class = chapteR
+
+	def name(self, instance):
+		return instance.info.first_name	
+
 
 class phd_guidE(resources.ModelResource):
 	class Meta:
