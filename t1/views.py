@@ -109,9 +109,11 @@ def principal_second(request,dept):
 
 def first_year(request):
     data0 = Year.objects.all()
+    data1 = User.objects.get(username=request.user)
 
     context = {
-            'data0':data0
+            'data0':data0,
+            'data1':data1
         }
 
     return render(request,'first_year.html',context=context)
@@ -126,8 +128,32 @@ def first_new(request,year):
 
     else:
   
-        form1 = forms.form_fdp()
-        form4 = forms.form_book()
+        form_fdp = forms.form_fdp()
+        form_refreshers_course = forms.form_refreshers_course()
+        form_sttp = forms.form_sttp()
+        form_workshop = forms.form_workshop()
+
+        form_book = forms.form_book()
+        form_chapter = forms.form_chapter()
+
+        form_seminar = forms.form_seminar()
+        form_technical_talk = forms.form_technical_talk()
+        form_session_chair = forms.form_session_chair()
+
+        form_honours = forms.form_honours()
+
+        form_online_courses = forms.form_online_courses()
+
+        form_counsltancy = forms.form_counsltancy()
+
+        form_guidance = forms.form_phd_guide()
+        form_pursuing_details = forms.form_phd_self()
+
+        form_conference = forms.form_conference()
+        form_journal = forms.form_journal()
+
+        form_funded_project = forms.form_funding()
+
 
 
         data0 = User.objects.get(username=request.user)
@@ -138,44 +164,200 @@ def first_new(request,year):
         # data1 = Field.objects.all()
         data2 = Year.objects.all()
         # data3 = zip(data1,data2)
-
+ 
         if request.method == 'POST':
-            # status = User.objects.get(username=request.user)
-            form1 = forms.form_fdp(request.POST)
-            # form2 = forms.form_refreshers_course(request.POST)
-            # form3 = forms.form_sttp(request.POST)
-            form4 = forms.form_book(request.POST)
+
+                
+            form_fdp = forms.form_fdp(request.POST)
+            form_refreshers_course = forms.form_refreshers_course(request.POST)
+            form_sttp = forms.form_sttp(request.POST)
+            form_workshop = forms.form_workshop(request.POST)
+
+            form_book = forms.form_book(request.POST)
+            form_chapter = forms.form_chapter(request.POST)
+
+            form_seminar = forms.form_seminar(request.POST)
+            form_technical_talk = forms.form_technical_talk(request.POST)
+            form_session_chair = forms.form_session_chair(request.POST)
+
+            form_honours = forms.form_honours(request.POST)
+
+            form_online_courses = forms.form_online_courses(request.POST)
+
+            form_counsltancy = forms.form_counsltancy(request.POST)
+
+            form_guidance = forms.form_phd_guide(request.POST)
+            form_pursuing_details = forms.form_phd_self(request.POST)
+
+            form_conference = forms.form_conference(request.POST)
+            form_journal = forms.form_journal(request.POST)
+
+            form_funded_project = forms.form_funding(request.POST)
 
 
-            if form1.is_valid():
-                print(year)
+            if form_fdp.is_valid():
+                
 
-                obj1 = form1.save(commit=False)
+                obj1 = form_fdp.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
                 obj1.save()
 
-            #
-            # if form2.is_valid():
-            #     obj = form2.save(commit=False)
-            #     obj.info = request.user
-            #     obj.year = year
-            #
-            #     obj.save()
-            #
-            #
-            #
-            # if form3.is_valid():
-            #     obj = form3.save(commit=False)
-            #     obj.info = request.user
-            #
-            #     obj.save()
+            if form_refreshers_course.is_valid():
+                
+
+                obj1 = form_refreshers_course.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()    
+
+
+            if form_sttp.is_valid():
+                
+
+                obj1 = form_sttp.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_workshop.is_valid():
+                
+
+                obj1 = form_workshop.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_book.is_valid():
+                
+
+                obj1 = form_book.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
 
 
 
-            if form4.is_valid():
-                obj4 = form4.save(commit=False)
+            if form_chapter.is_valid():
+                
+
+                obj1 = form_chapter.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+
+            if form_seminar.is_valid():
+                
+
+                obj1 = form_seminar.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_technical_talk.is_valid():
+                
+
+                obj1 = form_technical_talk.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_session_chair.is_valid():
+                
+
+                obj1 = form_session_chair.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+
+            if form_honours.is_valid():
+                
+
+                obj1 = form_honours.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_online_courses.is_valid():
+                
+
+                obj1 = form_online_courses.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save() 
+
+
+            if form_counsltancy.is_valid():
+                
+
+                obj1 = form_counsltancy.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save() 
+
+
+            if form_guidance.is_valid():
+                
+
+                obj1 = form_guidance.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save() 
+
+
+            if form_pursuing_details.is_valid():
+                
+
+                obj1 = form_pursuing_details.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+            if form_conference.is_valid():
+                
+
+                obj1 = form_conference.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_journal.is_valid():
+                
+
+                obj1 = form_journal.save(commit=False)
+                obj1.info = request.user
+                obj1.year = year
+
+                obj1.save()  
+
+
+            if form_funded_project.is_valid():
+                obj4 = form_funded_project.save(commit=False)
                 obj4.info = request.user
                 obj4.year = year
 
@@ -187,14 +369,32 @@ def first_new(request,year):
 
         context = {
                 'data0':data0,
-                # 'data1':data1,
                 'data2':data2,
-                # 'data3':data3,
-                'form1':form1,
-                # 'form2':form2,
-                # 'form3':form3,
-                'form4':form4,
-                'current_year':year
+                'current_year':year,
+                'form_fdp':form_fdp,
+                'form_refreshers_course':form_refreshers_course,
+                'form_sttp':form_sttp,
+                'form_workshop':form_workshop,
+                'form_book':form_book,
+                'form_chapter':form_chapter,
+
+                'form_seminar':form_seminar,
+                'form_technical_talk':form_technical_talk,
+                'form_session_chair':form_session_chair,
+
+                'form_honours':form_honours,
+                'form_online_courses':form_online_courses,
+                'form_counsltancy':form_counsltancy,
+
+                'form_guidance':form_guidance,
+                'form_pursuing_details':form_pursuing_details,
+                'form_conference':form_conference,
+                'form_journal':form_journal,
+
+                'form_funded_project':form_funded_project
+               
+                
+                
             }
 
         return render(request,'first_new.html',context = context)

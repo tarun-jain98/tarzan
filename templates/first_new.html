@@ -16,25 +16,22 @@
   <div class="ui attached stackable menu">
     <div class="ui container">
       <a class="item">
-        <i class="home icon"></i> Home
+        <i class="home icon"></i> FIMS
       </a>
-      <a class="item">
-        <i class="grid layout icon"></i> Browse
+
+       <a class="item">
+        Department of {{data0.department.name}}
       </a>
-      <a class="item">
-        <i class="mail icon"></i> Messages
-      </a>
-      <div class="ui simple dropdown item">
-        More
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <a class="item"><i class="edit icon"></i> Edit Profile</a>
-          <a class="item"><i class="globe icon"></i> Choose Language</a>
-          <a class="item"><i class="settings icon"></i> Account Settings</a>
-        </div>
-      </div>
+     
+    
+     
       <div class="right item">
-        <div class="ui input"><input type="text" placeholder="Search..."></div>
+         <a class="item">
+        Welcome, {{data0.first_name}}
+      </a>
+       <a class="item" href="/logout/">
+        <i class="power off icon"></i>
+      </a>
       </div>
     </div>
   </div>
@@ -85,7 +82,7 @@
   <a class="item" data-tab="first_first">FDP</a>
   <a class="item" data-tab="first_second">STTP</a>
   <a class="item" data-tab="first_third">Refrsher's Course</a>
-  <a class="item" data-tab="first_fourth">QIP</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
 </div>
 
 </div>
@@ -98,124 +95,11 @@
   <a class="item active" data-tab="first_first">FDP</a>
   <a class="item" data-tab="first_second">STTP</a>
   <a class="item" data-tab="first_third">Refrsher's Course</a>
-  <a class="item" data-tab="first_fourth">QIP</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
 </div>
- <div class="ui raised segment">
-
-		  <h4 class="ui header">Conducted/Organised</h4>
-
-		    <div class="ui form">
-		  <div class="one fields">
-		    <div class="six wide field">
-		      <label>Name</label>
-		      {% render_field form1.conducted_name class="form-control" %}
-		    </div>
-
-		  </div>
-
-		  <div class="two fields">
-		    <div class="field">
-		      <label>Date from</label>
-		      {% render_field form1.conducted_from class="form-control" id="datepicker1" %}
-		    </div>
-
-		    <div class="field">
-		      <label>Date to</label>
-		      {% render_field form1.conducted_to class="form-control" id="datepicker2" %}
-		    </div>
-		</div>
-
-		<div class="one fields">
-		  <div class="ten wide field">
-		    <label>Topic</label>
-		    {% render_field form1.conducted_topic class="form-control" %}
-		  </div>
-
-		</div>
 
 
-		<div class="two fields">
-		  <div class="field">
-		    <label>No. of participants</label>
-		    {% render_field form1.conducted_participants class="form-control" %}
-		  </div>
-
-		  <div class="field">
-		    <label>No. of speakers invited</label>
-		  {% render_field form1.conducted_speakers class="form-control" %}
-		  </div>
-		</div>
-
-
-
-		</div>
-
-
-
-
-
-		</div>
-
-
-		<!-- Attended -->
-
-		<div class="ui raised segment" style="margin-top:2%; margin-bottom:5%;">
-		<h4 class="ui header">Attended</h4>
-
-
-
-		  <div class="ui form">
-		<div class="one fields">
-		  <div class="six wide field">
-		    <label>Name</label>
-		    {% render_field form1.attended_name class="form-control" %}
-		  </div>
-
-		</div>
-
-		<div class="two fields">
-		  <div class="field">
-		    <label>Date from</label>
-		    {% render_field form1.attended_from class="form-control" id="datepicker3" %}
-		  </div>
-
-		  <div class="field">
-		    <label>Date to</label>
-		    {% render_field form1.attended_to class="form-control" id="datepicker4" %}
-		  </div>
-		</div>
-
-		<div class="one fields">
-		<div class="ten wide field">
-		  <label>Topic</label>
-		  {% render_field form1.attended_topic class="form-control" %}
-		</div>
-
-		</div>
-
-
-		<div class="one fields">
-		<div class="field">
-		  <label>Venue</label>
-		  {% render_field form1.attended_venue class="form-control" %}
-		</div>
-
-		</div>
-
-		<div class="one fields">
-		<div class="field">
-		  <label>Name of college</label>
-		  {% render_field form1.attended_college class="form-control" %}
-		</div>
-
-		</div>
-
-
-		</div>
-
-
-
-		</div>
+		No content FDP
 </div>
 
 
@@ -228,7 +112,7 @@
   <a class="item" data-tab="first_first">FDP</a>
   <a class="item active" data-tab="first_second">STTP</a>
   <a class="item" data-tab="first_third">Refrsher's Course</a>
-  <a class="item" data-tab="first_fourth">QIP</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
 </div>
 
      
@@ -252,7 +136,7 @@
   <a class="item" data-tab="first_first">FDP</a>
   <a class="item" data-tab="first_second">STTP</a>
   <a class="item active" data-tab="first_third">Refrsher's Course</a>
-  <a class="item" data-tab="first_fourth">QIP</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
 </div>
 
      
@@ -276,17 +160,17 @@ No content Refresher's course
 
 
 <div class="ui bottom attached tab segment" data-tab="first_fourth">
-<!-- 	QIP
+<!-- 	workshop
  -->
 	<div class="ui top attached tabular menu">
   <a class="item" data-tab="first_first">FDP</a>
   <a class="item" data-tab="first_second">STTP</a>
   <a class="item" data-tab="first_third">Refrsher's Course</a>
-  <a class="item active" data-tab="first_fourth">QIP</a>
+  <a class="item active" data-tab="first_fourth">Workshop</a>
 </div>
 
 
-<p>No content QIP</p>
+<p>No content workshop</p>
 
      
 

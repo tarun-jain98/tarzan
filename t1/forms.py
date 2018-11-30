@@ -40,19 +40,34 @@ class form_sttp(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info','year']
 
-
-class form_interaction(forms.ModelForm):
+class form_workshop(forms.ModelForm):
 	class Meta:
-		model = interaction
+		model = workshop
+		fields = '__all__'
+		exclude = ['info','year']	
+
+
+class form_seminar(forms.ModelForm):
+	class Meta:
+		model = seminar
 		fields = '__all__'
 		exclude = ['info','year']
 
-
-class form_open_courses(forms.ModelForm):
+class form_technical_talk(forms.ModelForm):
 	class Meta:
-		model = open_courses
+		model = technical_talk
 		fields = '__all__'
+
 		exclude = ['info','year']
+
+		
+class form_session_chair(forms.ModelForm):
+	class Meta:
+		model = session_chair
+		fields = '__all__'
+		exclude = ['info','year']			
+
+
 
 class form_honours(forms.ModelForm):
 	class Meta:
@@ -79,22 +94,36 @@ class form_funding(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info','year']
 
-class form_exclusive_research(forms.ModelForm):
+# class form_exclusive_research(forms.ModelForm):
+# 	class Meta:
+# 		model = exclusive_research
+# 		fields = '__all__'
+# 		exclude = ['info','year']	
+
+
+class form_conference(forms.ModelForm):
 	class Meta:
-		model = exclusive_research
+		model = conference
 		fields = '__all__'
 		exclude = ['info','year']
 
-
-class form_conference_journal(forms.ModelForm):
+class form_journal(forms.ModelForm):
 	class Meta:
-		model = conference_journal
+		model = journal
 		fields = '__all__'
+
 		exclude = ['info','year']
+
 
 class form_book(forms.ModelForm):
 	class Meta:
 		model = book
+		fields = '__all__'
+		exclude = ['info','year']
+
+class form_chapter(forms.ModelForm):
+	class Meta:
+		model = chapter
 		fields = '__all__'
 		exclude = ['info','year']
 
@@ -112,16 +141,4 @@ class form_phd_self(forms.ModelForm):
 		exclude = ['info','year']
 
 
-class form_open_courses(forms.ModelForm):
-	class Meta:
-		model = open_courses
-		fields = '__all__'
-		exclude = ['info','year']
 
-
-
-class form_exclusive_research(forms.ModelForm):
-	class Meta:
-		model = exclusive_research
-		fields = '__all__'
-		exclude = ['info','year']
