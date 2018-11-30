@@ -339,8 +339,8 @@ class honours(models.Model):
 		return self.info.first_name
 
 
-class counsltancy(models.Model):
-	# counsltancy_id = models.AutoField(primary_key=True)
+class consultancy(models.Model):
+	# consultancy_id = models.AutoField(primary_key=True)
 	name_organization = models.CharField(max_length=50, blank=True, null=True)
 	title = models.CharField(max_length=50, blank=True, null=True)
 	consultancy_type = models.ForeignKey('consultancy_type', on_delete=models.CASCADE,null=True)

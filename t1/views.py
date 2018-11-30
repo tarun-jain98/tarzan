@@ -144,7 +144,7 @@ def first_new(request,year):
 
         form_online_courses = forms.form_online_courses()
 
-        form_counsltancy = forms.form_counsltancy()
+        form_consultancy = forms.form_consultancy()
 
         form_guidance = forms.form_phd_guide()
         form_pursuing_details = forms.form_phd_self()
@@ -184,7 +184,7 @@ def first_new(request,year):
 
             form_online_courses = forms.form_online_courses(request.POST)
 
-            form_counsltancy = forms.form_counsltancy(request.POST)
+            form_consultancy = forms.form_consultancy(request.POST)
 
             form_guidance = forms.form_phd_guide(request.POST)
             form_pursuing_details = forms.form_phd_self(request.POST)
@@ -307,10 +307,10 @@ def first_new(request,year):
                 obj1.save() 
 
 
-            if form_counsltancy.is_valid():
+            if form_consultancy.is_valid():
                 
 
-                obj1 = form_counsltancy.save(commit=False)
+                obj1 = form_consultancy.save(commit=False)
                 obj1.info = request.user
                 obj1.year = year
 
@@ -384,7 +384,7 @@ def first_new(request,year):
 
                 'form_honours':form_honours,
                 'form_online_courses':form_online_courses,
-                'form_counsltancy':form_counsltancy,
+                'form_consultancy':form_consultancy,
 
                 'form_guidance':form_guidance,
                 'form_pursuing_details':form_pursuing_details,
@@ -892,13 +892,13 @@ def online_courses1_review(request,dept,year):
 
 
 def consultancy1(request,year):
-    form = forms.form_counsltancy()
-    if counsltancy.objects.filter(info=request.user).filter(year=year):
+    form = forms.form_consultancy()
+    if consultancy.objects.filter(info=request.user).filter(year=year):
 
         return HttpResponseRedirect('/preview_consultancy/'+year)
     if request.method == 'POST':
 
-        form = forms.form_counsltancy(request.POST)
+        form = forms.form_consultancy(request.POST)
 
         if form.is_valid():
             obj = form.save(commit=False)
@@ -913,7 +913,7 @@ def consultancy1(request,year):
     return render(request,'consultancy.html',{'form':form})
 
 def consultancy1_preview(request,year):
-    data1 = counsltancy.objects.filter(info=request.user).get(year=year)
+    data1 = consultancy.objects.filter(info=request.user).get(year=year)
     context={
             'key':data1
         }
@@ -931,7 +931,7 @@ def consultancy1_review(request,dept,year):
 
         dic["name"].append(data['first_name'])
 
-    df = pd.DataFrame(list(counsltancy.objects.filter(info__department__name=dept).filter(year=year).values()))
+    df = pd.DataFrame(list(consultancy.objects.filter(info__department__name=dept).filter(year=year).values()))
     df1 = pd.DataFrame.from_dict(dic)
 
     df2 = pd.merge(df1, df, left_on='info', right_on='info_id')
