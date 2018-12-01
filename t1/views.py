@@ -404,10 +404,50 @@ def first_new(request,year):
 
 def first_new_preview(request,year):
 
+    data0 = User.objects.get(username=request.user)
+
+    data2 = Year.objects.all()
+
     key_fdp = fdp.objects.filter(info=request.user).get(year=year)
+    key_refreshers_course = refreshers_course.filter(info=request.user).get(year=year)
+    key_sttp = sttp.objects.filter(info=request.user).get(year=year)
+    key_workshop = workshop.objects.filter(info=request.user).get(year=year)
+    key_seminar = seminar.objects.filter(info=request.user).get(year=year)
+    key_technical_talk = technical_talk.objects.filter(info=request.user).get(year=year)
+    key_session_chair = session_chair.objects.filter(info=request.user).get(year=year)
+    key_online_courses = online_courses.objects.filter(info=request.user).get(year=year)
+    key_honours = honours.objects.filter(info=request.user).get(year=year)
+    key_consultancy = consultancy.objects.filter(info=request.user).get(year=year)
+    key_funding = funding.objects.filter(info=request.user).get(year=year)
+    key_conference = conference.objects.filter(info=request.user).get(year=year)
+    key_journal = journal.objects.filter(info=request.user).get(year=year)
+    key_book = book.objects.filter(info=request.user).get(year=year)
+    key_chapter = chapter.objects.filter(info=request.user).get(year=year)
+    key_phd_guide = phd_guide.objects.filter(info=request.user).get(year=year)
+    key_phd_self = phd_self.objects.filter(info=request.user).get(year=year)
+
 
     context = {
-            'key_fdp':key_fdp
+            'current_year':year,
+
+            'data0':data0,
+            'data2':data2,
+            'key_fdp':key_fdp,
+            'key_refreshers_course':key_refreshers_course,
+            'key_sttp':key_sttp,
+            'key_workshop':key_workshop,
+            'key_seminar':key_seminar,
+            'key_technical_talk':key_technical_talk,
+            'key_online_courses':key_online_courses,
+            'key_honours':key_honours,
+            'key_consultancy':key_consultancy,
+            'key_funding':key_funding,
+            'key_conference':key_conference,
+            'key_journal':key_journal,
+            'key_book':key_book,
+            'key_chapter':key_chapter,
+            'key_phd_guide':key_phd_guide,
+            'key_phd_self':key_phd_self
 
         }
 
