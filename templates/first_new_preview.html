@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</head>
+<body>
+
+  <div class="ui attached stackable menu">
+    <div class="ui container">
+      <a class="item">
+        <i class="home icon"></i> FIMS
+      </a>
+
+       <a class="item">
+        Department of {{data0.department.name}}
+      </a>
+
+
+
+      <div class="right item">
+         <a class="item">
+        Welcome, {{data0.first_name}}
+      </a>
+       <a class="item" href="/logout/">
+        <i class="power off icon"></i>
+      </a>
+      </div>
+    </div>
+  </div>
+
+
+
+<div style="margin:3%;">
+
+	<div class="ui grid">
+  <div class="two wide column">
+    <div class="ui vertical fluid tabular menu">
+      {% for year in data2 %}
+      {% if current_year == year.year %}
+      <a class="item active">
+        {{year.year}}
+      </a>
+      {% else %}
+      <a class="item">
+        {{year.year}}
+      </a>
+      {% endif %}
+
+      {% endfor %}
+
+    </div>
+  </div>
+  <div class="fourteen wide stretched column">
+
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first">Program's attended</a>
+  <a class="item" data-tab="second">Books</a>
+  <a class="item" data-tab="third">Interaction</a>
+  <a class="item" data-tab="fourth">Honours</a>
+  <a class="item" data-tab="five">Online courses</a>
+  <a class="item" data-tab="six">Counsultancy</a>
+  <a class="item" data-tab="seven">PHD Details</a>
+  <a class="item" data-tab="eight">Publications</a>
+  <a class="item" data-tab="nine">Funded Projects</a>
+</div>
+
+
+
+
+
+<div class="ui bottom attached tab segment active" data-tab="first">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
+</div>
+
+</div>
+
+
+<div class="ui bottom attached tab segment" data-tab="first_first">
+<!-- 	FDP
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
+</div>
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+
+  <form method="post">
+
+
+    <div class="ui form">
+      <div class="one fields">
+    <div class="six wide field">
+      <label>FDP type</label>
+
+        <input type="text" disabled value="{{key_fdp.type_fdp}}">
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name</label>
+
+      <input type="text" disabled value="{{key_fdp.name}}">
+    </div>
+
+  </div>
+  <div class="one fields">
+  <div class="six wide field">
+    <label>Supported by</label>
+  
+    <input type="text" disabled value="{{key_fdp.supported_by}}">
+  </div>
+
+</div>
+
+
+  <div class="two fields">
+    <div class="field">
+      <label>Date from</label>
+      {% render_field form_fdp.date_from class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="field">
+      <label>Date to</label>
+      {% render_field form_fdp.date_to class="form-control" id="datepicker2" %}
+    </div>
+</div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_fdp.venue class="form-control" %}
+  </div>
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+  {% render_field form_fdp.brief_remarks class="form-control" %}
+  </div>
+</div>
+
+
+
+</div>
+
+
+ </div>
+</div>
+</div>
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="first_second">
+<!-- 	STTP
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item active" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
+</div>
+
+
+
+	<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+
+  <form method="post">
+
+
+    <div class="ui form">
+      <div class="one fields">
+    <div class="six wide field">
+      <label>STTP type</label>
+      {% render_field form_sttp.type_sttp class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name</label>
+      {% render_field form_sttp.name class="form-control" %}
+    </div>
+
+  </div>
+  <div class="one fields">
+  <div class="six wide field">
+    <label>Supported by</label>
+    {% render_field form_sttp.supported_by class="form-control" %}
+  </div>
+
+</div>
+
+
+  <div class="two fields">
+    <div class="field">
+      <label>Date from</label>
+      {% render_field form_sttp.date_from class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="field">
+      <label>Date to</label>
+      {% render_field form_sttp.date_to class="form-control" id="datepicker2" %}
+    </div>
+</div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_sttp.venue class="form-control" %}
+  </div>
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+  {% render_field form_sttp.brief_remarks class="form-control" %}
+  </div>
+</div>
+
+
+
+</div>
+
+
+ </div>
+</div>
+
+</div>
+
+
+
+<!-- -------------------------------------------------------------------
+ -->
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="first_third">
+<!-- 	Refresher's course
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item active" data-tab="first_third">Refrsher's Course</a>
+  <a class="item" data-tab="first_fourth">Workshop</a>
+</div>
+
+
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+
+    <div class="ui form">
+      <div class="one fields">
+    <div class="six wide field">
+      <label>Refreshers type</label>
+      {% render_field form_refreshers_course.type_fdp class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name</label>
+      {% render_field form_refreshers_course.name class="form-control" %}
+    </div>
+
+  </div>
+  <div class="one fields">
+  <div class="six wide field">
+    <label>Supported by</label>
+    {% render_field form_refreshers_course.supported_by class="form-control" %}
+  </div>
+
+</div>
+
+
+  <div class="two fields">
+    <div class="field">
+      <label>Date from</label>
+      {% render_field form_refreshers_course.date_from class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="field">
+      <label>Date to</label>
+      {% render_field form_refreshers_course.date_to class="form-control" id="datepicker2" %}
+    </div>
+</div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_refreshers_course.venue class="form-control" %}
+  </div>
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+  {% render_field form_refreshers_course.brief_remarks class="form-control" %}
+  </div>
+</div>
+
+
+
+</div>
+
+
+ </div>
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="first_fourth">
+<!-- 	workshop
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first_first">FDP</a>
+  <a class="item" data-tab="first_second">STTP</a>
+  <a class="item" data-tab="first_third">Refrsher's Course</a>
+  <a class="item active" data-tab="first_fourth">Workshop</a>
+</div>
+
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+
+    <div class="ui form">
+      <div class="one fields">
+    <div class="six wide field">
+      <label>Workshop type</label>
+      {% render_field form_workshop.type_fdp class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name</label>
+      {% render_field form_workshop.name class="form-control" %}
+    </div>
+
+  </div>
+  <div class="one fields">
+  <div class="six wide field">
+    <label>Supported by</label>
+    {% render_field form_workshop.supported_by class="form-control" %}
+  </div>
+
+</div>
+
+
+  <div class="two fields">
+    <div class="field">
+      <label>Date from</label>
+      {% render_field form_workshop.date_from class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="field">
+      <label>Date to</label>
+      {% render_field form_workshop.date_to class="form-control" id="datepicker2" %}
+    </div>
+</div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_workshop.venue class="form-control" %}
+  </div>
+</div>
+<div class="two fields">
+    <div class="field">
+      <label>Skills acquired</label>
+      {% render_field form_workshop.date_from class="form-control" %}
+    </div>
+
+    <div class="field">
+      <label>Skills info</label>
+      {% render_field form_workshop.date_to class="form-control" %}
+    </div>
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+  {% render_field form_workshop.brief_remarks class="form-control" %}
+  </div>
+</div>
+
+
+
+</div>
+
+
+ </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="second">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="second_first">Books</a>
+  <a class="item" data-tab="second_second">Chapters</a>
+
+</div>
+
+</div>
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="second_first">
+<!-- 	Books
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="second_first">Book</a>
+  <a class="item" data-tab="second_second">Chapter</a>
+
+</div>
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Number</label>
+      {% render_field form_book.number class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+    {% render_field form_book.title class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Author</label>
+    {% render_field form_book.author class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Edition</label>
+    {% render_field form_book.edition class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Volume</label>
+    {% render_field form_book.volume class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Publisher</label>
+    {% render_field form_book.publisher class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>ISBN</label>
+    {% render_field form.isbn class="form-control" %}
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_book.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+ </div>
+ </div>
+
+
+
+</div>
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="second_second">
+<!-- 	Chapters
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="second_first">Book</a>
+  <a class="item active" data-tab="second_second">Chapter</a>
+
+</div>
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Number</label>
+      {% render_field form_chapter.number class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+    {% render_field form_chapter.title class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Author</label>
+    {% render_field form_chapter.author class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Name of the book</label>
+    {% render_field form_chapter.name_book class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Chapter No.</label>
+    {% render_field form_chapter.chapter_no class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Page No.</label>
+    {% render_field form_chapter.page_no class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Publisher</label>
+    {% render_field form_chapter.publisher class="form-control" %}
+  </div>
+
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_chapter.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="third_first">Seminar</a>
+  <a class="item" data-tab="third_second">Technical Talks</a>
+  <a class="item" data-tab="third_third">Session chair</a>
+
+</div>
+
+</div>
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third_first">
+<!-- 	Seminars
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item active" data-tab="third_first">Seminar</a>
+  <a class="item" data-tab="third_second">Technical Talks</a>
+  <a class="item" data-tab="third_third">Session chair</a>
+
+</div>
+
+
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_seminar.title class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Topic</label>
+    {% render_field form_seminar.topic class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_seminar.venue class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Attendance No.</label>
+    {% render_field form_seminar.no_atttended class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_seminar.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third_second">
+<!-- 	Technical talks
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="third_first">Seminar</a>
+  <a class="item active" data-tab="third_second">Technical Talks</a>
+  <a class="item" data-tab="third_third">Session chair</a>
+
+</div>
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_technical_talk.title class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Topic</label>
+    {% render_field form_technical_talk.topic class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_technical_talk.venue class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Attendance No.</label>
+    {% render_field form_technical_talk.no_atttended class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_technical_talk.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- -------------------------------------------------------
+ -->
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="third_third">
+<!-- 	Session chair
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="third_first">Seminar</a>
+  <a class="item" data-tab="third_second">Technical Talks</a>
+  <a class="item active" data-tab="third_third">Session chair</a>
+
+</div>
+
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_session_chair.title class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Topic</label>
+    {% render_field form_session_chair.topic class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Venue</label>
+    {% render_field form_session_chair.venue class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Attendance No.</label>
+    {% render_field form_session_chair.no_atttended class="form-control" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Brief Remarks</label>
+    {% render_field form_session_chair.brief_remarks class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth">
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="fourth_first">National</a>
+  <a class="item" data-tab="fourth_second">International</a>
+  <a class="item" data-tab="fourth_third">State</a>
+
+</div>
+
+</div>
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth_first">
+<!-- 	National
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item active" data-tab="fourth_first">National</a>
+  <a class="item" data-tab="fourth_second">International</a>
+  <a class="item" data-tab="fourth_third">State</a>
+
+</div>
+
+
+
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Award Name</label>
+    {% render_field form_honours.national_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of the Organisation</label>
+   {% render_field form_honours.national_name_organization class="form-control" %}
+</div>
+
+</div>
+<div class="one fields">
+<div class="ten wide field">
+  <label>Area of achievement</label>
+   {% render_field form_honours.national_area_acheivement class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form_honours.national_brief_remarks class="form-control" %}
+</div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth_second">
+<!-- 	Interational
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="fourth_first">National</a>
+  <a class="item active" data-tab="fourth_second">International</a>
+  <a class="item" data-tab="fourth_third">State</a>
+
+</div>
+
+
+
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Award Name</label>
+    {% render_field form_honours.international_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of the Organisation</label>
+   {% render_field form_honours.international_name_organization class="form-control" %}
+</div>
+
+</div>
+<div class="one fields">
+<div class="ten wide field">
+  <label>Area of achievement</label>
+   {% render_field form_honours.international_area_acheivement class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form_honours.international_brief_remarks class="form-control" %}
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+<div class="ui bottom attached tab segment" data-tab="fourth_third">
+<!-- 	state
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="fourth_first">National</a>
+  <a class="item" data-tab="fourth_second">International</a>
+  <a class="item active" data-tab="fourth_third">State</a>
+
+</div>
+
+
+<div class="ui form">
+<div class="one fields">
+  <div class="six wide field">
+    <label>Award Name</label>
+    {% render_field form_honours.state_name_award class="form-control" %}
+  </div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Name of the Organisation</label>
+   {% render_field form_honours.state_name_organization class="form-control" %}
+</div>
+
+</div>
+<div class="one fields">
+<div class="ten wide field">
+  <label>Area of achievement</label>
+   {% render_field form_honours.state_area_acheivement class="form-control" %}
+</div>
+
+</div>
+
+
+<div class="one fields">
+<div class="ten wide field">
+  <label>Brief Description</label>
+   {% render_field form_honours.state_brief_remarks class="form-control" %}
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="five">
+<!-- online course
+ -->
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of course</label>
+      {% render_field form_online_courses.name_course class="form-control" %}
+  </div>
+    </div>
+
+
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Organisation/Agency Name</label>
+      {% render_field form_online_courses.name_organization class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Date of completion</label>
+     {% render_field form_online_courses.date_completed class="form-control" id="datepicker1" %}
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+    {% render_field form_online_courses.brief_remarks class="form-control" %}
+
+  </div>
+
+</div>
+<div class="one fields">
+  <div class="six wide field">
+    <label>Grade (If any)</label>
+    {% render_field form_online_courses.grade class="form-control" %}
+
+  </div>
+
+</div>
+
+ </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="six">
+<!-- consultancy
+ -->
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of organisation</label>
+      {% render_field form_consultancy.name_organization class="form-control" %}
+  </div>
+    </div>
+
+
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_consultancy.title class="form-control" %}
+  </div>
+    </div>
+    <div class="two fields">
+    <div class="six wide field">
+      <label>Consultancy Type</label>
+      {% render_field form_consultancy.consultancy_type class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Date approval</label>
+    {% render_field form_consultancy.consultancy_status class="form-control" %}
+
+  </div>
+
+
+
+    </div>
+
+
+    <div class="two fields">
+    <div class="six wide field">
+      <label>Value</label>
+      {% render_field form_consultancy.date_approval class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="six wide field">
+      <label>Consutancy status</label>
+      {% render_field form_consultancy.value class="form-control" id="datepicker2" %}
+    </div>
+</div>
+
+<div class="one fields">
+  <div class="twelve wide field">
+    <label>Consultancy status</label>
+    {% render_field form_consultancy.consultancy_status class="form-control" %}
+
+  </div>
+</div>
+
+
+
+
+
+<div class="one fields">
+  <div class="twelve wide field">
+    <label>Remarks</label>
+    {% render_field form_consultancy.brief_remarks class="form-control" %}
+
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="seven">
+
+
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="seven_first">Guidance</a>
+  <a class="item" data-tab="seven_second">Pursuing Details</a>
+
+
+</div>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="seven_first">
+<!-- 	Guidance
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="seven_first">Guidance</a>
+  <a class="item" data-tab="seven_second">Pursuing Details</a>
+
+</div>
+
+
+<p> <div class="ui container" style="margin-top:3%;">
+
+  <div class="ui raised segment">
+
+    <div class="ui form">
+    <div class="eight fields">
+    <div class="two wide field">
+      <label>Name of Student</label>
+      {% render_field form_guidance.name_student_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Type of Student</label>
+      {% render_field form_guidance.int_ext_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>University name</label>
+      {% render_field form_guidance.name_university_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Research Centre Name</label>
+      {% render_field form_guidance.name_research_centre_1 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Year of Registration</label>
+      {% render_field form_guidance.year_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Area/Domain</label>
+      {% render_field form_guidance.area_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>PHD Status</label>
+      {% render_field form_guidance.phd_status_1 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      <label>Co guide (if any)</label>
+      {% render_field form_guidance.co_guide_1 class="form-control" %}
+    </div>
+
+</div>
+
+<div class="eight fields">
+    <div class="two wide field">
+{% render_field form_guidance.name_student_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_2 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_2 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_2 class="form-control" %}
+    </div>
+
+</div>
+    <div class="eight fields">
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_student_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_3 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_3 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_3 class="form-control" %}
+    </div>
+
+</div>
+  <div class="eight fields">
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_student_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_4 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_4 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_4 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_student_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_5 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_5 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_5 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_student_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_6 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_6 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_6 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_student_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_7 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_7 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_7 class="form-control" %}
+    </div>
+
+</div>
+
+
+<div class="eight fields">
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_student_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.int_ext_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_university_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.name_research_centre_8 class="form-control" id="datepicker1" %}
+    </div>
+
+    <div class="two wide field">
+
+      {% render_field form_guidance.year_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.area_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.phd_status_8 class="form-control" %}
+    </div>
+
+    <div class="two wide field">
+      {% render_field form_guidance.co_guide_8 class="form-control" %}
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="seven_second">
+<!-- 	Pursuing Details
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item" data-tab="seven_first">Guidance</a>
+  <a class="item active" data-tab="seven_second">Pursuing Details</a>
+
+</div>
+
+
+<div class="ui container" style="margin-top:3%;">
+
+
+  <div class="ui raised segment">
+
+    <div class="ui form">
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of Guide</label>
+      {% render_field form_pursuing_details.name_guide class="form-control" %}
+    </div>
+
+  </div>
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Name of Co-guide</label>
+    {% render_field form_pursuing_details.name_co_guide class="form-control" %}
+    </div>
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>University Name</label>
+    {% render_field form_pursuing_details.name_university class="form-control" %}
+  </div>
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Research Centre Name</label>
+    {% render_field form_pursuing_details.name_research_centre class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>Year of Registration</label>
+    {% render_field form_pursuing_details.year class="form-control" %}
+  </div>
+
+
+</div>
+<div class="two fields">
+  <div class="six wide field">
+    <label>Area/Domain</label>
+    {% render_field form_pursuing_details.area class="form-control" %}
+  </div>
+  <div class="six wide field">
+    <label>PHD Status</label>
+    {% render_field form_pursuing_details.phd_status class="form-control" %}
+  </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+</div>
+
+
+</div>
+
+<!-- -------------------------------------- -->
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="eight">
+
+
+
+  <div class="ui top attached tabular menu">
+  <a class="item" data-tab="eight_first">Journals</a>
+  <a class="item" data-tab="eight_second">Conferences</a>
+
+
+</div>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="eight_first">
+<!-- 	Journals
+ -->
+	<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="eight_first">Journals</a>
+  <a class="item" data-tab="eight_second">Conferences</a>
+
+</div>
+
+
+<p>No content Journals</p>
+
+</div>
+
+
+
+<!-- -------------------------------------- -->
+
+
+<div class="ui bottom attached tab segment" data-tab="eight_second">
+<!-- 	Conferences
+ -->
+	<div class="ui top attached tabular menu">
+ <a class="item" data-tab="eight_first">Journals</a>
+  <a class="item active" data-tab="eight_second">Conferences</a>
+
+</div>
+
+
+<p>No content Conferences</p>
+
+</div>
+
+
+<!-- -------------------------------------- -->
+
+
+
+
+
+
+
+<div class="ui bottom attached tab segment" data-tab="nine">
+<!-- Funded projects
+ -->
+<div class="ui container" style="margin-top:3%;">
+
+
+    <div class="ui form">
+
+
+<!-- one -->
+
+<div class="ui raised segment">
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_funded_project.title_1 class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of the funding agency</label>
+     {% render_field form_funded_project.name_agency_1 class="form-control " %}
+  </div>
+
+</div>
+<div class="three fields">
+  <div class="four wide field">
+    <label>Type of funding agency</label>
+    {% render_field form_funded_project.agency_type_1 class="form-control agency_type_1" %}
+
+  </div>
+
+  <div class="four wide field">
+    <label>Date of sanction</label>
+    {% render_field form_funded_project.date_sanction_1 class="form-control" id="datepicker1" %}
+
+  </div>
+  <div class="four wide field">
+    <label>Total amount sanction</label>
+    {% render_field form_funded_project.amount_sanction_1 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Date from</label>
+    {% render_field form_funded_project.from_date_1 class="form-control" id="datepicker2" %}
+
+  </div>
+
+  <div class="six wide field">
+    <label>Date to</label>
+    {% render_field form_funded_project.to_date_1 class="form-control" id="datepicker3" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Place of execution</label>
+    {% render_field form_funded_project.place_1 class="form-control" %}
+
+  </div>
+  <div class="six wide field">
+    <label>PI/Co-PI</label>
+    {% render_field form_funded_project.investigator_type_1 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="one fields">ect
+  <div class="six wide field">
+    <label>Remarks</label>
+     {% render_field form_funded_project.brief_remarks_1 class="form-control" %}
+  </div>
+
+</div>
+
+
+
+
+<!-- one end -->
+
+ </div>
+
+ <div class="ui raised segment">
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_funded_project.title_2 class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of the funding agency</label>
+     {% render_field form_funded_project.name_agency_2 class="form-control" %}
+  </div>
+
+</div>
+<div class="three fields">
+  <div class="four wide field">
+    <label>Type of funding agency</label>
+    {% render_field form_funded_project.agency_type_2 class="form-control" %}
+
+  </div>
+
+  <div class="four wide field">
+    <label>Date of sanction</label>
+    {% render_field form_funded_project.date_sanction_2 class="form-control" id="datepicker5" %}
+
+  </div>
+  <div class="four wide field">
+    <label>Total amount sanction</label>
+    {% render_field form_funded_project.amount_sanction_2 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Date from</label>
+    {% render_field form_funded_project.from_date_2 class="form-control" id="datepicker6" %}
+
+  </div>
+
+  <div class="six wide field">
+    <label>Date to</label>
+    {% render_field form_funded_project.to_date_2 class="form-control" id="datepicker7" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Place of execution</label>
+    {% render_field form_funded_project.place_2 class="form-control" %}
+
+  </div>
+  <div class="six wide field">
+    <label>PI/Co-PI</label>
+    {% render_field form_funded_project.investigator_type_2 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+     {% render_field form_funded_project.brief_remarks_2 class="form-control" %}
+  </div>
+
+</div>
+
+</div>
+
+
+
+ <div class="ui raised segment">
+
+  <div class="one fields">
+    <div class="six wide field">
+      <label>Title</label>
+      {% render_field form_funded_project.title_3 class="form-control" %}
+  </div>
+    </div>
+
+
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Name of the funding agency</label>
+     {% render_field form_funded_project.name_agency_3 class="form-control" %}
+  </div>
+
+</div>
+<div class="three fields">
+  <div class="four wide field">
+    <label>Type of funding agency</label>
+    {% render_field form_funded_project.agency_type_3 class="form-control" %}
+
+  </div>
+
+  <div class="four wide field">
+    <label>Date of sanction</label>
+    {% render_field form_funded_project.date_sanction_3 class="form-control" id="datepicker9" %}
+
+  </div>
+  <div class="four wide field">
+    <label>Total amount sanction</label>
+    {% render_field form_funded_project.amount_sanction_3 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Date from</label>
+    {% render_field form_funded_project.from_date_3 class="form-control" id="datepicker10" %}
+
+  </div>
+
+  <div class="six wide field">
+    <label>Date to</label>
+    {% render_field form_funded_project.to_date_3 class="form-control" id="datepicker11" %}
+
+  </div>
+
+
+</div>
+
+<div class="two fields">
+  <div class="six wide field">
+    <label>Place of execution</label>
+    {% render_field form_funded_project.place_3 class="form-control" %}
+
+  </div>
+  <div class="six wide field">
+    <label>PI/Co-PI</label>
+    {% render_field form_funded_project.investigator_type_3 class="form-control" %}
+
+  </div>
+
+
+</div>
+
+<div class="one fields">
+  <div class="six wide field">
+    <label>Remarks</label>
+     {% render_field form_funded_project.brief_remarks_3 class="form-control" %}
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<button class="fluid ui primary button" type="submit" style="margin-top:4%;">
+  <i class="right arrow icon"></i>
+  Submit
+</button>
+
+  </form>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$(function(){
+    $('.menu .item').tab();
+    });
+
+</script>

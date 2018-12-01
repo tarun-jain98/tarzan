@@ -29,6 +29,8 @@ urlpatterns = [
 
     url(r'^first_new/(?P<year>[\w\-]+)$',views.first_new,name="first_new"),
 
+    url(r'^first_new_preview/(?P<year>[\w\-]+)$',views.first_new_preview,name="first_new_preview"),
+
 
 
 

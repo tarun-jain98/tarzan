@@ -124,7 +124,7 @@ def first_year(request):
 def first_new(request,year):
 
     if fdp.objects.filter(info=request.user).filter(year=year):
-        return HttpResponseRedirect('/first_year')
+        return HttpResponseRedirect('/first_new_preview/'+year)
 
     else:
 
@@ -398,6 +398,20 @@ def first_new(request,year):
             }
 
         return render(request,'first_new.html',context = context)
+
+
+
+
+def first_new_preview(request,year):
+
+    key_fdp = fdp.objects.filter(info=request.user).get(year=year)
+
+    context = {
+            'key_fdp':key_fdp
+
+        }
+
+    return render(request,'first_new_preview.html',context=context)
 
 
 
