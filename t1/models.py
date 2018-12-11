@@ -328,7 +328,7 @@ class honours(models.Model):
 
 	international_name_award = models.CharField(max_length=50, blank=True, null=True)
 	international_name_organization = models.CharField(max_length=50, blank=True, null=True)
-	international_brief_remarks = models.TextField( blank=True, null=True)
+	international_area_acheivement = models.TextField( blank=True, null=True)
 	international_brief_remarks = models.TextField( blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
